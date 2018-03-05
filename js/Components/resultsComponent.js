@@ -4,5 +4,5 @@
   };
   angular
     .module("App")
-    .component("reslutsComponent", resultsComponent)
+    .component("reslutsComponent", resultsComponent);
 })();

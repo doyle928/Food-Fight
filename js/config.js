@@ -5,14 +5,14 @@
 	.config(function($routeProvider){
 		$routeProvider
 		.when("/welcome", {
-			template: "<welcome></welcome>"
+			template: "<start-component></start-component>"
 		})
 		.when("/events", {
-			template: "<events></events>"
+			template: "<event-component></event-component>"
 		})
-		.when("/results"), {
-			template: "<results></results>"
-		}
+		// .when("/results"), {
+		// 	template: "<results></results>"
+		// }
 		.otherwise({redirectTo: "/welcome"});
 	});
 

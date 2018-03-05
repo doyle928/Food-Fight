@@ -1,7 +1,7 @@
 (function(){
 	var gameComponent = {
 		templateUrl: "./partials/event.html",
-		controller: "controller"
+		controller: "controllerFunction"
 	};
 
 	angular

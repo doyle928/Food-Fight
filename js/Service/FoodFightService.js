@@ -20,9 +20,8 @@
             changeDayCount: changeDayCount,
             changeEvent: changeEvent, 
             getProgressBar: getProgressBar, 
-            getAmount = getAmount
-
-        }
+            getAmount: getAmount
+        };
         function changeProgressBar (progressBar){
             progressValue -= progressBar;
             console.log(progressValue);
@@ -52,7 +51,7 @@
 
     angular
         .module("App")
-        .factory("TodoService", TodoService);
+        .factory("FoodFightService", FoodFightService);
 
 
 })();
