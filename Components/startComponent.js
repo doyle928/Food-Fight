@@ -13,3 +13,4 @@
 		.module("App")
 		.component("startComponent", startComponent);
 })();
+
