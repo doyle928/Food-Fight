@@ -1,57 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us" ng-app="App">
 
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Food Fight</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
-    <script src="style/main.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css">
 </head>
 
 <body>
-    <div class="title">
-        <h1 class="splashHeader">Food Fight</h1>
-        <hr>
-    </div>
-    <div class="body">
-        <p>Food Fight will put you into the shoes of someone who struggles to afford the food they need to feed their family. This is a very real situation that many Americans face every day, and they desperately need your help. Food Gatherers of Washtenaw County helps to provide that assistance, but they cannot do it alone. Please consider donating a small contribution to them, so we can help as many families as possible.</p>
-        <div class="welcomeButtons">
-            <button>Play</button>
-            <button>Donate</button>
-        </div>
-    </div>
 
-    <!-- <div class="header">
-        <progress></progress>
-        <div class="topInfo">
-            <p>$
-                <span class="budget">86</span>
-            </p>
-            <p>Day:
-                <span>3</span>
-            </p>
-        </div>
-    </div>
-    <div class="eventTitle">
-        <h1 class="eventHeader">Event</h1>
-        <hr>
-        <p>Officia aute duis cillum duis eu laborum ut magna aliquip.</p>
-    </div>
-    <div class="cardContainer">
-        <div class="card1">
-            <div>
-                <p>Et duis sit reprehenderit et sint aute est.</p>
-            </div>
-        </div>
-        <div class="card2">
-            <div>
-                <p>Qui non proident aute sit excepteur veniam occaecat adipisicing reprehenderit ex nisi deserunt veniam qui.</p>
-            </div>
-        </div>
-    </div> -->
-
+  <ng-view></ng-view>
+   <!-- <start-component></start-component>   -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
+  <script src="js/module.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/Components/eventComponent.js"></script>
+  <script src="js/Components/resultsComponent.js"></script>
+  <script src="js/Components/startComponent.js"></script>
+  <script type="text/javascript" src="js/Controller/controller.js"></script>
+  <script type="text/javascript" src="js/Service/FoodFightService.js"></script>
 </body>
 
 </html>
