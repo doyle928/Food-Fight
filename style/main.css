@@ -1,0 +1,54 @@
+body {
+  background: radial-gradient(circle, rgb(25, 25, 25), rgb(0, 0, 0));
+  color: white;
+  margin-top: 40px;
+}
+h1 {
+  padding: 10px;
+  margin: 0;
+  text-align: center;
+  font-weight: 700;
+  font-size: 4em;
+}
+hr {
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid crimson;
+}
+.body {
+  padding-top: 15px;
+  width: 90%;
+  margin: 0 auto;
+}
+.welcomeButtons button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 1.3em;
+  padding: 10px 20px;
+  border-bottom: 1px solid crimson;
+  margin: 0 20px;
+}
+.welcomeButtons {
+  margin: 0 auto;
+  margin-top: 60px;
+  margin-left: 8%;
+}
+.card1 {
+  width: 250px;
+  height: 250px;
+  color: black;
+  background-color: bisque;
+}
+.card1 p,
+.card2 p {
+  text-align: center;
+  width: 225px;
+  height: 225px;
+  border: 1px solid black;
+}
+progress {
+  width: 3px;
+  color: crimson;
+  width: 100px;
+}
