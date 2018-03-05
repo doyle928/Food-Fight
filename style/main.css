@@ -3,7 +3,7 @@ body {
   color: white;
   margin-top: 40px;
 }
-h1 {
+.title h1 {
   padding: 10px;
   margin: 0;
   text-align: center;
@@ -34,21 +34,52 @@ hr {
   margin-top: 60px;
   margin-left: 8%;
 }
-.card1 {
-  width: 250px;
-  height: 250px;
+.card1,
+.card2 {
+  width: 190px;
+  height: 190px;
   color: black;
-  background-color: bisque;
+  background-color: wheat;
+  margin: 20px auto;
 }
-.card1 p,
-.card2 p {
-  text-align: center;
-  width: 225px;
-  height: 225px;
+.card1 div,
+.card2 div {
+  width: 160px;
+  height: 160px;
   border: 1px solid black;
+  margin: auto;
+  position: relative;
+  top: 15px;
+}
+.card1 div p,
+.card2 div p {
+  text-align: center;
+  padding: 10px;
 }
 progress {
-  width: 3px;
-  color: crimson;
-  width: 100px;
+  background-color: crimson;
+  width: 100%;
+  height: 3px;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.topInfo {
+  position: absolute;
+  top: -10px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.topInfo p {
+  padding: 0 5px;
+}
+.eventTitle h1 {
+  font-size: 2.2em;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
 }
