@@ -1,6 +1,7 @@
 body {
   background: radial-gradient(circle, rgb(25, 25, 25), rgb(0, 0, 0));
-  color: white;
+  color: #eee;
+  font-family: "Roboto", sans-serif;
   margin-top: 40px;
 }
 .title h1 {
@@ -13,7 +14,7 @@ body {
 hr {
   width: 300px;
   margin: 0 auto;
-  border: 1px solid crimson;
+  border: 1px solid #400000;
 }
 .body {
   padding-top: 15px;
@@ -21,14 +22,16 @@ hr {
   margin: 0 auto;
   text-align: center;
 }
+
 button {
   border: none;
   background-color: black;
-  color: white;
+  color: #eee;
   font-size: 1.3em;
   padding: 10px 20px;
-  border-bottom: 1px solid crimson;
+  border-bottom: 1px solid #400000;
   margin: 0 20px;
+  cursor: pointer;
 }
 
 .priorityButton {
@@ -37,20 +40,6 @@ button {
 .secondaryButton {
   margin-top: 50px;
 }
-/* .welcomeButtons button {
-  border: none;
-  background-color: black;
-  color: white;
-  font-size: 1.3em;
-  padding: 10px 20px;
-  border-bottom: 1px solid crimson;
-  margin: 0 20px;
-}
-.welcomeButtons {
-  margin: 0 auto;
-  margin-top: 60px;
-  margin-left: 8%;
-} */
 .card1,
 .card2 {
   width: 190px;
@@ -58,6 +47,8 @@ button {
   color: black;
   background-color: wheat;
   margin: 20px auto;
+  cursor: pointer;
+  transform-style: preserve-3d;
 }
 .card1 div,
 .card2 div {
@@ -67,6 +58,7 @@ button {
   margin: auto;
   position: relative;
   top: 15px;
+  transform: translateZ(20px);
 }
 .card1 div p,
 .card2 div p {
@@ -74,7 +66,6 @@ button {
   padding: 10px;
 }
 progress {
-  background-color: crimson;
   width: 100%;
   height: 3px;
   padding: 0;
@@ -82,6 +73,10 @@ progress {
   position: absolute;
   top: 0;
   left: 0;
+  background-color: #400000;
+}
+progress::-webkit-progress-value {
+  background-color: #400000;
 }
 .topInfo {
   position: absolute;
@@ -100,7 +95,15 @@ progress {
   padding: 10px;
   margin: 0;
 }
+.eventTitle p {
+  text-align: center;
+}
 
-a {
-  color: white;
+footer a {
+  position: absolute;
+  bottom: 5px;
+  width: 100%;
+  text-align: center;
+  color: #eee;
+  text-decoration: none;
 }
