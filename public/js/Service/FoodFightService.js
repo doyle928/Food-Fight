@@ -18,7 +18,8 @@
       changeDayCount: changeDayCount,
       changeEvent: changeEvent,
       getProgressBar: getProgressBar,
-      getAmount: getAmount
+      getAmount: getAmount, 
+      getEvents: getEvents
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -46,6 +47,12 @@
       return event;
     }
   }
+  function getEvents() {
+            return $http.get("data/events.json")
+                .then(function(response) {
+                    return response.data;
+                });
+        }
 
   angular.module("App").factory("FoodFightService", FoodFightService);
 })();
