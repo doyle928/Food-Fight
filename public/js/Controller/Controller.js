@@ -8,10 +8,14 @@ import { isNullOrUndefined } from "util";
     $ctrl.amount;
     $ctrl.dayCount;
     $ctrl.usedEvents = [];
+<<<<<<< HEAD
     $ctrl.randPiggy = Math.floor(Math.random() * 12) + 5;
     $ctrl.randDonate = Math.floor(Math.random() * 26) + 20;
     $ctrl.randPiggyUse = 1;
     $ctrl.randDonateUse = 1;
+=======
+    $ctrl.allEvents;
+>>>>>>> 03aa551a1b0cc48d477810cb3eff8fb6e50435a4
 
     getEverything();
     console.log($ctrl.eventObj);
@@ -64,7 +68,12 @@ import { isNullOrUndefined } from "util";
       $ctrl.amount = FoodFightService.getAmount();
       $ctrl.dayCount = FoodFightService.changeDayCount();
       $(".mainProgress").attr("value", $ctrl.amount);
+      $ctrl.allEvents=FoodFightService.getEvents().then(function(){
+        console.log("helllo");
+
+      });
     }
   }
+
   angular.module("App").controller("controllerFunction", controllerFunction);
 })();
