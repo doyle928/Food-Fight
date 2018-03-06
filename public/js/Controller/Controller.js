@@ -1,5 +1,3 @@
-import { isNullOrUndefined } from "util";
-
 (function() {
   function controllerFunction(FoodFightService, $location) {
     var $ctrl = this;
@@ -26,48 +24,43 @@ import { isNullOrUndefined } from "util";
     };
 
     $ctrl.piggyBank = function() {
-      if ($ctrl.randPiggyUse != 0) {
+      if ($ctrl.randPiggyUse > 0) {
         FoodFightService.breakPiggy($ctrl.randDonate);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);
         $ctrl.randPiggyUse--;
-      }else{
+      } else {
         //end goal => show div with error
         alert("you cruel bastard");
       }
     };
     $ctrl.donBlood = function() {
-      if ($ctrl.randDonateUse != 0) {
-        FoodFightService.donateBlood($ctrl.donateAmount);
+      if ($ctrl.randDonateUse > 0) {
+        FoodFightService.donateBlood($ctrl.randDonate);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);
         $ctrl.randDonateUse--;
-      }else{
+      } else {
         //end goal=> show div with error
         alert("you already gave blood");
       }
     };
 
     function getEverything() {
-      FoodFightService.changeEvent().then(event => {
-        if (isNullOrUndefined($ctrl.usedEvents.indexOf(event.id))) {
+      FoodFightService.getEvents().then(event => {
+        if ($ctrl.usedEvents.indexOf(event.id) == -1) {
           $ctrl.eventObj = event;
           $ctrl.usedEvents.push(event.id);
         } else {
           getEverything();
         }
       });
-      console.log($ctrl.eventObj);
       $ctrl.progressBar = FoodFightService.getProgressBar();
       $ctrl.amount = FoodFightService.getAmount();
       $ctrl.dayCount = FoodFightService.changeDayCount();
       $(".mainProgress").attr("value", $ctrl.amount);
-      $ctrl.allEvents=FoodFightService.getEvents().then(function(){
-        console.log("helllo");
-
-      });
     }
   }
 
