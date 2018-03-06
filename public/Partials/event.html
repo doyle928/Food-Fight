@@ -1,5 +1,5 @@
 <div class="header">
-    <progress></progress>
+    <progress class="mainProgress" value="150" max="150"></progress>
     <div class="topInfo">
         <p>$
             <span class="budget">{{$ctrl.amount}}</span>
@@ -15,14 +15,14 @@
     <p>{{$ctrl.eventObj.text}}</p>
 </div>
 <div class="cardContainer">
-    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1Price)" class="card1">
-        <div>
+    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1Price)" class="card1" data-tilt>
+        <div data-tilt>
             <p>{{$ctrl.eventObj.option1}}</p>
             <p>{{$ctrl.eventObj.option1Price}}</p>
         </div>
     </div>
-    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2">
-        <div>
+    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2" data-tilt>
+        <div data-tilt>
             <p>{{$ctrl.eventObj.option2}}</p>
             <p>{{$ctrl.eventObj.option2Price}}</p>
         </div>
