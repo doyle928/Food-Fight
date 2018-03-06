@@ -47,16 +47,18 @@
 
     function getEvents() {
       return $http({
-        method:'GET',
-        url:'/Data/events.json'
-      }).then(function(response){
-        console.log("from service ",response.data);
-        return response.data[randNum()];
-      }).catch(function(err){
-        console.log(err);
-      });
+        method: "GET",
+        url: "/Data/events.json"
+      })
+        .then(function(response) {
+          console.log("from service ", response.data);
+          return response.data[randNum()];
+        })
+        .catch(function(err) {
+          console.log(err);
+        });
     }
-  }
+
     function breakPiggy(amount) {
       dollarValue += amount;
     }
