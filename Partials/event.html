@@ -1,0 +1,34 @@
+<div class="header">
+    <progress></progress>
+    <div class="topInfo">
+        <p>$
+            <span class="budget">{{$ctrl.amount}}</span>
+        </p>
+        <p>Day:
+            <span>{{$ctrl.dayCount}}</span>
+        </p>
+    </div>
+</div>
+<div class="eventTitle">
+    <h1 class="eventHeader">{{$ctrl.eventObj.eventName}}</h1>
+    <hr>
+    <p>{{$ctrl.eventObj.text}}</p>
+</div>
+<div class="cardContainer">
+    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1Price)" class="card1">
+        <div>
+            <p>{{$ctrl.eventObj.option1}}</p>
+            <p>{{$ctrl.eventObj.option1Price}}</p>
+        </div>
+    </div>
+    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2">
+        <div>
+            <p>{{$ctrl.eventObj.option2}}</p>
+            <p>{{$ctrl.eventObj.option2Price}}</p>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <a href="#">Please Donate at Food Gatherers!</a>
+</footer>
