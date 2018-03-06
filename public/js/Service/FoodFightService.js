@@ -41,9 +41,18 @@
     function changeDayCount() {
       return dayCount++;
     }
+    function randNum () {
+      return Math.floor(Math.random()*5)+ 1;
+    }
 
     function changeEvent() {
-      return event;
+      return event[randNum()];
+    }
+    function breakPiggy(amount){
+      dollarValue += amount
+    }
+    function donateBlood(amount){
+      dollarValue += amount;
     }
   }
 
