@@ -18,8 +18,7 @@
       changeDayCount: changeDayCount,
       changeEvent: changeEvent,
       getProgressBar: getProgressBar,
-      getAmount: getAmount,
-      getEvents: getEvents
+      getAmount: getAmount
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -42,37 +41,29 @@
     function changeDayCount() {
       return dayCount++;
     }
-    function randNum () {
-      return Math.floor(Math.random()*5)+ 1;
+    function randNum() {
+      return Math.floor(Math.random() * 6) + 1;
     }
 
-    function changeEvent() {
-      return event[randNum()];
+    function getEvents() {
+      return $http({
+        method:'GET',
+        url:'/Data/events.json'
+      }).then(function(response){
+        console.log("from service ",response.data);
+        return response.data[randNum()];
+      }).catch(function(err){
+        console.log(err);
+      });
     }
-    function breakPiggy(amount){
-      dollarValue += amount
-    }
-    function donateBlood(amount){
+  }
+    function breakPiggy(amount) {
       dollarValue += amount;
     }
-
-  function getEvents() {
-        return $http({
-          method:'GET',
-          url:'/Data/events.json'
-        }).then(function(response){
-          console.log("from service ",response.data);
-          return response.data;
-        }).catch(function(err){
-          console.log(err);
-        });
-      }
+    function donateBlood(amount) {
+      dollarValue += amount;
     }
-//             return $http.get("data/events.json")
-//                 .then(function(response) {
-//                     console.log(repsonse);
-//                     return response.data;}).catch(function(err){console.log(err);});
-//         }
-// }
+  }
+
   angular.module("App").factory("FoodFightService", FoodFightService);
 })();

@@ -118,6 +118,11 @@ footer a {
   width: 100px;
   border-radius: 50%;
   border: 2px solid crimson;
+  background-color: black;
+}
+.piggy:hover,
+.blood:hover{
+  background-color: rgb(25, 25, 25);
 }
 .blood {
   margin: 20px 10px;
