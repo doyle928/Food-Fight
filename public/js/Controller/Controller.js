@@ -5,6 +5,7 @@
     $ctrl.progressBar;
     $ctrl.amount;
     $ctrl.dayCount;
+    $ctrl.usedEvents = [];
 
     getEverything();
     console.log($ctrl.eventObj);

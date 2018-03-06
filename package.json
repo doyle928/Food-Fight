@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/doyle928/Food-Fight/issues"
   },
-  "homepage": "https://github.com/doyle928/Food-Fight#readme"
+  "homepage": "https://github.com/doyle928/Food-Fight#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "pg": "^7.4.1"
+  }
 }
