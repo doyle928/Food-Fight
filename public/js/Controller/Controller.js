@@ -6,6 +6,7 @@
     $ctrl.amount;
     $ctrl.dayCount;
     $ctrl.usedEvents = [];
+    $ctrl.allEvents;
 
     getEverything();
     console.log($ctrl.eventObj);
@@ -26,7 +27,12 @@
       $ctrl.amount = FoodFightService.getAmount();
       $ctrl.dayCount = FoodFightService.changeDayCount();
       $(".mainProgress").attr("value", $ctrl.amount);
+      $ctrl.allEvents=FoodFightService.getEvents().then(function(){
+        console.log("helllo");
+
+      });
     }
   }
+
   angular.module("App").controller("controllerFunction", controllerFunction);
 })();

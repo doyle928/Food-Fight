@@ -1,5 +1,5 @@
 (function() {
-  function FoodFightService() {
+  function FoodFightService($http) {
     var progressValue = 150;
     var dollarValue = 150;
     var dayCount = 1;
@@ -18,7 +18,7 @@
       changeDayCount: changeDayCount,
       changeEvent: changeEvent,
       getProgressBar: getProgressBar,
-      getAmount: getAmount, 
+      getAmount: getAmount,
       getEvents: getEvents
     };
     function changeProgressBar(progressBar) {
@@ -46,13 +46,24 @@
     function changeEvent() {
       return event;
     }
-  }
-  function getEvents() {
-            return $http.get("data/events.json")
-                .then(function(response) {
-                    return response.data;
-                });
-        }
 
+  function getEvents() {
+        return $http({
+          method:'GET',
+          url:'/Data/events.json'
+        }).then(function(response){
+          console.log("from service ",response.data);
+          return response.data;
+        }).catch(function(err){
+          console.log(err);
+        });
+      }
+    }
+//             return $http.get("data/events.json")
+//                 .then(function(response) {
+//                     console.log(repsonse);
+//                     return response.data;}).catch(function(err){console.log(err);});
+//         }
+// }
   angular.module("App").factory("FoodFightService", FoodFightService);
 })();
