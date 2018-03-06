@@ -1,0 +1,31 @@
+[   {"event": "Pizza Party", 
+  "text": "Your child has been invited to a slumber party, but in order to go, you need to give them $10 for pizza. What do you do?",
+  "option1": "Give them the $10",
+  "option2": "Feed them at home for $3"
+  },
+  {"event": "Picky Child", 
+  "text": "Your child doesn't like having the same food all of the time. They've started crying.",
+  "option1": "Promise that you'll go out to eat this weekend for $25.",
+  "option2": "Tell them that you simply cannot afford anything else."
+  },
+  {"event": "Power Outage", 
+  "text": "The power in your neighborhood has gone out and the food in your refridgerator has spoiled.",
+  "option1": "Go grocery shopping again (costs the same amount as grocery shopping)",
+  "option2": "Buy off the McDonald's dollar menu for the rest of the week (costs $20)"
+  },
+  {"event": "Forgotten Wallet", 
+  "text": "Your coworker, Steve, has forgotten their wallet and can't afford to buy their lunch today. They ask if you can spot them.",
+  "option1": "Pay for their lunch $10. Steve never pays you back.",
+  "option2": "Offer to share some of your own lunch. You end up not getting enough to eat and your work performance suffers."
+  },
+  {"event": "Thanksgiving", 
+  "text": "It's Thanksgiving, and it's your turn to host the extended family.",
+  "option1": "Buy the necessary food to host Thanksgiving ($100)",
+  "option2": "Lie - Say that you've been scheduled to work on Thanksgiving, and can't host this year."
+  },
+  {"event": "Medical Emergency", 
+  "text": "Due to your excessive unhealthy eating, you've had an unexpected medical condition. And the doctor strongly recommends a specific diet.",
+  "option1": "Conform to the diet - costs $60 for the specialized food.",
+  "option2": "Continue to eat as you have before. You start to feel perpetually weak and uneasy. Your work performance suffers."
+  }
+];
