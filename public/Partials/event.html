@@ -1,42 +1,54 @@
-<div class="header">
-    <progress class="mainProgress" value="150" max="150"></progress>
-    <div class="topInfo">
-        <p>$
-            <span class="budget">{{$ctrl.amount}}</span>
-        </p>
-        <p>Day:
-            <span>{{$ctrl.dayCount}}</span>
-        </p>
-    </div>
-</div>
-<div class="eventTitle">
-    <h1 class="eventHeader">{{$ctrl.eventObj.eventName}}</h1>
-    <hr>
-    <p>{{$ctrl.eventObj.text}}</p>
-</div>
-<div class="cardContainer">
-    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1Price)" class="card1" data-tilt>
-        <div data-tilt>
-            <p>{{$ctrl.eventObj.option1}}</p>
-            <p>{{$ctrl.eventObj.option1Price}}</p>
-        </div>
-    </div>
-    <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2" data-tilt>
-        <div data-tilt>
-            <p>{{$ctrl.eventObj.option2}}</p>
-            <p>{{$ctrl.eventObj.option2Price}}</p>
-        </div>
-    </div>
-</div>
-<div class="cashGrab">
-    <div class="piggy" ng-click="$ctrl.piggyBank()">
-        <img src="dependencies/piggy-bank.svg">
-    </div>
-    <div class="blood" ng-click="$ctrl.donBlood()">
-        <img src="dependencies/blood-sample.svg">
-    </div>
-</div>
+<div ng-click="$ctrl.cashMenu" class="needCashMenu">
 
-<footer>
-    <a href="#">Please Donate at Food Gatherers!</a>
-</footer>
+    <ul class="cashGrabItems">
+        <li class="piggy" ng-click="$ctrl.piggyBank()">
+            <img src="dependencies/piggy-bank.svg">
+        </li>
+        <li class="blood" ng-click="$ctrl.donBlood()">
+            <img src="dependencies/blood-sample.svg">
+        </li>
+    </ul>
+</div>
+<span class="getCash" ng-click="$ctrl.cashMenu()">
+    <p>NEED
+        <br>CASH?</p>
+</span>
+<div class="main">
+    <div class="header">
+        <progress class="mainProgress" value="150" max="150"></progress>
+        <div class="topInfo">
+            <p>$
+                <span class="budget">{{$ctrl.amount}}</span>
+            </p>
+            <p>Day:
+                <span>{{$ctrl.dayCount}}</span>
+            </p>
+        </div>
+    </div>
+    <div class="eventTitle">
+        <h1 class="eventHeader">{{$ctrl.eventObj.event}}</h1>
+        <hr>
+        <p>{{$ctrl.eventObj.text}}</p>
+    </div>
+    <div class="cardContainer">
+        <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1Price)" class="card1" data-tilt data-tilt-max="15" data-tilt-speed="400"
+            data-tilt-perspective="500" data-tilt-scale="1.05">
+            <div>
+                <p>{{$ctrl.eventObj.option1}}</p>
+                <p>{{$ctrl.eventObj.option1Price}}</p>
+            </div>
+        </div>
+        <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2" data-tilt data-tilt-max="15" data-tilt-speed="400"
+            data-tilt-perspective="500" data-tilt-scale="1.05">
+            <div>
+                <p>{{$ctrl.eventObj.option2}}</p>
+                <p>{{$ctrl.eventObj.option2Price}}</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <a href="# ">Please Donate at Food Gatherers!</a>
+    </footer>
+</div>
+\

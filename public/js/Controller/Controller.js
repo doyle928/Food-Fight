@@ -1,6 +1,6 @@
 (function() {
   function controllerFunction(FoodFightService, $location) {
-    var $ctrl = this;
+    const $ctrl = this;
     $ctrl.eventObj = {};
     $ctrl.progressBar;
     $ctrl.amount;
@@ -62,6 +62,11 @@
       $ctrl.dayCount = FoodFightService.changeDayCount();
       $(".mainProgress").attr("value", $ctrl.amount);
     }
+
+    $ctrl.cashMenu = function() {
+      $(".needCashMenu").css("width", "143px");
+      $(".main").css("margin-left", "143px");
+    };
   }
 
   angular.module("App").controller("controllerFunction", controllerFunction);
