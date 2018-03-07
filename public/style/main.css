@@ -1,12 +1,7 @@
 body {
-<<<<<<< HEAD
-  background: linear-gradient(to right, rgb(7, 0, 0), rgb(76, 0, 1), rgb(7, 0, 0));
-  color: white;
-=======
   background-color: #1f1f1f;
   color: #eee;
   font-family: "Roboto", sans-serif;
->>>>>>> 78b93a21b63f1ffad32ca26bfa45536923c49459
   margin-top: 40px;
   text-align: center;
 }
@@ -20,11 +15,7 @@ body {
 hr {
   width: 300px;
   margin: 0 auto;
-<<<<<<< HEAD
   border: 1px solid #870805;
-=======
-  border: 1px solid #dc143c;
->>>>>>> 78b93a21b63f1ffad32ca26bfa45536923c49459
 }
 .body {
   padding-top: 15px;
@@ -33,19 +24,11 @@ hr {
 }
 button {
   border: none;
-<<<<<<< HEAD
-  background-color: transparent;
-  color: white;
-  font-size: 1.3em;
-  padding: 10px 20px;
-  border-bottom: 1px solid #870805;
-=======
   background-color: #1f1f1f;
   color: #eee;
   font-size: 1.3em;
   padding: 10px 20px;
   border-bottom: 1px solid #dc143c;
->>>>>>> 78b93a21b63f1ffad32ca26bfa45536923c49459
   margin: 0 20px;
 }
 
@@ -86,14 +69,11 @@ progress {
   position: absolute;
   top: 0;
   left: 0;
-<<<<<<< HEAD
-=======
   background-color: #dc143c;
   transition: 0.3s;
 }
 progress::-webkit-progress-value {
   background-color: #dc143c;
->>>>>>> 78b93a21b63f1ffad32ca26bfa45536923c49459
 }
 .topInfo {
   position: absolute;
