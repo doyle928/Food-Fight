@@ -1,10 +1,11 @@
 var express = require("express");
 // var inMemoryDatabase = require("./in-memory-database.js");
 var router = express.Router();
+var pool = require("./pgconnectionpool");
 
 var eventDb = inMemoryDatabase();
 eventDb.init([
-	{eventName: "Test event", 
+	{eventName: "Test event",
        	text: "Test event 1 description",
        	option1: "Option1 Test",
        	option1Price: 15,
