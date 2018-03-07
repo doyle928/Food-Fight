@@ -1,15 +1,3 @@
-(function () {
-
-	angular
-	.module("App", ["ngRoute"]);
-
-
-
-
-
-
-
-
-
-
+(function() {
+  angular.module("App", ["ngRoute"]);
 })();
