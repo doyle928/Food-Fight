@@ -7,23 +7,24 @@
       eventName: "I'm an event",
       text: "You've been hit with an event. Choose a thing.",
       option1: "I'm option1",
-      option1Price: 10,
+      option1price: 10,
       option2: "I'm option2",
-      option2Price: 20
+      option2price: 20
     };
 
     return {
       changeProgressBar: changeProgressBar,
       changeAmount: changeAmount,
       changeDayCount: changeDayCount,
-      changeEvent: changeEvent,
       getProgressBar: getProgressBar,
       getAmount: getAmount,
-      getEvents: getEvents
+      getEvents: getEvents,
+      breakPiggy: breakPiggy,
+      donateBlood: donateBlood
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
-      console.log(progressValue);
+      //console.log(progressValue);
     }
     function getProgressBar() {
       return progressValue;
@@ -33,34 +34,36 @@
       if (dollarValue <= 0) {
         dollarValue = 0;
       }
-      console.log(dollarValue);
+      //console.log(dollarValue);
     }
     function getAmount() {
       return dollarValue;
     }
-
     function changeDayCount() {
       return dayCount++;
     }
-
-    function changeEvent() {
-      return event;
+    function breakPiggy(amount) {
+      dollarValue += amount;
+    }
+    function donateBlood(amount) {
+      dollarValue += amount;
     }
     function randNum() {
-      return Math.floor(Math.random() * 8) + 1;
+      return Math.floor(Math.random() * 10) + 1;
     }
 
-    function getEvents() {
-      return $http({
-        method: "GET",
-        url: "/Data/events.json"
-      })
-        .then(function(response) {
-          console.log("from service ", response.data);
+
+  function getEvents() {
+        return $http({
+          method:"GET",
+          url:"/events"
+        }).then(function(response){
+          //console.log("from service ",response.data);
+
           return response.data[randNum()];
         })
         .catch(function(err) {
-          console.log(err);
+          //console.log(err);
         });
     }
   }

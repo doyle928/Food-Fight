@@ -1,12 +1,12 @@
 body {
   background-color: #1f1f1f;
   color: #eee;
-  font-family: "Rambla", sans-serif;
+  font-family: "Average Sans", serif;
   text-align: center;
   padding: 0;
   margin: 0;
 }
-#backgroundImgDiv{
+#backgroundImgDiv {
   overflow: hidden;
   background-image: url("../images/background.jpg");
   background-size: cover;
@@ -16,16 +16,15 @@ body {
   padding: 0;
   margin: 20vh 0 0 -10px;
   text-align: left;
-  font-weight: 700;
   font-size: 3em;
   transition: 0.3s;
-  font-family: "Sanchez", serif;
+  font-family: "Fjalla One", sans-serif;
 }
 
 hr {
   width: 300px;
   margin: 0 auto;
-  border: 1px solid #870805;
+  border: 1px solid #dc143c;
   transition: 0.3s;
 }
 
@@ -51,7 +50,7 @@ button {
 
 .priorityButton {
   font-size: 2em;
-  width: 80vw;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -59,9 +58,12 @@ button {
   bottom: 0;
 }
 
-.priorityButton i {
+.priorityButton .arrowDown {
   font-size: 1.3em;
   color: #870805;
+}
+.priorityButton .arrowRight {
+  display: none;
 }
 
 .card1,
@@ -70,9 +72,10 @@ button {
   height: 130px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
+  background-color: rgba(255, 255, 255, 0.1);
   margin: 30px auto;
-  margin-top: 10px;
-  border-radius: 10px;
+  border-radius: 3px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
 .cardContainer {
@@ -84,6 +87,7 @@ button {
   text-align: center;
   padding: 10px 20px;
   margin: auto;
+  color: white;
 }
 
 progress {
@@ -116,20 +120,28 @@ progress::-webkit-progress-value {
 .topInfo p {
   padding: 0 5px;
 }
-.eventTitle{
-    text-align: center;
+
+.fillSpace {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+.eventTitle {
+  margin: 30px;
 }
 .eventTitle h1 {
   font-size: 2.2em;
   text-align: center;
   padding: 10px;
   margin: 0;
-  margin-top: 20px;
-  font-family: "Sanchez", serif;
+  font-weight: 400;
+  font-family: "Fjalla One", sans-serif;
 }
 
 .eventTitle p {
-  width: 90%;
+  width: 85vw;
+  margin: 10px auto;
+  text-align: center;
   overflow: hidden;
   text-align: center;
 }
@@ -150,7 +162,7 @@ a {
   width: 100px;
   border-radius: 50%;
   border: 3px solid #dc143c;
-  background-color: #F0F0F0;
+  background-color: #f0f0f0;
 }
 
 .piggy:hover,
@@ -178,21 +190,26 @@ a {
 .blood img {
   position: absolute;
   left: 50%;
-  transform: translateX(-45%);
-  padding-top: 10px;
+  transform: translateX(-51%);
+  padding-top: 11px;
 }
 
 .needCashMenu {
   /* background-color: #1f1f1f; */
-  background: linear-gradient(to left, #1f1f1f 90%, #000);
+  background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
+  border-right: 3px solid #dbdbdb;
   position: absolute;
-  left: 0;
+  left: -3px;
   top: 0;
   height: 100vh;
   width: 0;
   overflow-x: hidden;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.3s;
+}
+.needCashMenu p {
+  white-space: nowrap;
+  font-size: 1.2em;
 }
 
 .getCash {
@@ -218,20 +235,24 @@ a {
 
 .cashGrabItems {
   padding: 15px;
-  margin-top: 50vh;
+  margin-top: 40vh;
   transform: translateY(-50%);
 }
 
 .needCashMenu li {
   list-style: none;
-  margin: 60px 0;
+  margin: 50px 0;
+  transition: 0.3s;
 }
 
 .main {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  transition: margin-left 0.5s;
+  transition: margin-left 0.3s;
+  overflow: hidden;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
 }
 
 .titleNav {
@@ -250,6 +271,8 @@ a {
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
 }
 
 .titleNav ul {
@@ -335,10 +358,77 @@ footer {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  transition: 0.3s;
 }
 
 footer a {
   text-decoration: none;
+  white-space: nowrap;
+}
+.secondaryButton {
+  display: none;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 768px) {
+  .titleIcons {
+    display: block;
+  }
+  .titleIcons i {
+    position: absolute;
+    left: 50%;
+    top: -29px;
+    padding: 10px;
+    font-size: 1.5em;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+  }
+  .titleIcons div {
+    display: none;
+  }
+  .priorityButton .arrowDown {
+    display: none;
+  }
+  .priorityButton .arrowRight {
+    display: block;
+  }
+  .priorityButton {
+    left: 25vw;
+    bottom: 150px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .priorityButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  .title h1 {
+    margin: 30vh 0 0 20vw;
+  }
+  .bodyText {
+    margin: 0;
+    margin: 0 20vw;
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+  .secondaryButton {
+    position: fixed;
+    right: 33vw;
+    bottom: 150px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .secondaryButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  /* ---------------------------------- event page ----------------------------------- */
 }
 .donateDiv {
   display: column;
