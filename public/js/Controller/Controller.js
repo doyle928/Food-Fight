@@ -53,27 +53,37 @@
         if ($ctrl.usedEvents.indexOf(event.id) == -1) {
           $ctrl.eventObj = event;
           $ctrl.usedEvents.push(event.id);
+          $ctrl.progressBar = FoodFightService.getProgressBar();
+          $ctrl.amount = FoodFightService.getAmount();
+          $ctrl.dayCount = FoodFightService.changeDayCount();
+          $(".mainProgress").attr("value", $ctrl.amount);
         } else {
           getEverything();
         }
       });
-      $ctrl.progressBar = FoodFightService.getProgressBar();
-      $ctrl.amount = FoodFightService.getAmount();
-      $ctrl.dayCount = FoodFightService.changeDayCount();
-      $(".mainProgress").attr("value", $ctrl.amount);
     }
 
     $ctrl.cashMenu = function() {
       $(".needCashMenu").css("width", "145px");
       $(".main").css("margin-left", "145px");
       $(".getCash").css("left", "145px");
-      $(".header").css("margin-left", "145px");
+      $(".topInfo").css("left", "145px");
+      $("progress").css("left", "145px");
+      $("footer").css("left", "calc(50% + 145px)");
+      $(".needCashMenu")
+        .find("li")
+        .css("margin-left", "0");
     };
     $ctrl.cashMin = function() {
       $(".needCashMenu").css("width", "0");
       $(".main").css("margin-left", "0px");
       $(".getCash").css("left", "0");
-      $(".header").css("margin-left", "0");
+      $(".topInfo").css("left", "0");
+      $("progress").css("left", "0");
+      $("footer").css("left", "50%");
+      $(".needCashMenu")
+        .find("li")
+        .css("margin-left", "-80px");
     };
   }
   angular.module("App").controller("controllerFunction", controllerFunction);
