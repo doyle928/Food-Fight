@@ -50,7 +50,7 @@ button {
 
 .priorityButton {
   font-size: 2em;
-  width: 80vw;
+  width: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,9 +58,12 @@ button {
   bottom: 0;
 }
 
-.priorityButton i {
+.priorityButton .arrowDown {
   font-size: 1.3em;
   color: #870805;
+}
+.priorityButton .arrowRight {
+  display: none;
 }
 
 .card1,
@@ -69,7 +72,6 @@ button {
   height: 130px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  /* background: radial-gradient(circle at 100% 100%, #465858, #556161); */
   background-color: rgba(255, 255, 255, 0.1);
   margin: 30px auto;
   border-radius: 3px;
@@ -264,6 +266,8 @@ a {
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
+  background-image: url("../images/background.jpg");
+  background-size: cover;
 }
 
 .titleNav ul {
@@ -355,4 +359,69 @@ footer {
 footer a {
   text-decoration: none;
   white-space: nowrap;
+}
+.secondaryButton {
+  display: none;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+@media screen and (min-width: 768px) {
+  .titleIcons {
+    display: block;
+  }
+  .titleIcons i {
+    position: absolute;
+    left: 50%;
+    top: -29px;
+    padding: 10px;
+    font-size: 1.5em;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+  }
+  .titleIcons div {
+    display: none;
+  }
+  .priorityButton .arrowDown {
+    display: none;
+  }
+  .priorityButton .arrowRight {
+    display: block;
+  }
+  .priorityButton {
+    left: 25vw;
+    bottom: 150px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .priorityButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  .title h1 {
+    margin: 30vh 0 0 20vw;
+  }
+  .bodyText {
+    margin: 0;
+    margin: 0 20vw;
+    font-size: 1.2em;
+    margin-top: 0;
+  }
+  .secondaryButton {
+    position: fixed;
+    right: 33vw;
+    bottom: 150px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .secondaryButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  /* ---------------------------------- event page ----------------------------------- */
 }
