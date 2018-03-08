@@ -370,6 +370,49 @@ footer a {
 }
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  /*---------------------Start---------------------*/
+
+  .titleIcons div {
+    display: none;
+  }
+  .welcomeButtons {
+    width: 480px;
+  }
+  .priorityButton .arrowDown {
+    display: none;
+  }
+  .priorityButton .arrowRight {
+    display: block;
+  }
+  .priorityButton {
+    left: 10vw;
+    bottom: 150px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 125px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .priorityButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  .secondaryButton {
+    position: fixed;
+    left: 10vw;
+    bottom: 75px;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 125px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .secondaryButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+
+/*-----------------------------------event--------------------------*/
   .main {
     overflow: hidden;
     margin-left: 145px;
@@ -508,6 +551,7 @@ footer a {
   }*/
 #resultsDiv {
   margin: 0 auto;
+}
   /* ---------------------------------- event page ----------------------------------- */
   .cardContainer {
     display: flex;
@@ -663,8 +707,7 @@ footer a {
   hr {
     width: 50vw;
   }
-}
-}
+
 .donateDiv {
   display: column;
   width: 90%;
