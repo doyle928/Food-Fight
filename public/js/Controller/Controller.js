@@ -67,11 +67,13 @@
       $(".needCashMenu").css("width", "145px");
       $(".main").css("margin-left", "145px");
       $(".getCash").css("left", "145px");
+      $(".header").css("margin-left", "145px");
     };
     $ctrl.cashMin = function() {
       $(".needCashMenu").css("width", "0");
       $(".main").css("margin-left", "0px");
       $(".getCash").css("left", "0");
+      $(".header").css("margin-left", "0");
     };
   }
   angular.module("App").controller("controllerFunction", controllerFunction);

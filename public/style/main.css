@@ -5,6 +5,7 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
+  overflow: hidden;
   /* background-image: url("../images/smoke.jpeg");
   background-size: cover;
   background-position: center; */
@@ -220,6 +221,8 @@ a {
 }
 
 .main {
+  width: 100vw;
+  height: 100vh;
   overflow-x: hidden;
   transition: margin-left 0.5s;
 }
