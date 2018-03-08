@@ -5,10 +5,11 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
+}
+#backgroundImgDiv{
   overflow: hidden;
-  /* background-image: url("../images/smoke.jpeg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
-  background-position: center; */
 }
 
 .title h1 {
@@ -65,12 +66,12 @@ button {
 
 .card1,
 .card2 {
-  width: 250px;
+  width: 240px;
   height: 130px;
+  background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  background: radial-gradient(circle at 100% 100%, #465858, #556161);
-  /* background-color: #f0f0b9; */
   margin: 30px auto;
+  border-radius: 10px;
 }
 
 .cardContainer {
@@ -144,7 +145,7 @@ a {
   width: 100px;
   border-radius: 50%;
   border: 3px solid #dc143c;
-  background-color: #1f1f1f;
+  background-color: #F0F0F0;
 }
 
 .piggy:hover,
@@ -243,9 +244,6 @@ a {
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
-  overflow: hidden;
-  background-image: url("../images/smoke.jpeg");
-  background-size: cover;
 }
 
 .titleNav ul {
@@ -277,7 +275,6 @@ a {
   clear: both;
   width: 100vw;
   margin: 0 10%;
-  /* background-image: url("/images/main.jpg"); */
 }
 
 .titleIcons {
@@ -295,7 +292,7 @@ a {
   margin-right: 30px;
 }
 
-/* 
+/*
 .imgContainer {
   position: absolute;
   left: 0;
@@ -324,7 +321,6 @@ a {
   top: 0;
   height: 110vh;
   z-index: -1;
-  background-image: url("../images/smoke.jpeg");
   background-size: 110vh auto;
 }
 
