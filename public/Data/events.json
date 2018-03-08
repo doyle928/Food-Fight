@@ -1,4 +1,4 @@
-[{
+/* [{
     "event": "Pizza Party",
     "text": "Your child has been invited to a slumber party, but in order to go, you need to give them $10 for pizza. What do you do?",
     "option1": "Give them some cash.",
@@ -52,4 +52,4 @@
     "option2Price": 0,
     "id": 6
   }
-]
+] */
