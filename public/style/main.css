@@ -1,7 +1,7 @@
 body {
   background-color: #1f1f1f;
   color: #eee;
-  font-family: "Roboto", sans-serif;
+  font-family: "Rambla", sans-serif;
   text-align: center;
   padding: 0;
   margin: 0;
@@ -17,6 +17,7 @@ body {
   font-weight: 700;
   font-size: 3em;
   transition: 0.3s;
+  font-family: "Sanchez", serif;
 }
 
 hr {
@@ -31,6 +32,7 @@ hr {
   margin: 0 auto;
   transition: 0.3s;
 }
+
 .bodyText p {
   font-size: 1.1em;
   text-align: left;
@@ -54,6 +56,7 @@ button {
   position: fixed;
   bottom: 0;
 }
+
 .priorityButton i {
   font-size: 1.3em;
   color: #870805;
@@ -69,20 +72,15 @@ button {
   margin: 30px auto;
 }
 
-.card1 div,
-.card2 div {
-  width: 160px;
-  height: 160px;
-  border: 1px solid #1f1f1f;
-  margin: auto;
-  position: relative;
-  top: 15px;
+.cardContainer {
+  overflow: hidden;
 }
 
-.card1 div p,
-.card2 div p {
+.card1 p,
+.card2 p {
   text-align: center;
-  padding: 10px;
+  padding: 10px 20px;
+  margin: auto;
 }
 
 progress {
@@ -121,7 +119,9 @@ progress::-webkit-progress-value {
   text-align: center;
   padding: 10px;
   margin: 0;
+  font-family: "Sanchez", serif;
 }
+
 .eventTitle p {
   width: 90%;
   overflow: hidden;
@@ -193,12 +193,19 @@ a {
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  clip-path: polygon(0 0, 60px 20px, 60px 70px, 0 140px);
+  width: 25px;
+  height: 100px;
+  clip-path: polygon(0 0, 25px 10px, 25px 90px, 0 100px);
+  border-radius: 3px;
+  background: lightgrey;
   transition: 0.3s;
 }
 
 .getCash p {
   text-align: center;
+  color: #1f1f1f;
+  font-size: 1.2em;
+  font-weight: 600 !important;
 }
 
 .cashGrabItems {
@@ -216,6 +223,7 @@ a {
   overflow-x: hidden;
   transition: margin-left 0.5s;
 }
+
 .titleNav {
   background-color: #1f1f1f;
   position: absolute;
@@ -226,6 +234,7 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
 }
+
 .titleMain {
   transition: margin-left 0.5s;
   width: 100vw;
@@ -235,37 +244,45 @@ a {
   background-image: url("../images/smoke.jpeg");
   background-size: cover;
 }
+
 .titleNav ul {
   padding: 10px 15px;
 }
+
 .titleNav ul li {
   list-style: none;
   text-align: left;
   padding: 10px 0;
   font-size: 1.2em;
 }
+
 .titleNav ul li a {
   text-decoration: none;
 }
+
 .titleMain > div > i {
   font-size: 1.75em;
   margin: 30px;
 }
+
 .titleMain > .welcomeContainer > div {
   width: 80vw;
   float: left;
 }
+
 .welcomeContainer {
   clear: both;
   width: 100vw;
   margin: 0 10%;
   /* background-image: url("/images/main.jpg"); */
 }
+
 .titleIcons {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
+
 .titleIcons div {
   margin: 0;
   padding: 0;
@@ -274,6 +291,7 @@ a {
   font-size: 1.75em;
   margin-right: 30px;
 }
+
 /* 
 .imgContainer {
   position: absolute;
@@ -296,6 +314,7 @@ a {
   top: 0;
   opacity: 0.5;
 } */
+
 .imgContainer {
   position: absolute;
   left: 0;
@@ -305,12 +324,14 @@ a {
   background-image: url("../images/smoke.jpeg");
   background-size: 110vh auto;
 }
+
 footer {
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
 }
+
 footer a {
   text-decoration: none;
 }
