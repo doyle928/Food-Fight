@@ -428,6 +428,9 @@ footer a {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
+  #resultsDiv {
+    margin: 0 auto;
+  }
   /* ---------------------------------- event page ----------------------------------- */
 }
 .donateDiv {
