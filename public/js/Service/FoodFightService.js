@@ -16,10 +16,11 @@
       changeProgressBar: changeProgressBar,
       changeAmount: changeAmount,
       changeDayCount: changeDayCount,
-      changeEvent: changeEvent,
       getProgressBar: getProgressBar,
       getAmount: getAmount,
-      getEvents: getEvents
+      getEvents: getEvents,
+      breakPiggy: breakPiggy,
+      donateBlood: donateBlood
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -38,17 +39,19 @@
     function getAmount() {
       return dollarValue;
     }
-
     function changeDayCount() {
       return dayCount++;
     }
-
-    function changeEvent() {
-      return event;
+    function breakPiggy(amount) {
+      dollarValue += amount;
+    }
+    function donateBlood(amount) {
+      dollarValue += amount;
     }
     function randNum() {
       return Math.floor(Math.random() * 10) + 1;
     }
+
 
   function getEvents() {
         return $http({
@@ -56,6 +59,7 @@
           url:"/events"
         }).then(function(response){
           //console.log("from service ",response.data);
+
           return response.data[randNum()];
         })
         .catch(function(err) {

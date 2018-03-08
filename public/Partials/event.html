@@ -1,4 +1,5 @@
 <div class="needCashMenu">
+    <p>NEED CASH?</p>
     <ul class="cashGrabItems">
         <li class="piggy" ng-click="$ctrl.piggyBank()">
             <img src="dependencies/piggy-bank.svg">
@@ -34,17 +35,29 @@
             <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)" class="card1" data-tilt data-tilt-max="15" data-tilt-speed="400"
                 data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
                 <p>{{$ctrl.eventObj.option1}}</p>
+
                 <p>{{$ctrl.eventObj.option1price}}</p>
             </div>
             <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2price)" class="card2" data-tilt data-tilt-max="15" data-tilt-speed="400"
                 data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
                 <p>{{$ctrl.eventObj.option2}}</p>
                 <p>{{$ctrl.eventObj.option2price}}</p>
+                <!-- <p>${{$ctrl.eventObj.option1Price}}</p> -->
+
             </div>
         </div>
-
-        <footer>
-            <a href="# ">Please donate at Food Gatherers</a>
-        </footer>
+        <!-- <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2Price)" class="card2" data-tilt data-tilt-max="15" data-tilt-speed="400"
+            data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+            <p>{{$ctrl.eventObj.option2}}</p>
+            <p>${{$ctrl.eventObj.option2Price}}</p>
+        </div> -->
     </div>
+
+    <div class="fillSpace">
+    </div>
+
+    <footer>
+        <a href="# ">Please donate at Food Gatherers</a>
+    </footer>
+</div>
 </div>
