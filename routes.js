@@ -18,3 +18,5 @@ router.get("/events", function(req, res){
 		res.send(result.rows);
 	});
 });
+
+module.exports = router;

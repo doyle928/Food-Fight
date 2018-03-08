@@ -1,10 +1,10 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var util = require("util");
-var routes = require("./routes");
+var router = require("./routes");
 //var events = require("./routes.js");
 var app = express();
-app.use("/", routes);
+app.use("/", router);
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
 //app.use("/", events);
