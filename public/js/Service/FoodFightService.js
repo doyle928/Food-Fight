@@ -16,11 +16,10 @@
       changeProgressBar: changeProgressBar,
       changeAmount: changeAmount,
       changeDayCount: changeDayCount,
-      getEvents: getEvents,
+      changeEvent: changeEvent,
       getProgressBar: getProgressBar,
       getAmount: getAmount,
-      breakPiggy: breakPiggy,
-      donateBlood: donateBlood
+      getEvents: getEvents
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -43,30 +42,28 @@
     function changeDayCount() {
       return dayCount++;
     }
-    function randNum() {
-      return Math.floor(Math.random() * 5) + 1;
+
+    function changeEvent() {
+      return event;
     }
 
-    function getEvents() {
-      return $http({
-        method: "GET",
-        url: "/Data/events.json"
-      })
-        .then(function(response) {
+  function getEvents() {
+        return $http({
+          method:'GET',
+          url:'/Data/events.json'
+        }).then(function(response){
+          console.log("from service ",response.data);
           return response.data[randNum()];
-        })
-        .catch(function(err) {
+        }).catch(function(err){
           console.log(err);
         });
+      }
     }
-
-    function breakPiggy(amount) {
-      dollarValue += amount;
-    }
-    function donateBlood(amount) {
-      dollarValue += amount;
-    }
-  }
-
+//             return $http.get("data/events.json")
+//                 .then(function(response) {
+//                     console.log(repsonse);
+//                     return response.data;}).catch(function(err){console.log(err);});
+//         }
+// }
   angular.module("App").factory("FoodFightService", FoodFightService);
 })();
