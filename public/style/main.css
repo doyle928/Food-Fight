@@ -424,4 +424,8 @@ footer a {
     border-bottom: 2px solid #dc143c;
   }
   /* ---------------------------------- event page ----------------------------------- */
+  .cardContainer {
+    display: flex;
+    flex-direction: row;
+  }
 }
