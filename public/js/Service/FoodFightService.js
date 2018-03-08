@@ -49,8 +49,8 @@
 
   function getEvents() {
         return $http({
-          method:'GET',
-          url:'/Data/events.json'
+          method:"GET",
+          url:"/events"
         }).then(function(response){
           console.log("from service ",response.data);
           return response.data[randNum()];
