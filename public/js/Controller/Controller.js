@@ -32,7 +32,7 @@
         $ctrl.randPiggyUse--;
       } else {
         //end goal => show div with error
-        alert("you cruel bastard");
+        alert("You've already taken your kids' piggy-banks!");
       }
     };
     $ctrl.donBlood = function() {
@@ -44,7 +44,7 @@
         $ctrl.randDonateUse--;
       } else {
         //end goal=> show div with error
-        alert("you already gave blood");
+        alert("You've already given blood!");
       }
     };
 

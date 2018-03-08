@@ -20,7 +20,8 @@
       getAmount: getAmount,
       getEvents: getEvents,
       breakPiggy: breakPiggy,
-      donateBlood: donateBlood
+      donateBlood: donateBlood,
+      getDayCount: getDayCount
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -50,6 +51,9 @@
     }
     function randNum() {
       return Math.floor(Math.random() * 10) + 1;
+    }
+    function getDayCount(){
+      return dayCount;
     }
 
 

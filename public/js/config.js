@@ -10,6 +10,9 @@
       .when("/results", {
         template: "<results-component></results-component>"
       })
+      .when("/donate", {
+        template: "<donate-component></donate-component>"
+      })
       .otherwise({ redirectTo: "/welcome" });
   });
 })();
