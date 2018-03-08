@@ -3,5 +3,5 @@
     templateUrl: "Partials/donate.html",
     controller: "controllerFunction"
   };
-  angular.module("App").component("donateComponent", resultsComponent);
+  angular.module("App").component("donateComponent", donateComponent);
 })();
