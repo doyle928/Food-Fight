@@ -2,50 +2,73 @@ body {
   background-color: #1f1f1f;
   color: #eee;
   font-family: "Roboto", sans-serif;
-  margin-top: 40px;
   text-align: center;
-}
-.title h1 {
-  padding: 10px;
+  padding: 0;
   margin: 0;
-  text-align: center;
-  font-weight: 700;
-  font-size: 4em;
+  /* background-image: url("../images/smoke.jpeg");
+  background-size: cover;
+  background-position: center; */
 }
+
+.title h1 {
+  padding: 0;
+  margin: 20vh 0 0 -10px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 3em;
+  transition: 0.3s;
+}
+
 hr {
   width: 300px;
   margin: 0 auto;
   border: 1px solid #870805;
+  transition: 0.3s;
 }
-.body {
-  padding-top: 15px;
+
+.bodyText {
   width: 90%;
   margin: 0 auto;
+  transition: 0.3s;
 }
+.bodyText p {
+  font-size: 1.1em;
+  text-align: left;
+  padding-left: 20px;
+}
+
 button {
   border: none;
-  background-color: #1f1f1f;
+  background-color: transparent;
   color: #eee;
   font-size: 1.3em;
-  padding: 10px 20px;
-  border-bottom: 1px solid #dc143c;
-  margin: 0 20px;
+  padding: 10px 10px;
 }
 
 .priorityButton {
   font-size: 2em;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
 }
-.secondaryButton {
-  margin-top: 50px;
+.priorityButton i {
+  font-size: 1.3em;
+  color: #870805;
 }
+
 .card1,
 .card2 {
-  width: 190px;
-  height: 190px;
-  color: #1f1f1f;
-  background-color: #f0f0b9;
-  margin: 20px auto;
+  width: 250px;
+  height: 130px;
+  color: white;
+  background: radial-gradient(circle at 100% 100%, #465858, #556161);
+  /* background-color: #f0f0b9; */
+  margin: 30px auto;
 }
+
 .card1 div,
 .card2 div {
   width: 160px;
@@ -55,11 +78,13 @@ button {
   position: relative;
   top: 15px;
 }
+
 .card1 div p,
 .card2 div p {
   text-align: center;
   padding: 10px;
 }
+
 progress {
   background-color: crimson;
   width: 100%;
@@ -72,9 +97,11 @@ progress {
   background-color: #dc143c;
   transition: 0.3s;
 }
+
 progress::-webkit-progress-value {
   background-color: #dc143c;
 }
+
 .topInfo {
   position: absolute;
   top: -10px;
@@ -84,24 +111,32 @@ progress::-webkit-progress-value {
   justify-content: space-between;
   transition: 0.3s;
 }
+
 .topInfo p {
   padding: 0 5px;
 }
+
 .eventTitle h1 {
   font-size: 2.2em;
   text-align: center;
   padding: 10px;
   margin: 0;
 }
+.eventTitle p {
+  width: 90%;
+  overflow: hidden;
+}
 
 a {
   color: white;
 }
+
 .cashGrab {
   position: absolute;
   bottom: 0;
   left: 0;
 }
+
 .piggy,
 .blood {
   height: 100px;
@@ -110,33 +145,79 @@ a {
   border: 3px solid #dc143c;
   background-color: #1f1f1f;
 }
+
 .piggy:hover,
 .blood:hover {
   background-color: rgb(25, 25, 25);
 }
+
 .blood {
   margin: 20px 0;
 }
+
 .piggy img,
 .blood img {
   width: 70px;
   height: 70px;
 }
+
 .piggy img {
   position: absolute;
   left: 50%;
   transform: translateX(-60%);
   padding-top: 15px;
 }
+
 .blood img {
   position: absolute;
   left: 50%;
   transform: translateX(-45%);
   padding-top: 10px;
 }
+
 .needCashMenu {
+  /* background-color: #1f1f1f; */
+  background: linear-gradient(to left, #1f1f1f 90%, #000);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  overflow-x: hidden;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+.getCash {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(0 0, 60px 20px, 60px 70px, 0 140px);
+  transition: 0.3s;
+}
+
+.getCash p {
+  text-align: center;
+}
+
+.cashGrabItems {
+  padding: 15px;
+  margin-top: 50vh;
+  transform: translateY(-50%);
+}
+
+.needCashMenu li {
+  list-style: none;
+  margin: 60px 0;
+}
+
+.main {
+  overflow-x: hidden;
+  transition: margin-left 0.5s;
+}
+.titleNav {
   background-color: #1f1f1f;
-  border-right: 3px solid #dc143c;
   position: absolute;
   left: 0;
   top: 0;
@@ -145,28 +226,91 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
 }
-.getCash span {
+.titleMain {
+  transition: margin-left 0.5s;
+  width: 100vw;
+  height: 100vh;
+  box-shadow: -5px 0px 10px black;
+  overflow: hidden;
+  background-image: url("../images/smoke.jpeg");
+  background-size: cover;
+}
+.titleNav ul {
+  padding: 10px 15px;
+}
+.titleNav ul li {
+  list-style: none;
+  text-align: left;
+  padding: 10px 0;
+  font-size: 1.2em;
+}
+.titleNav ul li a {
+  text-decoration: none;
+}
+.titleMain > div > i {
+  font-size: 1.75em;
+  margin: 30px;
+}
+.titleMain > .welcomeContainer > div {
+  width: 80vw;
+  float: left;
+}
+.welcomeContainer {
+  clear: both;
+  width: 100vw;
+  margin: 0 10%;
+  /* background-image: url("/images/main.jpg"); */
+}
+.titleIcons {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.titleIcons div {
+  margin: 0;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  font-size: 1.75em;
+  margin-right: 30px;
+}
+/* 
+.imgContainer {
   position: absolute;
   left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: #1f1f1f;
-  border: 3px solid #dc143c;
-  /* clip-path: polygon(0 0, 60px 20px, 60px 70px, 0 140px); */
+  right: 0;
+  overflow: hidden;
 }
-.getCash p {
-  text-align: center;
+.mainImg {
+  height: 100vh;
 }
-.cashGrabItems {
-  padding: 15px;
-  margin-top: 50vh;
-  transform: translateY(-50%);
-  transition: 0.3s;
+.mainImg2 {
+  position: absolute;
+  left: 10px;
+  top: 0;
+  opacity: 0.5;
 }
-.needCashMenu li {
-  list-style: none;
-  margin: 60px 0;
+.mainImg3 {
+  position: absolute;
+  left: -10px;
+  top: 0;
+  opacity: 0.5;
+} */
+.imgContainer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 110vh;
+  z-index: -1;
+  background-image: url("../images/smoke.jpeg");
+  background-size: 110vh auto;
 }
-.main {
-  transition: margin-left 0.5s;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+footer a {
+  text-decoration: none;
 }

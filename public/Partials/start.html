@@ -1,13 +1,46 @@
-<div class="title">
-    <h1 class="splashHeader">FOOD FIGHT</h1>
-    <hr>
-</div>
-<div class="body">
-    <p>Food Gatherers serves 44,500 low-income adults, seniors, and children in Washtenaw County, who do not have enough food.</p>
-    <br>
-    <h2>Could you feed a family of 4 on $150 a week?</h2>
-    <div class="welcomeButtons">
-        <button class="priorityButton" ng-click="$ctrl.start()">TRY IT</button>
-        <button class="secondaryButton">Donate</button>
+<nav class="titleNav">
+    <ul>
+        <li>
+            <a href="#!/start">Info</a>
+        </li>
+        <li>
+            <a href="#!/events">Game</a>
+        </li>
+        <li>
+            <a href="#!/result">Donate</a>
+        </li>
+    </ul>
+</nav>
+<div class="titleMain" slide-up data-parallaxify-background-range="50">
+    <div class="imgContainer">
+        <!-- <img class="mainImg mainImg1" src="images/main.jpg">
+        <img class="mainImg mainImg2" src="images/main.jpg" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500"
+            data-tilt-scale="1.05">
+        <img class="mainImg mainImg3" src="images/main.jpg" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500"
+            data-tilt-scale="1.05"> -->
+    </div>
+    <div class="titleIcons">
+        <i class="material-icons" class="menuIcon" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
+        <div>?</div>
+    </div>
+    <div class="welcomeContainer">
+        <div class="title">
+            <h1 class="splashHeader">FOOD FIGHT</h1>
+        </div>
+        <div class="bodyText">
+            <!-- <p>Food Gatherers serves 44,500 low-income adults, seniors, and children in Washtenaw County, who do not have enough
+                food.
+            </p>
+            <br> -->
+            <p>Could you feed a family of 4 on $150 a week?</p>
+            <div class="welcomeButtons">
+                <button class="priorityButton" ng-click="$ctrl.start()">
+                    <span>TRY IT</span>
+                    <i class="material-icons">
+                        <i class="material-icons">keyboard_arrow_down</i>
+                    </i>
+                </button>
+            </div>
+        </div>
     </div>
 </div>
