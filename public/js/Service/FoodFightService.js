@@ -46,6 +46,9 @@
     function changeEvent() {
       return event;
     }
+    function randNum() {
+      return Math.floor(Math.random() * 8) + 1;
+    }
 
   function getEvents() {
         return $http({
@@ -54,16 +57,11 @@
         }).then(function(response){
           console.log("from service ",response.data);
           return response.data[randNum()];
-        }).catch(function(err){
+        })
+        .catch(function(err) {
           console.log(err);
         });
-      }
     }
-//             return $http.get("data/events.json")
-//                 .then(function(response) {
-//                     console.log(repsonse);
-//                     return response.data;}).catch(function(err){console.log(err);});
-//         }
-// }
+  }
   angular.module("App").factory("FoodFightService", FoodFightService);
 })();
