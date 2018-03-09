@@ -25,10 +25,12 @@
 
     $ctrl.piggyBank = function() {
       if ($ctrl.randPiggyUse > 0) {
-        FoodFightService.breakPiggy($ctrl.randDonate);
+        let randPiggyHolder = $ctrl.randPiggy;
+        FoodFightService.breakPiggy(randPiggyHolder);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);
+        $("progress").attr("max", randPiggyHolder + 150);
         $ctrl.randPiggyUse--;
       } else {
         //end goal => show div with error
@@ -37,10 +39,12 @@
     };
     $ctrl.donBlood = function() {
       if ($ctrl.randDonateUse > 0) {
-        FoodFightService.donateBlood($ctrl.randDonate);
+        let randDonateHolder = $ctrl.randDonate;
+        FoodFightService.donateBlood(randDonateHolder);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);
+        $("progress").attr("max", randDonateHolder + 150);
         $ctrl.randDonateUse--;
       } else {
         //end goal=> show div with error
@@ -63,24 +67,40 @@
       $ctrl.amount = FoodFightService.getAmount();
       $ctrl.dayCount = FoodFightService.changeDayCount();
       $(".mainProgress").attr("value", $ctrl.amount);
+      var windowWidth = $(window).width();
+      if (windowWidth < 480) {
+        cashMinItems();
+      } else {
+        cashMenuItems();
+      }
       //   } else {
       //     getEverything();
       //   }
       // });
     }
 
-    $ctrl.cashMenu = function() {
-      $(".needCashMenu").css("width", "145px");
-      $(".main").css("margin-left", "145px");
-      $(".getCash").css("left", "145px");
-      $(".topInfo").css("left", "145px");
-      $("progress").css("left", "145px");
-      $("footer").css("left", "calc(50% + 145px)");
+    function cashMenuItems() {
+      $(".needCashMenu").css("width", "122px");
+      $(".main").css("margin-left", "119px");
+      $(".getCash").css("left", "119px");
+      $(".topInfo").css("left", "119px");
+      $("progress").css("left", "119px");
+      $("footer").css("left", "calc(50% + 119px)");
       $(".needCashMenu")
         .find("li")
         .css("margin-left", "0");
+    }
+
+    $ctrl.cashMenu = function() {
+      var windowWidth = $(window).width();
+      if (windowWidth < 480) {
+        cashMenuItems();
+      } else {
+        console.log("viewport too big");
+      }
     };
-    $ctrl.cashMin = function() {
+
+    function cashMinItems() {
       $(".needCashMenu").css("width", "0");
       $(".main").css("margin-left", "0px");
       $(".getCash").css("left", "0");
@@ -90,7 +110,26 @@
       $(".needCashMenu")
         .find("li")
         .css("margin-left", "-80px");
+    }
+    $ctrl.cashMin = function() {
+      let windowWidth = $(window).width();
+      windowWidth = parseInt(windowWidth);
+      if (windowWidth < 480) {
+        cashMinItems();
+      } else {
+        console.log("viewport too big");
+      }
     };
+    function updateSize() {
+      var windowWidth = $(window).width();
+      if (windowWidth < 480) {
+        cashMinItems();
+      } else {
+        cashMenuItems();
+      }
+    }
+    $(document).ready(updateSize);
+    $(window).resize(updateSize);
   }
   angular.module("App").controller("controllerFunction", controllerFunction);
 })();

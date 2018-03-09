@@ -3,7 +3,33 @@
     return {
       link: function ($scope, $element, $attrs) {
 
-        $(".titleMain").parallaxify();
+        //$(".titleMain").parallaxify();
+
+        $('.titleMain').parallaxify({
+          motionType: 'natural',
+          mouseMotionType: 'gaussian'
+        });
+
+        $('.main').parallaxify({
+          motionType: 'natural',
+          mouseMotionType: 'gaussian'
+        });
+
+
+        // defining your own motion type
+        // example for linear motion
+        $.parallaxify.motionType.linear = {
+          function (delta, deltaMax) {
+            if (delta <= -deltaMax) return 1;
+            if (delta >= deltaMax) return -1;
+            return -delta / deltaMax;
+          }
+        };
+
+        // // using the linear positioning function
+        // $('#other').parallaxify({
+        //   positionProperty: 'linear'
+        // });
 
         (function ($, window, document, undefined) {
 

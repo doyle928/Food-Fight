@@ -5,10 +5,11 @@ body {
   text-align: center;
   padding: 0;
   margin: 0;
+  overflow: hidden;
 }
 #backgroundImgDiv {
   overflow: hidden;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/food.png");
   background-size: cover;
 }
 
@@ -158,11 +159,11 @@ a {
 
 .piggy,
 .blood {
-  height: 100px;
-  width: 100px;
+  height: 75px;
+  width: 75px;
   border-radius: 50%;
   border: 3px solid #dc143c;
-  background-color: #f0f0f0;
+  background-color: #1f1f1f;
 }
 
 .piggy:hover,
@@ -176,14 +177,14 @@ a {
 
 .piggy img,
 .blood img {
-  width: 70px;
-  height: 70px;
+  width: 50px;
+  height: 50px;
 }
 
 .piggy img {
   position: absolute;
   left: 50%;
-  transform: translateX(-60%);
+  transform: translateX(-50%);
   padding-top: 15px;
 }
 
@@ -197,7 +198,6 @@ a {
 .needCashMenu {
   /* background-color: #1f1f1f; */
   background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
-  border-right: 3px solid #dbdbdb;
   position: absolute;
   left: -3px;
   top: 0;
@@ -251,12 +251,12 @@ a {
   overflow-x: hidden;
   transition: margin-left 0.3s;
   overflow: hidden;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/food.png");
   background-size: cover;
 }
 
 .titleNav {
-  background-color: #1f1f1f;
+  background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
   position: absolute;
   left: 0;
   top: 0;
@@ -271,7 +271,8 @@ a {
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
-  background-image: url("../images/background.jpg");
+  /* background: radial-gradient(#1f1f1f, #101010); */
+  background-image: url("../images/food.png");
   background-size: cover;
 }
 
@@ -368,6 +369,16 @@ footer a {
 .secondaryButton {
   display: none;
 }
+.donateDiv {
+  display: column;
+  width: 90%;
+  text-align: Left;
+  margin-left: 20px;
+}
+input {
+  width: 280px;
+  margin-top: 7px;
+}
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   /*---------------------Start---------------------*/
@@ -389,7 +400,7 @@ footer a {
     bottom: 150px;
     font-size: 1.3em;
     border-bottom: 2px solid white;
-    width: 125px;
+    width: 119px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -403,7 +414,7 @@ footer a {
     bottom: 75px;
     font-size: 1.3em;
     border-bottom: 2px solid white;
-    width: 125px;
+    width: 119px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -412,11 +423,11 @@ footer a {
     border-bottom: 2px solid #dc143c;
   }
 
-/*-----------------------------------event--------------------------*/
+  /*-----------------------------------event--------------------------*/
   .main {
     overflow: hidden;
-    margin-left: 145px;
-    width: calc(100% - 145px);
+    margin-left: 119px;
+    width: calc(100% - 119px);
   }
   .needCashMenu {
     background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
@@ -425,7 +436,7 @@ footer a {
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 145px;
+    width: 122px;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -442,13 +453,13 @@ footer a {
     display: none;
   }
   progress {
-    left: 145px;
+    left: 119px;
     height: 5px;
-    width: calc(100% - 145px);
+    width: calc(100% - 119px);
   }
   .topInfo {
-    left: 145px;
-    width: calc(100% - 160px);
+    left: 119px;
+    width: calc(100% - 119px);
     font-size: 1.5em;
     top: -15px;
     padding: 10px;
@@ -489,8 +500,15 @@ footer a {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
+  .main {
+    overflow: hidden;
+  }
+  .titleMain {
+    overflow: hidden;
+  }
   .titleIcons {
     display: block;
+    overflow: hidden;
   }
   .titleIcons i {
     position: absolute;
@@ -500,6 +518,10 @@ footer a {
     font-size: 1.5em;
     transform: translateX(-50%);
     background-color: #1f1f1f;
+    cursor: pointer;
+  }
+  .titleIcons i:hover {
+    background-color: #dc143c;
   }
   .titleIcons div {
     display: none;
@@ -510,15 +532,22 @@ footer a {
   .priorityButton .arrowRight {
     display: block;
   }
+  .welcomeButtons {
+    display: flex;
+    position: absolute;
+    bottom: 15vh;
+  }
   .priorityButton {
-    left: 25vw;
-    bottom: 150px;
+    position: static;
     font-size: 1.3em;
     border-bottom: 2px solid white;
     width: 225px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    margin-right: 60px;
+    transform: translateX(-30%);
+    cursor: pointer;
   }
   .priorityButton:hover {
     border-bottom: 2px solid #dc143c;
@@ -530,28 +559,31 @@ footer a {
     margin: 0;
     margin: 0 20vw;
     font-size: 1.2em;
+    width: 50vw;
     margin-top: 0;
   }
+  .bodyText p {
+    overflow: hidden;
+  }
   .secondaryButton {
-    position: fixed;
-    right: 33vw;
-    bottom: 150px;
     font-size: 1.3em;
     border-bottom: 2px solid white;
     width: 225px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    cursor: pointer;
   }
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
-/*  #resultsDiv {
+  
+  /*  #resultsDiv {
     margin: 0 auto;
   }*/
-#resultsDiv {
-  margin: 0 auto;
-}
+  #resultsDiv {
+    margin: 0 auto;
+  }
   /* ---------------------------------- event page ----------------------------------- */
   .cardContainer {
     display: flex;
@@ -560,8 +592,8 @@ footer a {
   }
   .main {
     overflow: hidden;
-    margin-left: 145px;
-    width: calc(100% - 145px);
+    margin-left: 119px;
+    width: calc(100% - 119px);
   }
   .needCashMenu {
     background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
@@ -570,7 +602,7 @@ footer a {
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 145px;
+    width: 122px;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -587,13 +619,13 @@ footer a {
     display: none;
   }
   progress {
-    left: 145px;
+    left: 119px;
     height: 5px;
-    width: calc(100% - 145px);
+    width: calc(100% - 119px);
   }
   .topInfo {
-    left: 145px;
-    width: calc(100% - 160px);
+    left: 119px;
+    width: calc(100% - 148px);
     font-size: 1.5em;
     top: -15px;
     padding: 10px;
@@ -629,26 +661,109 @@ footer a {
   hr {
     width: 50vw;
   }
+  footer{
+    transform: translateX(-50%);
+  }
 }
 
 @media only screen and (min-width: 1224px) {
+  .titleMain {
+    overflow: hidden;
+  }
+  .titleIcons {
+    display: block;
+    overflow: hidden;
+  }
+  .titleIcons i {
+    position: absolute;
+    left: 50%;
+    top: -29px;
+    padding: 10px;
+    font-size: 1.5em;
+    transform: translateX(-50%);
+    background-color: #1f1f1f;
+    cursor: pointer;
+  }
+  .titleIcons i:hover {
+    background-color: #dc143c;
+  }
+  .titleIcons div {
+    display: none;
+  }
+  .priorityButton .arrowDown {
+    display: none;
+  }
+  .priorityButton .arrowRight {
+    display: block;
+  }
+  .welcomeButtons {
+    display: flex;
+    position: absolute;
+    bottom: 18vh;
+  }
+  .priorityButton {
+    position: static;
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-right: 60px;
+    transform: translateX(-30%);
+    cursor: pointer;
+  }
+  .priorityButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  .title h1 {
+    margin: 30vh 0 0 20vw;
+  }
+  .bodyText {
+    margin: 0;
+    margin: 0 20vw;
+    font-size: 1.2em;
+    width: 50vw;
+    margin-top: 0;
+  }
+  .bodyText p {
+    overflow: hidden;
+  }
+  .secondaryButton {
+    font-size: 1.3em;
+    border-bottom: 2px solid white;
+    width: 225px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    cursor: pointer;
+  }
+  .secondaryButton:hover {
+    border-bottom: 2px solid #dc143c;
+  }
+  /*--------------------------------EVENTS-----------------------------------------------*/
   .cardContainer {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    overflow: hidden;
   }
   .main {
-    margin-left: 145px;
-    width: calc(100% - 145px);
+    overflow: hidden;
+    margin-left: 119px;
+    width: calc(100% - 119px);
+  }
+  .fillSpace {
+    overflow: hidden;
   }
   .needCashMenu {
     background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
-    border-right: 3px solid #dc143c;
+    border-right: none;
     position: absolute;
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 145px;
+    width: 122px;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -665,13 +780,13 @@ footer a {
     display: none;
   }
   progress {
-    left: 145px;
+    left: 119px;
     height: 5px;
-    width: calc(100% - 145px);
+    width: calc(100% - 119px);
   }
   .topInfo {
-    left: 145px;
-    width: calc(100% - 160px);
+    left: 119px;
+    width: calc(100% - 148px);
     font-size: 1.5em;
     top: -15px;
     padding: 10px;
@@ -691,30 +806,24 @@ footer a {
     margin-right: auto;
   }
   .eventHeader {
-    font-size: 4em !important;
+    font-size: 3em !important;
   }
   .eventTitle p {
-    font-size: 1.5em;
+    font-size: 1.2em;
     width: auto;
   }
   .card1,
   .card2 {
-    width: 300px;
-    height: 150px;
+    width: 250px;
+    height: 130px;
     padding: 0;
-    margin: 50px;
+    margin: 30px;
   }
   hr {
     width: 50vw;
   }
+  footer{
+    transform: translateX(-50%);
 
-.donateDiv {
-  display: column;
-  width: 90%;
-  text-align: Left;
-  margin-left: 20px;
-}
-input {
-  width: 280px;
-  margin-top: 7px;
+  }
 }
