@@ -369,16 +369,50 @@ footer a {
 .secondaryButton {
   display: none;
 }
-.donateDiv {
-  display: column;
-  width: 90%;
-  text-align: Left;
-  margin-left: 20px;
-}
 input {
   width: 280px;
   margin-top: 7px;
 }
+
+#donateTemplate {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-image: url("../images/food.png");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#donateDiv {
+  display: flex;
+  flex-direction: column;
+}
+#donateDiv a {
+  text-decoration: none;
+  margin-bottom: 10px;
+  background-color: 
+}
+
+.donateInputs {
+  border: none;
+  background: none;
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+#donateCard {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   /*---------------------Start---------------------*/
