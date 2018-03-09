@@ -5,15 +5,6 @@
 
         //$(".titleMain").parallaxify();
 
-        $('.titleMain').parallaxify({
-          motionType: 'natural',
-          mouseMotionType: 'gaussian'
-        });
-
-        $('.main').parallaxify({
-          motionType: 'natural',
-          mouseMotionType: 'gaussian'
-        });
 
 
         // defining your own motion type
@@ -25,6 +16,17 @@
             return -delta / deltaMax;
           }
         };
+
+        
+        $($element).parallaxify({
+          motionType: 'natural',
+          mouseMotionType: 'gaussian'
+        });
+
+        $scope.$on("$destroy", function() {
+          console.log("destroying...");
+          $($element).data("plugin_parallaxify").destroy();
+        });
 
         // // using the linear positioning function
         // $('#other').parallaxify({
