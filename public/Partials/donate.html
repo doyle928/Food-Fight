@@ -1,21 +1,22 @@
-<body>
-  <div class="main">
-    <div class="donateDiv">
-  <h2>Donate to Food Gatherers</h2>
-  <input type="text" placeholder="First name"></input>
-  <input type="text" placeholder="Last name"></input>
-  <input type="number" placeholder="$50"></input>
-    <input type="text" placeholder="Message"></input>
-  <input type="text" placeholder="Street Address"></input>
-  <input type="text" placeholder="City"></input>
-  <input type="text" placeholder="State"></input>
-  <input type="text" placeholder="Zipcode"></input>
-  <input type="text" placeholder="Phone"></input>
-  <input type="text" placeholder="Credit of debit card number"></input>
-  <input type="text" placeholder="Name on card"></input>
-  <input type="text" placeholder="Expiration date"></input>
-  <input type="text" placeholder="CID"></input>
-  <button>DONATE</button>
+<div id="donateTemplate">
+    <div id="donateDiv">
+        <h2>Donate to Food Gatherers</h2>
+        <div id="donateCard">
+            <input class="donateInputs" type="text" placeholder="First Name">
+            <input class="donateInputs" type="text" placeholder="Last Name">
+            <input class="donateInputs" type="number" placeholder="$50">
+            <input class="donateInputs" type="text" placeholder="Message">
+            <input class="donateInputs" type="text" placeholder="Street Address">
+            <input class="donateInputs" type="text" placeholder="City">
+            <input class="donateInputs" type="text" placeholder="State">
+            <input class="donateInputs" type="text" placeholder="Zipcode">
+            <input class="donateInputs" type="text" placeholder="Phone">
+            <input class="donateInputs" type="text" placeholder="Credit/Debit Card Number">
+            <input class="donateInputs" type="text" placeholder="Name on Card">
+            <input class="donateInputs" type="text" placeholder="Expiration Date">
+            <input class="donateInputs" type="text" placeholder="CID">
+            <a href="http://www.foodgatherers.org/donate">DONATE</a>
+        </div>
+    </div>
+    <button ng-click="$ctrl.home();">HOME</button>
 </div>
-</div>
-</body>
