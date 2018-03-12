@@ -385,7 +385,7 @@ input {
   width: 280px;
   margin-top: 7px;
 }
-
+/*//////////////////////////////////////DONATE PAGE///////////////////////////////////*/
 #donateTemplate {
   width: 100vw;
   height: 100vh;
@@ -422,10 +422,67 @@ input {
   flex-direction: column;
 }
 
+/*//////////////////////////////////RESULTS PAGE////////////////////////////////////////////////*/
+#resultsMain {
+  width: 100vw;
+  height: 100vh;
+}
+/*//////////////////////////////////ADD EVENTS PAGE////////////////////////////////////////////////*/
+#addMain {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/food.png");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.addInputs {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  color: #eee;
+}
+#addContent div {
+  margin: 20px;
+  border: 1px solid red;
+}
+#addContent button:hover {
+  border-bottom: 2px solid #dc143c;
+}
+#eventTitle {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#eventTitle input {
+  width: 20vw;
+}
+#eventTitle label {
+  padding: 5px;
+}
+#options {
+  display: flex;
+}
+#options input[type="number"] {
+  width: 40px;
+}
+#options input[type="text"]{
+  width: 100px;
+}
+#options label {
+  padding: 10px;
+}
+#options div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0px;
+  padding: 20px;
+}
+
+/* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
 
-
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   /*---------------------Start---------------------*/
 
@@ -630,6 +687,9 @@ input {
   #resultsDiv {
     margin: 0 auto;
   }
+  #resultsMain{
+    background-image: url("../images/food.png");
+  }
   /* ---------------------------------- event page ----------------------------------- */
   .cardContainer {
     display: flex;
@@ -712,6 +772,8 @@ input {
   }
 }
 
+/*//////////////////////////   OVER 1224       //////////////////////////////////////////*/
+
 @media only screen and (min-width: 1224px) {
   .titleMain {
     overflow: hidden;
@@ -787,6 +849,8 @@ input {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
+
+
   /*--------------------------------EVENTS-----------------------------------------------*/
   .cardContainer {
     display: flex;
@@ -870,6 +934,12 @@ input {
   }
   footer{
     transform: translateX(-50%);
-
   }
+  
 }
+
+
+
+
+
+

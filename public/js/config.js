@@ -10,6 +10,9 @@
       .when("/results", {
         template: "<results-component></results-component>"
       })
+      .when("/add", {
+        template: "<add-component></add-component>"
+      })
       .when("/donate", {
         template: "<donate-component></donate-component>"
       })

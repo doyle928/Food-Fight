@@ -55,6 +55,7 @@
     function getEverything() {
       FoodFightService.getEvents().then(event => {
         //console.log(event);
+
         if (event.repeatability === true) {
           $ctrl.eventObj = event;
         } else {
@@ -80,7 +81,7 @@
     }
 
     function cashMenuItems() {
-      $(".needCashMenu").css("width", "122px");
+      $(".needCashMenu").css("width", "135px");
       $(".main").css("margin-left", "119px");
       $(".getCash").css("left", "119px");
       $(".topInfo").css("left", "119px");
