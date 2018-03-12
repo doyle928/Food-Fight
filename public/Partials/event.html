@@ -31,6 +31,9 @@
             <hr>
             <p>{{$ctrl.eventObj.text}}</p>
         </div>
+        <div class="eventImageDiv">
+          <img class="eventImage" src="{{$ctrl.eventObj.image}}">
+        </div>
         <div class="cardContainer">
             <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)" class="card1" data-tilt data-tilt-max="15" data-tilt-speed="400"
                 data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
@@ -43,11 +46,12 @@
                 <p>${{$ctrl.eventObj.option2price}}</p>
             </div>
         </div>
-    </div>
-
     <div class="fillSpace">
     </div>
-</div>
-<footer>
-    <a href="/#!/donate">Please donate at Food Gatherers</a>
-</footer>
+    </div>
+    <footer>
+      <div class="facebookDiv" ng-click="">
+        <img class="facebookImage" src="images/facebook.png">
+      </div>
+        <a href="/#!/donate">Donate</a>
+    </footer>

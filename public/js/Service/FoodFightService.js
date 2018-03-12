@@ -9,9 +9,10 @@
             option1: "I'm option1",
             option1price: 10,
             option2: "I'm option2",
-            option2price: 20
+            option2price: 20, 
+            image: "images/forgotten-wallet.jpg", 
+            fact: "I'm a fact"
         };
-
         return {
             changeProgressBar: changeProgressBar,
             changeAmount: changeAmount,
@@ -65,8 +66,6 @@
         function getDayCount() {
             return dayCount;
         }
-
-
         function getEvents() {
             return $http({
                     method: "GET",
@@ -80,7 +79,6 @@
                     //console.log(err);
                 });
         }
-
         function addEvent(newEvent) {
             return $http({
                 url: "/events",
