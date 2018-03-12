@@ -1,4 +1,9 @@
 <div class="needCashMenu">
+    <div class="mood">
+        <span class="emotionWriteTo">
+        </span>
+        <progress class="moodProgress" value="10" max="10"></progress>
+    </div>
     <p>NEED CASH?</p>
     <ul class="cashGrabItems">
         <li class="piggy" ng-click="$ctrl.piggyBank()">
@@ -32,13 +37,13 @@
             <p>{{$ctrl.eventObj.text}}</p>
         </div>
         <div class="cardContainer">
-            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)" class="card1" data-tilt data-tilt-max="15" data-tilt-speed="400"
-                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1price, $ctrl.eventObj.mood1)" class="card1" data-tilt data-tilt-max="15"
+                data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
                 <p>{{$ctrl.eventObj.option1}}</p>
                 <p>${{$ctrl.eventObj.option1price}}</p>
             </div>
-            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2price)" class="card2" data-tilt data-tilt-max="15" data-tilt-speed="400"
-                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2price, $ctrl.eventObj.mood2)" class="card2" data-tilt data-tilt-max="15"
+                data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
                 <p>{{$ctrl.eventObj.option2}}</p>
                 <p>${{$ctrl.eventObj.option2price}}</p>
             </div>

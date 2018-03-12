@@ -3,6 +3,7 @@
     var progressValue = 150;
     var dollarValue = 150;
     var dayCount = 1;
+    var currentMood = 10;
     var event = {
       eventName: "I'm an event",
       text: "You've been hit with an event. Choose a thing.",
@@ -21,7 +22,9 @@
       getEvents: getEvents,
       breakPiggy: breakPiggy,
       donateBlood: donateBlood,
-      getDayCount: getDayCount
+      getDayCount: getDayCount,
+      sendMood: sendMood,
+      getMood: getMood
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -52,16 +55,22 @@
     function randNum() {
       return Math.floor(Math.random() * 10) + 1;
     }
-    function getDayCount(){
+    function getDayCount() {
       return dayCount;
     }
+    function sendMood(amount) {
+      currentMood -= amount;
+    }
+    function getMood() {
+      return currentMood;
+    }
 
-
-  function getEvents() {
-        return $http({
-          method:"GET",
-          url:"/events"
-        }).then(function(response){
+    function getEvents() {
+      return $http({
+        method: "GET",
+        url: "/events"
+      })
+        .then(function(response) {
           //console.log("from service ",response.data);
 
           return response.data[randNum()];
