@@ -53,9 +53,9 @@
                   <p>{{$ctrl.eventObj.option1}}</p>
                   <p>${{$ctrl.eventObj.option1price}}</p>
                 </div>
-                <div class="back">
+                <div class="back" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)">
                   <p>{{$ctrl.eventObj.fact}}</p>
-                  <a ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)">Next event</a>
+                  <p>Next event</p>
                 </div>
               </div>
             </div>
@@ -67,9 +67,9 @@
                   <p>{{$ctrl.eventObj.option2}}</p>
                   <p>${{$ctrl.eventObj.option2price}}</p>
                 </div>
-                <div class="back">
+                <div class="back" ng-click="$ctrl.selectOption($ctrl.eventObj.option2price)">
                   <p>{{$ctrl.eventObj.fact}}</p>
-                  <a ng-click="$ctrl.selectOption($ctrl.eventObj.option2price)">Next event</a>
+                  <p>Next event</p>
                 </div>
               </div>
               </div>
@@ -82,5 +82,7 @@
       <div class="facebookDiv" ng-click="">
         <img class="facebookImage" src="images/facebook.png">
       </div>
+      <div>
         <a href="/#!/donate">Donate</a>
+      </div>
     </footer>
