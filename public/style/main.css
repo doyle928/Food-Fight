@@ -399,12 +399,11 @@ footer {
   position: fixed;
   bottom: 0;
   text-align: center;
-  margin-left: -50px;
+  transform: translateX(-50%);
 }
 
 footer a {
   text-decoration: none;
-  white-space: nowrap;
 }
 .secondaryButton {
   display: none;
@@ -449,9 +448,6 @@ input {
   display: flex;
   flex-direction: column;
 }
-
-
-
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
@@ -579,6 +575,9 @@ input {
   }
   hr {
     width: 50vw;
+  }
+  footer{
+    margin-left: -55px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
@@ -754,7 +753,7 @@ input {
     width: 50vw;
   }
   footer{
-    transform: translateX(-50%);
+    margin-left: -55px;
   }
 }
 
@@ -923,7 +922,6 @@ input {
     width: 50vw;
   }
   footer{
-    transform: translateX(-50%);
-
+    margin-left: -55px;
   }
 }
