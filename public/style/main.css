@@ -78,6 +78,20 @@ button {
 .priorityButton .arrowRight {
   display: none;
 }
+.eventContainer {
+  text-align: center;
+}
+
+.eventImageDiv {
+  display: none;
+}
+
+.eventImage {
+  width: 500px;
+  height: 260px;
+  border-radius: 3px;
+  margin: 10px;
+}
 
 .card1,
 .card2 {
@@ -85,7 +99,6 @@ button {
   height: 130px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  background-color: rgba(255, 255, 255, 0.1);
   margin: 30px auto;
   border-radius: 3px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -101,6 +114,22 @@ button {
   padding: 10px 20px;
   margin: auto;
   color: white;
+}
+.facebookDiv{
+  width: 34px;
+  height: 34px;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* background-color: white; */
+  border-radius: 3px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+.facebookImage{
+  width: 28px;
+  height: 28px;
+  margin: 4px;
+  border-radius: 3px;
+  background-color: black;
 }
 
 .mainProgress {
@@ -373,14 +402,12 @@ a {
 footer {
   position: fixed;
   bottom: 0;
-  left: 50%;
+  text-align: center;
   transform: translateX(-50%);
-  transition: 0.3s;
 }
 
 footer a {
   text-decoration: none;
-  white-space: nowrap;
 }
 .secondaryButton {
   display: none;
@@ -756,6 +783,14 @@ input {
     font-size: 1.2em;
     width: auto;
   }
+  .eventImageDiv {
+    display: block;
+    width: 520px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0 auto;
+  }
   .cardContainer {
     margin-left: calc(20% - 20px);
   }
@@ -768,6 +803,9 @@ input {
   }
   hr {
     width: 50vw;
+  }
+  footer{
+    margin-left: -55px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
@@ -922,6 +960,14 @@ input {
     font-size: 1.2em;
     width: auto;
   }
+  .eventImageDiv {
+    display: block;
+    width: 520px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0 auto;
+  }
   .card1,
   .card2 {
     width: 250px;
@@ -929,6 +975,8 @@ input {
     padding: 0;
     margin: 30px;
   }
+
+
   hr {
     width: 50vw;
   }
@@ -1082,6 +1130,14 @@ input {
   .eventTitle p {
     font-size: 1.2em;
     width: auto;
+  }
+  .eventImageDiv {
+    display: block;
+    width: 520px;
+    height: 280px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0 auto;
   }
   .card1,
   .card2 {

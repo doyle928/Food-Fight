@@ -6,6 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Food Fight</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="Food Fight For Good"/>
+  <meta property="og:type" content="website"/>
+  <meta property="or:url" content="http://foodfightforgood.org"/>
+  <meta property="og:image" content="./images/not-enough-food.jpg"/>
+  <meta property="og:description" content="Could you feed a family of 4 on $150 a week? Try it."/>
+  <meta property="og:site_name" content="http://foodfightforgood.org"/>
+  <meta property="fb:admins" content="727082414"/>
   <link rel="stylesheet" type="text/css" media="screen" href="style/main.css">
   <link rel="icon" href="images/favicon-tomato.png" type="image/gif" sizes="16x16">
   <link href="https://fonts.googleapis.com/css?family=Average+Sans|Fjalla+One" rel="stylesheet">
@@ -18,11 +25,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.js"></script>
-  <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="js/main.js"></script>
   <script src="js/module.js"></script>
   <script src="js/config.js"></script>
-  <script src="js/Controller/controller.js"></script>
+  <script src="js/Controller/Controller.js"></script>
   <script src="js/Service/FoodFightService.js"></script>
   <script src="js/Components/eventComponent.js"></script>
   <script src="js/Components/resultsComponent.js"></script>
@@ -31,7 +38,25 @@
   <script src="js/directives/tilt.directive.js"></script>
   <script src="js/jquery.parallaxify.js"></script>
   <script src="js/directives/slideup.directive.js"></script>
+  <!-- <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '149926329011406',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+    FB.AppEvents.logPageView();
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script> -->
 </body>
 
 </html>
