@@ -88,7 +88,7 @@ button {
 
 .eventImage {
   width: 500px;
-  height: 260px;
+  height: 240px;
   border-radius: 3px;
   margin: 10px;
 }
@@ -96,10 +96,10 @@ button {
 .card1,
 .card2 {
   width: 240px;
-  height: 130px;
+  height: 100px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  margin: 30px auto;
+  margin: 10px auto;
   border-radius: 3px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -176,6 +176,7 @@ button {
   text-align: center;
   padding: 10px;
   margin: 0;
+  margin-top: -20px;
   font-weight: 400;
   font-family: "Fjalla One", sans-serif;
 }
@@ -786,7 +787,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 240px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -797,9 +798,9 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 130px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
   }
   hr {
     width: 50vw;
@@ -963,7 +964,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 260px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -971,9 +972,9 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 130px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
   }
   /* entire container, keeps perspective */
   .flip-container {
@@ -986,7 +987,7 @@ input {
 
   .flip-container, .front, .back {
     width: 250px;
-    height: 130px;
+    height: 100px;
   }
 
   /* flip speed goes here */
@@ -1175,7 +1176,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 260px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -1183,9 +1184,9 @@ input {
   .card1,
   .card2 {
     width: 300px;
-    height: 160px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
   }
   hr {
     width: 50vw;

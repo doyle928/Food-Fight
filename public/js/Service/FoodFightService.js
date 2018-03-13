@@ -4,6 +4,7 @@
     var dollarValue = 150;
     var dayCount = 1;
     var currentMood = 10;
+    var numberOfEvents = 15;
     var event = {
       eventName: "I'm an event",
       text: "You've been hit with an event. Choose a thing.",
@@ -55,7 +56,7 @@
       dollarValue += amount;
     }
     function randNum() {
-      return Math.floor(Math.random() * 10) + 1;
+      return Math.floor(Math.random() * numberOfEvents) + 1;
     }
     function getDayCount() {
       return dayCount;
