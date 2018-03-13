@@ -24,8 +24,8 @@
 
     $ctrl.piggyBank = function() {
       if ($ctrl.randPiggyUse > 0) {
-        let randPiggyHolder = $ctrl.randPiggy;
-        FoodFightService.breakPiggy(randPiggyHolder);
+        //let randPiggyHolder = $ctrl.randPiggy;
+        FoodFightService.breakPiggy($ctrl.randPiggy);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);

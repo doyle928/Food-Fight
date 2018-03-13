@@ -51,13 +51,13 @@
         </div> -->
         <div class="cardContainer">
             <div class="card1 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
-                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price, $ctrl.eventObj.mood2)">
                 <div class="flipper">
                     <div class="front">
                         <p>{{$ctrl.eventObj.option1}}</p>
                         <p>${{$ctrl.eventObj.option1price}}</p>
                     </div>
-                    <div class="back" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)">
+                    <div class="back">
                         <p>{{$ctrl.eventObj.fact}}</p>
                         <p>Next event</p>
                     </div>
