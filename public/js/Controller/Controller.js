@@ -11,6 +11,7 @@
     $ctrl.randDonate = Math.floor(Math.random() * 30) + 20;
     $ctrl.randPiggyUse = 1;
     $ctrl.randDonateUse = 1;
+    $ctrl.numberOfEvents;
 
     getEverything();
     console.log($ctrl.eventObj);
@@ -24,8 +25,8 @@
 
     $ctrl.piggyBank = function() {
       if ($ctrl.randPiggyUse > 0) {
-        //let randPiggyHolder = $ctrl.randPiggy;
-        FoodFightService.breakPiggy($ctrl.randPiggy);
+        let randPiggyHolder = $ctrl.randPiggy;
+        FoodFightService.breakPiggy(randPiggyHolder);
         $ctrl.progressBar = FoodFightService.getProgressBar();
         $ctrl.amount = FoodFightService.getAmount();
         $(".mainProgress").attr("value", $ctrl.amount);
@@ -60,31 +61,64 @@
     };
 
     function getEverything() {
-      FoodFightService.getEvents().then(event => {
-        //console.log(event);
-
-        if (event.repeatability === true) {
-          $ctrl.eventObj = event;
-        } else {
-          getEverything();
-        }
-        $ctrl.progressBar = FoodFightService.getProgressBar();
-        $ctrl.amount = FoodFightService.getAmount();
-        if ($ctrl.amount <= 0) {
-          $location.path("/results");
-        }
-        $ctrl.dayCount = FoodFightService.changeDayCount();
-        $ctrl.moodCurrent = FoodFightService.getMood();
-        $(".mainProgress").attr("value", $ctrl.amount);
-        $(".moodProgress").attr("value", $ctrl.moodCurrent);
-        var windowWidth = $(window).width();
-        if (windowWidth < 480) {
-          cashMinItems();
-        } else {
-          cashMenuItems();
-        }
-        moodIcon();
-      });
+      $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
+      if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
+        FoodFightService.getEvents().then(event => {
+          if (event == undefined) {
+            getEverything();
+          } else {
+            if (event.repeatability === true) {
+              $ctrl.eventObj = event;
+              $ctrl.progressBar = FoodFightService.getProgressBar();
+              $ctrl.amount = FoodFightService.getAmount();
+              if ($ctrl.amount <= 0) {
+                $location.path("/results");
+              }
+              $ctrl.dayCount = FoodFightService.changeDayCount();
+              $ctrl.moodCurrent = FoodFightService.getMood();
+              $(".mainProgress").attr("value", $ctrl.amount);
+              $(".moodProgress").attr("value", $ctrl.moodCurrent);
+              var windowWidth = $(window).width();
+              if (windowWidth < 480) {
+                cashMinItems();
+              } else {
+                cashMenuItems();
+              }
+              moodIcon();
+            } else {
+              getEverything();
+            }
+          }
+        });
+      } else {
+        FoodFightService.getEvents().then(event => {
+          if (event == undefined) {
+            getEverything();
+          } else {
+            $ctrl.eventObj = event;
+            if ($ctrl.usedEvents.indexOf(event.id) == -1) {
+              $ctrl.progressBar = FoodFightService.getProgressBar();
+              $ctrl.amount = FoodFightService.getAmount();
+              if ($ctrl.amount <= 0) {
+                $location.path("/results");
+              }
+              $ctrl.dayCount = FoodFightService.changeDayCount();
+              $ctrl.moodCurrent = FoodFightService.getMood();
+              $(".mainProgress").attr("value", $ctrl.amount);
+              $(".moodProgress").attr("value", $ctrl.moodCurrent);
+              var windowWidth = $(window).width();
+              if (windowWidth < 480) {
+                cashMinItems();
+              } else {
+                cashMenuItems();
+              }
+              moodIcon();
+            } else {
+              getEverything();
+            }
+          }
+        });
+      }
     }
 
     function cashMenuItems() {
@@ -128,6 +162,7 @@
         console.log("viewport too big");
       }
     };
+
     function updateSize() {
       var windowWidth = $(window).width();
       if (windowWidth < 480) {

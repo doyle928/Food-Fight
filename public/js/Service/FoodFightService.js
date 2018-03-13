@@ -28,15 +28,23 @@
       getDayCount: getDayCount,
       sendMood: sendMood,
       getMood: getMood,
-      addEvent: addEvent
+      addEvent: addEvent,
+      getNumberOfEvents: getNumberOfEvents
     };
+
+    function getNumberOfEvents() {
+      return numberOfEvents;
+    }
+
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
       //console.log(progressValue);
     }
+
     function getProgressBar() {
       return progressValue;
     }
+
     function changeAmount(dollarAmount) {
       dollarValue -= dollarAmount;
       if (dollarValue <= 0) {
@@ -44,57 +52,70 @@
       }
       //console.log(dollarValue);
     }
+
     function getAmount() {
       return dollarValue;
     }
+
     function changeDayCount() {
       return dayCount++;
     }
+
     function breakPiggy(amount) {
       dollarValue += amount;
     }
+
     function donateBlood(amount) {
       dollarValue += amount;
     }
+
     function randNum() {
       return Math.floor(Math.random() * numberOfEvents) + 1;
+      // var randomEventNumber = Math.floor(Math.random() * numberOfEvents) + 1;
+      // if(randomEventNumber == 13 || randomEventNumber == 14 || randomEventNumber == 15){
+      // randNum();
+      // } else {
+      //   return randomEventNumber;
+      // }
     }
+
     function getDayCount() {
       return dayCount;
     }
+
     function sendMood(amount) {
       currentMood -= amount;
     }
+
     function getMood() {
       return currentMood;
     }
 
     function getEvents() {
       return $http({
-        method: "GET",
-        url: "/events"
-      })
+          method: "GET",
+          url: "/events"
+        })
         .then(function(response) {
-          //console.log("from service ",response.data);
-
-                    return response.data[randNum()];
-                })
-                .catch(function(err) {
-                    //console.log(err);
-                });
-        }
-        function addEvent(newEvent) {
-            return $http({
-                url: "/events",
-                method: "POST",
-                data: newEvent
-            }).then(function(response) {
-                return response;
-            })
-            .catch(function(err){
-              console.log("ERROR");
-            });
-        }
+            return response.data[randNum()];
+        })
+        .catch(function(err) {
+          //console.log(err);
+        });
     }
-    angular.module("App").factory("FoodFightService", FoodFightService);
+
+    function addEvent(newEvent) {
+      return $http({
+          url: "/events",
+          method: "POST",
+          data: newEvent
+        }).then(function(response) {
+          return response;
+        })
+        .catch(function(err) {
+          console.log("ERROR");
+        });
+    }
+  }
+  angular.module("App").factory("FoodFightService", FoodFightService);
 })();

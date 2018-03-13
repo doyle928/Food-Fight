@@ -19,7 +19,7 @@ body {
   animation: slidedown 1s both ease-in;
   background-image: url("../images/food.png");
   background-size: cover;
-  z-index: 9999;
+  z-index: 9998;
 }
 .view-animate.ng-enter{
   z-index: -1;
@@ -287,7 +287,7 @@ a {
   top: 0;
   height: 100vh;
   width: 0;
-  z-index: -1;
+  z-index: 9998;
   overflow-x: hidden;
   overflow: hidden;
   transition: 0.5s;
@@ -324,8 +324,9 @@ a {
 
 .cashGrabItems {
   padding: 15px;
-  margin-top: 41vh;
-  transform: translateY(-50%);
+  position: fixed;
+  bottom: 50px;
+  z-index: 9998;
 }
 
 .needCashMenu li {
@@ -855,7 +856,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -866,7 +867,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -875,7 +876,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
@@ -1081,7 +1082,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -1092,7 +1093,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -1101,7 +1102,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
@@ -1370,7 +1371,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -1381,7 +1382,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -1390,7 +1391,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
