@@ -28,8 +28,12 @@
       getDayCount: getDayCount,
       sendMood: sendMood,
       getMood: getMood,
-      addEvent: addEvent
+      addEvent: addEvent,
+      getNumberOfEvents: getNumberOfEvents
     };
+    function getNumberOfEvents(){
+      return numberOfEvents;
+    }
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
       //console.log(progressValue);
@@ -57,7 +61,12 @@
       dollarValue += amount;
     }
     function randNum() {
-      return Math.floor(Math.random() * numberOfEvents) + 1;
+      var randomEventNumber = Math.floor(Math.random() * numberOfEvents) + 1;
+      if(randomEventNumber == 13 || randomEventNumber == 14 || randomEventNumber == 15){
+      randNum();
+    } else {
+      return randomEventNumber;
+    }
     }
     function getDayCount() {
       return dayCount;
