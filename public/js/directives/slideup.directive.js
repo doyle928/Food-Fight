@@ -754,12 +754,7 @@
 
           // Expose the plugin class so it can be modified
           window[pluginName] = Plugin;
-          $scope.$on("$destroy", function() {
-            console.log("destroying...");
-            Plugin(element, options);
-              // $($element).data(pluginName).destroy();
-              //$.data(this, 'plugin_' + pluginName, null);
-          });
+
         }(jQuery, this, document));
 
       }

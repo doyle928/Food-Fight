@@ -6,11 +6,39 @@ body {
   padding: 0;
   margin: 0;
   overflow: hidden;
+  background-image: url("../images/food.png");
+  background-size: cover;
 }
-#backgroundImgDiv {
+/* #backgroundImgDiv {
   overflow: hidden;
   background-image: url("../images/food.png");
   background-size: cover;
+} */
+
+.view-animate.ng-leave{
+  animation: slidedown 1s both ease-in;
+  background-image: url("../images/food.png");
+  background-size: cover;
+  z-index: 9999;
+}
+.view-animate.ng-enter{
+  z-index: -1;
+}
+@keyframes slidedown {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-110%);
+  }
+}
+@keyframes slideleft{
+  from{
+    transfrom: translateX(0);
+  }
+  to{
+    transform: translateX(-110%);
+  }
 }
 
 #backbutton {
@@ -63,12 +91,16 @@ button {
 
 .priorityButton {
   font-size: 2em;
-  width: auto;
+  width: 150px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: fixed;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  transition: .3s;
 }
 
 .priorityButton .arrowDown {
@@ -78,6 +110,7 @@ button {
 .priorityButton .arrowRight {
   display: none;
 }
+/*============================EVENT==============================================================*/
 .eventContainer {
   text-align: center;
 }
@@ -115,7 +148,7 @@ button {
   margin: auto;
   color: white;
 }
-.facebookDiv{
+.facebookDiv {
   width: 34px;
   height: 34px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -124,14 +157,16 @@ button {
   margin: 0 auto;
   margin-bottom: 10px;
 }
-.facebookImage{
+.facebookImage {
   width: 28px;
   height: 28px;
   margin: 4px;
   border-radius: 3px;
   background-color: black;
 }
-
+.header{
+  z-index: -1;
+}
 .mainProgress {
   background-color: crimson;
   width: 100%;
@@ -142,11 +177,16 @@ button {
   top: 0;
   left: 0;
   background-color: #dc143c;
+  color: transparent;
+  z-index: -1;
   transition: 0.3s;
 }
 
 .mainProgress::-webkit-progress-value {
   background-color: #dc143c;
+}
+.mainProgress::-webkit-progress-bar{
+  background-color: black;
 }
 
 .topInfo {
@@ -178,6 +218,7 @@ button {
   margin: 0;
   font-weight: 400;
   font-family: "Fjalla One", sans-serif;
+  text-shadow: #000 1px 0 10px;
 }
 
 .eventTitle p {
@@ -186,6 +227,7 @@ button {
   text-align: center;
   overflow: hidden;
   text-align: center;
+  text-shadow: #000 1px 0 10px;
 }
 
 a {
@@ -203,7 +245,8 @@ a {
   height: 75px;
   width: 75px;
   border-radius: 50%;
-  border: 3px solid #dc143c;  background-color: #1f1f1f;
+  border: 3px solid #dc143c;
+  background-color: #1f1f1f;
 }
 
 .piggy:hover,
@@ -243,6 +286,7 @@ a {
   top: 0;
   height: 100vh;
   width: 0;
+  z-index: -1;
   overflow-x: hidden;
   overflow: hidden;
   transition: 0.5s;
@@ -294,10 +338,11 @@ a {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
-  transition: margin-left 0.3s;
+  transition: 0.3s;
   overflow: hidden;
-  background-image: url("../images/food.png");
-  background-size: cover;
+  z-index: -1;
+  /* background-image: url("../images/food.png");
+  background-size: cover; */
 }
 
 .titleNav {
@@ -312,13 +357,13 @@ a {
 }
 
 .titleMain {
-  transition: margin-left 0.5s;
+  transition: 0.3s;
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
   /* background: radial-gradient(#1f1f1f, #101010); */
-  background-image: url("../images/food.png");
-  background-size: cover;
+  /* background-image: url("../images/food.png"); */
+  /* background-size: cover; */
 }
 
 .titleNav ul {
@@ -421,8 +466,8 @@ input {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../images/food.png");
-  background-size: cover;
+  /* background-image: url("../images/food.png");
+  background-size: cover; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -480,25 +525,25 @@ input {
   background-color: #dc143c;
 }
 /*-=---------------------RESULT-----------------------------------------------------------------------*/
-.mainResult{
+.mainResult {
   overflow: hidden;
-  background-image: url("../images/food.png");
-  background-size: cover;
+  /* background-image: url("../images/food.png");
+  background-size: cover; */
   width: 100vw;
   height: 100vh;
 }
-.formFocus{
+.formFocus {
   display: none;
   position: fixed;
-  top:-50px;
-  left:-50px;
+  top: -50px;
+  left: -50px;
   width: 120vw;
   height: 120vh;
   background-color: #000000b0;
 }
 .formFocus i {
   position: fixed;
-  top:30px;
+  top: 30px;
   right: 30px;
   color: white;
 }
@@ -512,8 +557,8 @@ input {
   display: flex;
   flex-direction: column;
   position: absolute;
-  top:200px;
-  left:50%;
+  top: 200px;
+  left: 50%;
   transform: translateX(-50%);
 }
 .form {
@@ -532,7 +577,7 @@ input {
 .ccNum div label input {
   width: 55px;
   height: 25px;
-  margin-left:0;
+  margin-left: 0;
   border-radius: 3px;
   padding-left: 5px;
 }
@@ -546,7 +591,7 @@ input {
 .cardName {
   display: flex;
   align-items: flex-end;
-  margin-top: 10px
+  margin-top: 10px;
 }
 .cardName label {
   font-size: 0.7em;
@@ -612,17 +657,21 @@ input {
   flex-direction: row;
   justify-content: space-between;
   width: 285px;
-  margin-top: 15px
+  margin-top: 15px;
 }
 .card {
   width: 350px;
   height: 215px;
   border-radius: 5px;
   margin: -150px auto 0 auto;
-  background: radial-gradient(circle at 100% 100%, rgb(100, 1, 100), rgb(197, 1, 148));
-  font-family: 'Coda', cursive;
+  background: radial-gradient(
+    circle at 100% 100%,
+    rgb(100, 1, 100),
+    rgb(197, 1, 148)
+  );
+  font-family: "Coda", cursive;
 }
-.chip{
+.chip {
   background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);
   border-top: 1px solid purple;
   border-left: 1px solid purple;
@@ -630,12 +679,12 @@ input {
   border-bottom: 1px solid rgb(184, 0, 184);
   width: 50px;
   height: 35px;
-  border-radius:5px;
+  border-radius: 5px;
 }
 .chipDec {
   width: 30px;
   height: 17px;
-  margin:auto;
+  margin: auto;
   border-radius: 5px;
   border: 3px solid grey;
   margin-top: 5px;
@@ -646,40 +695,48 @@ input {
   padding: 30px 20px;
   align-items: start;
 }
-.topCard p{
-  margin:0;
+.topCard p {
+  margin: 0;
 }
-.cardNumbers{
+.cardNumbers {
   display: flex;
   margin: 0 30px;
   padding: 0;
   margin-top: -15px;
   font-size: 1.7em;
-  letter-spacing: .11em;
+  letter-spacing: 0.11em;
 }
 
-.cardNameonCard{
-  display:flex;
-  font-size:0.8em;
+.cardNameonCard {
+  display: flex;
+  font-size: 0.8em;
   margin: -30px 25px 0 20px;
   justify-content: space-between;
 }
 
 .expOnCard div {
-  display:flex;
-  
+  display: flex;
 }
-.expOnCard{
+.expOnCard {
   font-size: 1em;
-  display:flex;
-  justify-content: space-between;  
+  display: flex;
+  justify-content: space-between;
   margin: -30px 30px 0 30px;
 }
-
 
 /* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
 @media screen and (min-width: 480px) and (max-width: 767px) {
   /*---------------------Start---------------------*/
+
+  .view-animate.ng-leave{
+    animation: slideleft 1s both ease-in;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    z-index: 9999;
+  }
+  .view-animate.ng-enter{
+    z-index: -1;
+  }
 
   .titleIcons div {
     display: none;
@@ -698,10 +755,12 @@ input {
     bottom: 150px;
     font-size: 1.3em;
     border-bottom: 2px solid white;
-    width: 119px;
+    width: 175px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    transform: translateX(0);
+    transition: .3s;
   }
   .priorityButton:hover {
     border-bottom: 2px solid #dc143c;
@@ -712,10 +771,11 @@ input {
     bottom: 75px;
     font-size: 1.3em;
     border-bottom: 2px solid white;
-    width: 119px;
+    width: 175px;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    transition: .3s;
   }
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
@@ -735,6 +795,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
+    z-index: -1;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -749,6 +810,9 @@ input {
   }
   .getCash {
     display: none;
+  }
+  .header{
+    z-index: -1;
   }
   .mainProgress {
     left: 119px;
@@ -804,11 +868,50 @@ input {
   hr {
     width: 50vw;
   }
-  footer{
+  footer {
     margin-left: -55px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
+  .view-animate.ng-leave{
+    animation: slideleft 1s both ease-in;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    z-index: 9999;
+  }
+  .view-animate.ng-enter{
+    z-index: -1;
+  }
+
+  .titleNav {
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  .titleNav ul {
+    padding: 0;
+  }
+  
+  .titleNav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    text-align: left;
+    padding: 0 15px;
+    margin: auto;
+    font-size: 1.2em;
+  }
+  
+  .titleNav ul li a {
+    text-decoration: none;
+  }
+
   .main {
     overflow: hidden;
   }
@@ -822,11 +925,13 @@ input {
   .titleIcons i {
     position: absolute;
     left: 50%;
-    top: -29px;
+    top: -32px;
     padding: 10px;
     font-size: 1.5em;
     transform: translateX(-50%);
     background-color: #1f1f1f;
+    border-top: 2px solid #1f1f1f;
+    transition: .3s;
     cursor: pointer;
   }
   .titleIcons i:hover {
@@ -845,6 +950,7 @@ input {
     display: flex;
     position: absolute;
     bottom: 15vh;
+    transition: .3s;
   }
   .priorityButton {
     position: static;
@@ -912,6 +1018,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
+    z-index: -1;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -926,6 +1033,9 @@ input {
   }
   .getCash {
     display: none;
+  }
+  .header{
+    z-index: -1;
   }
   .mainProgress {
     left: 119px;
@@ -976,7 +1086,6 @@ input {
     margin: 30px;
   }
 
-
   hr {
     width: 50vw;
   }
@@ -986,6 +1095,72 @@ input {
 }
 
 @media only screen and (min-width: 1224px) {
+  .view-animate.ng-leave{
+    animation: slideleft 1s ease-in;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    z-index: 9999;
+  }
+  .view-animate.ng-enter{
+    z-index: -1;
+  }
+
+  .titleNav {
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  
+  .titleNav ul {
+    padding: 0;
+  }
+  
+  .titleNav ul li {
+    display: inline-block;
+    float: left;
+    list-style: none;
+    text-align: left;
+    padding: 0 15px;
+    margin: auto;
+    font-size: 1.2em;
+  }
+  
+  .titleNav ul li a {
+    text-decoration: none;
+  }
+
+  .titleNav {
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100vw;
+    overflow-x: hidden;
+    transition: 0.5s;
+  }
+  
+  .titleNav ul {
+    padding: 0;
+  }
+  
+  .titleNav ul li {
+    list-style: none;
+    text-align: left;
+    padding: 0 15px;
+    margin: auto;
+    font-size: 1.2em;
+  }
+  
+  .titleNav ul li a {
+    text-decoration: none;
+  }
+
   .titleMain {
     overflow: hidden;
   }
@@ -996,11 +1171,13 @@ input {
   .titleIcons i {
     position: absolute;
     left: 50%;
-    top: -29px;
+    top: -32px;
     padding: 10px;
     font-size: 1.5em;
     transform: translateX(-50%);
     background-color: #1f1f1f;
+    border-top: 2px solid #1f1f1f;
+    transition: .3s;
     cursor: pointer;
   }
   .titleIcons i:hover {
@@ -1019,6 +1196,7 @@ input {
     display: flex;
     position: absolute;
     bottom: 18vh;
+    transition: .3s;
   }
   .priorityButton {
     position: static;
@@ -1083,6 +1261,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
+    z-index: -1;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -1097,6 +1276,9 @@ input {
   }
   .getCash {
     display: none;
+  }
+  .header{
+    z-index: -1;
   }
   .mainProgress {
     left: 119px;

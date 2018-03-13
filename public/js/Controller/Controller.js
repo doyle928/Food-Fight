@@ -158,6 +158,17 @@
         $(".emotionWriteTo").html('<i class="material-icons">mood_bad</i>');
       }
     }
+
+    $(".formFocus").hide();
+    $(".creditForm").hide();
+    $ctrl.showDonate = function() {
+      $(".formFocus").fadeIn(400);
+      $(".creditForm").fadeIn(400);
+    };
+    $ctrl.close = function() {
+      $(".formFocus").hide();
+      $(".creditForm").hide();
+    };
   }
   angular.module("App").controller("controllerFunction", controllerFunction);
 })();
