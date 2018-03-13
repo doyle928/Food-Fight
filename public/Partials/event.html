@@ -39,124 +39,151 @@
         <div class="eventImageDiv">
             <img class="eventImage" src="{{$ctrl.eventObj.image}}">
         </div>
+        <!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+        	<div class="flipper">
+        		<div class="front">
+        			front content
+        		</div>
+        		<div class="back">
+        			back content
+        		</div>
+        	</div>
+        </div> -->
         <div class="cardContainer">
-            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option1price, $ctrl.eventObj.mood1)" class="card1" data-tilt data-tilt-max="15"
-                data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
-                <p>{{$ctrl.eventObj.option1}}</p>
-                <p>${{$ctrl.eventObj.option1price}}</p>
-            </div>
-            <div ng-click="$ctrl.selectOption($ctrl.eventObj.option2price, $ctrl.eventObj.mood2)" class="card2" data-tilt data-tilt-max="15"
-                data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
-                <p>{{$ctrl.eventObj.option2}}</p>
-                <p>${{$ctrl.eventObj.option2price}}</p>
-            </div>
-        </div>
-        <div class="fillSpace">
-        </div>
-    </div>
-    <footer>
-        <div class="facebookDiv" ng-click="">
-            <img class="facebookImage" src="images/facebook.png">
-        </div>
-        <p ng-click="$ctrl.showDonate()">Donate</p>
-    </footer>
-
-    <div class="formFocus">
-        <i class="material-icons" ng-click="$ctrl.close()">close</i>
-    </div>
-    <div class="creditForm">
-        <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-glare data-tilt-max-glare="1">
-            <div class="topCard">
-                <div class="chip">
-                    <div class="chipDec"></div>
-                </div>
-                <p>VISA</p>
-            </div>
-            <div class="cardNumbers">
-                <p>{{ ccnum1 }}</p>
-                <p>&#160;</p>
-                <p>{{ ccnum2 }}</p>
-                <p>&#160;</p>
-                <p>{{ ccnum3 }}</p>
-                <p>&#160;</p>
-                <p>{{ ccnum4 }}</p>
-            </div>
-
-            <div class="cardNameonCard">
-                <p>Card Holder</p>
-                <p class="exptext">Expiration</p>
-
-            </div>
-            <div class="expOnCard">
-                <p>{{ ccname }}</p>
-                <div>
-                    <p>{{ exp1 }}</p>
-                    <p>/</p>
-                    <p>{{ exp2 }}</p>
-                </div>
-            </div>
-
-
-        </div>
-        <div class="creditCard">
-            <form class="form" autocomplete="on" novalidate>
-                <div class="ccNum">
-                    <div>
-                        <label for="card-number">Credit Card
-                            <input type="text" id="card-number3" maxlength="4" ng-model="ccnum1">
-                        </label>
+            <div class="card1 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+                <div class="flipper">
+                    <div class="front">
+                        <p>{{$ctrl.eventObj.option1}}</p>
+                        <p>${{$ctrl.eventObj.option1price}}</p>
                     </div>
-                    <input type="text" maxlength="4" ng-model="ccnum2">
-                    <input type="text" maxlength="4" ng-model="ccnum3">
-                    <input type="text" maxlength="4" ng-model="ccnum4">
+                    <div class="back" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price)">
+                        <p>{{$ctrl.eventObj.fact}}</p>
+                        <p>Next event</p>
+                    </div>
                 </div>
-                <div class="cardName">
-                    <label for="card-holder">Card Holder Name
-                        <input type="name" id="card-holder3" ng-model="ccname" maxlength="32">
+            </div>
+            <div class="card2 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8">
+                <div class="flipper">
+                    <div class="front">
+                        <p>{{$ctrl.eventObj.option2}}</p>
+                        <p>${{$ctrl.eventObj.option2price}}</p>
+                    </div>
+                    <div class="back" ng-click="$ctrl.selectOption($ctrl.eventObj.option2price)">
+                        <p>{{$ctrl.eventObj.fact}}</p>
+                        <p>Next event</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="fillSpace">
+    </div>
+</div>
+<footer>
+    <div class="facebookDiv" ng-click="">
+        <img class="facebookImage" src="images/facebook.png">
+    </div>
+    <p ng-click="$ctrl.showDonate()">Donate</p>
+</footer>
+
+<div class="formFocus">
+    <i class="material-icons" ng-click="$ctrl.close()">close</i>
+</div>
+<div class="creditForm">
+    <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-glare data-tilt-max-glare="1">
+        <div class="topCard">
+            <div class="chip">
+                <div class="chipDec"></div>
+            </div>
+            <p>VISA</p>
+        </div>
+        <div class="cardNumbers">
+            <p>{{ ccnum1 }}</p>
+            <p>&#160;</p>
+            <p>{{ ccnum2 }}</p>
+            <p>&#160;</p>
+            <p>{{ ccnum3 }}</p>
+            <p>&#160;</p>
+            <p>{{ ccnum4 }}</p>
+        </div>
+
+        <div class="cardNameonCard">
+            <p>Card Holder</p>
+            <p class="exptext">Expiration</p>
+
+        </div>
+        <div class="expOnCard">
+            <p>{{ ccname }}</p>
+            <div>
+                <p>{{ exp1 }}</p>
+                <p>/</p>
+                <p>{{ exp2 }}</p>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="creditCard">
+        <form class="form" autocomplete="on" novalidate>
+            <div class="ccNum">
+                <div>
+                    <label for="card-number">Credit Card
+                        <input type="text" id="card-number3" maxlength="4" ng-model="ccnum1">
                     </label>
                 </div>
-                <div class="expCCV">
-                    <div class="expWhole">
-                        <div class="expirationLabel">
-                            <label for='expiration-date'>Expiration
-                                <select id="expiration-date3" ng-model="exp1">
-                                    <option value=""></option>
-                                    <option value="01">01</option>
-                                    <option value="02">02</option>
-                                    <option value="03">03</option>
-                                    <option value="04">04</option>
-                                    <option value="05">05</option>
-                                    <option value="06">06</option>
-                                    <option value="07">07</option>
-                                    <option value="08">08</option>
-                                    <option value="09">09</option>
-                                    <option value="10">10</option>
-                                    <option value="11">11</option>
-                                    <option value="12">12</option>
-                                </select>
-                            </label>
-                        </div>
-                        <select ng-model="exp2">
-                            <option value="&nbsp;&nbsp;&nbsp;">&nbsp;&nbsp;&nbsp;</option>
-                            <option value="18">18</option>
-                            <option value="19">19</option>
-                            <option value="20">20</option>
-                            <option value="21">21</option>
-                            <option value="22">22</option>
-                            <option value="23">23</option>
-                            <option value="24">24</option>
-                            <option value="25">25</option>
-                        </select>
-                    </div>
-                    <div class="ccvForm">
-                        <label for="ccv">CCV
-                            <input type="text" id="ccv3" maxlength="3" ng-model="ccCCV">
+                <input type="text" maxlength="4" ng-model="ccnum2">
+                <input type="text" maxlength="4" ng-model="ccnum3">
+                <input type="text" maxlength="4" ng-model="ccnum4">
+            </div>
+            <div class="cardName">
+                <label for="card-holder">Card Holder Name
+                    <input type="name" id="card-holder3" ng-model="ccname" maxlength="32">
+                </label>
+            </div>
+            <div class="expCCV">
+                <div class="expWhole">
+                    <div class="expirationLabel">
+                        <label for='expiration-date'>Expiration
+                            <select id="expiration-date3" ng-model="exp1">
+                                <option value=""></option>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                            </select>
                         </label>
                     </div>
+                    <select ng-model="exp2">
+                        <option value="&nbsp;&nbsp;&nbsp;">&nbsp;&nbsp;&nbsp;</option>
+                        <option value="18">18</option>
+                        <option value="19">19</option>
+                        <option value="20">20</option>
+                        <option value="21">21</option>
+                        <option value="22">22</option>
+                        <option value="23">23</option>
+                        <option value="24">24</option>
+                        <option value="25">25</option>
+                    </select>
                 </div>
-                <button type="submit" class="submitCC">Submit</button>
+                <div class="ccvForm">
+                    <label for="ccv">CCV
+                        <input type="text" id="ccv3" maxlength="3" ng-model="ccCCV">
+                    </label>
+                </div>
+            </div>
+            <button type="submit" class="submitCC">Submit</button>
 
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 </div>

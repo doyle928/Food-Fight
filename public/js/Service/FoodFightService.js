@@ -4,6 +4,7 @@
     var dollarValue = 150;
     var dayCount = 1;
     var currentMood = 10;
+    var numberOfEvents = 15;
     var event = {
       eventName: "I'm an event",
       text: "You've been hit with an event. Choose a thing.",
@@ -11,7 +12,8 @@
       option1price: 10,
       option2: "I'm option2",
       option2price: 20,
-      image: "images/forgotten-wallet.jpg"
+      image: "images/forgotten-wallet.jpg",
+      fact: "I'm a fact"
     };
 
     return {
@@ -25,7 +27,8 @@
       donateBlood: donateBlood,
       getDayCount: getDayCount,
       sendMood: sendMood,
-      getMood: getMood
+      getMood: getMood,
+      addEvent: addEvent
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -54,7 +57,7 @@
       dollarValue += amount;
     }
     function randNum() {
-      return Math.floor(Math.random() * 10) + 1;
+      return Math.floor(Math.random() * numberOfEvents) + 1;
     }
     function getDayCount() {
       return dayCount;
@@ -74,12 +77,24 @@
         .then(function(response) {
           //console.log("from service ",response.data);
 
-          return response.data[randNum()];
-        })
-        .catch(function(err) {
-          //console.log(err);
-        });
+                    return response.data[randNum()];
+                })
+                .catch(function(err) {
+                    //console.log(err);
+                });
+        }
+        function addEvent(newEvent) {
+            return $http({
+                url: "/events",
+                method: "POST",
+                data: newEvent
+            }).then(function(response) {
+                return response;
+            })
+            .catch(function(err){
+              console.log("ERROR");
+            });
+        }
     }
-  }
-  angular.module("App").factory("FoodFightService", FoodFightService);
+    angular.module("App").factory("FoodFightService", FoodFightService);
 })();

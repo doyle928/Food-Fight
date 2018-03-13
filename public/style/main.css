@@ -121,7 +121,7 @@ button {
 
 .eventImage {
   width: 500px;
-  height: 260px;
+  height: 240px;
   border-radius: 3px;
   margin: 10px;
 }
@@ -129,10 +129,10 @@ button {
 .card1,
 .card2 {
   width: 240px;
-  height: 130px;
+  height: 100px;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
-  margin: 30px auto;
+  margin: 10px auto;
   border-radius: 3px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
@@ -216,6 +216,7 @@ button {
   text-align: center;
   padding: 10px;
   margin: 0;
+  margin-top: -20px;
   font-weight: 400;
   font-family: "Fjalla One", sans-serif;
   text-shadow: #000 1px 0 10px;
@@ -461,7 +462,7 @@ input {
   width: 280px;
   margin-top: 7px;
 }
-
+/*//////////////////////////////////////DONATE PAGE///////////////////////////////////*/
 #donateTemplate {
   width: 100vw;
   height: 100vh;
@@ -724,7 +725,66 @@ input {
   margin: -30px 30px 0 30px;
 }
 
-/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */
+/*//////////////////////////////////RESULTS PAGE////////////////////////////////////////////////*/
+#resultsMain {
+  width: 100vw;
+  height: 100vh;
+}
+/*//////////////////////////////////ADD EVENTS PAGE////////////////////////////////////////////////*/
+#addMain {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../images/food.png");
+  background-size: cover;
+  overflow: hidden;
+}
+
+.addInputs {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #eee;
+  color: #eee;
+}
+#addContent div {
+  margin: 20px;
+  border: 1px solid red;
+}
+#addContent button:hover {
+  border-bottom: 2px solid #dc143c;
+}
+#eventTitle {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+#eventTitle input {
+  width: 20vw;
+}
+#eventTitle label {
+  padding: 5px;
+}
+#options {
+  display: flex;
+}
+#options input[type="number"] {
+  width: 40px;
+}
+#options input[type="text"]{
+  width: 100px;
+}
+#options label {
+  padding: 10px;
+}
+#options div {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  margin: 0px;
+  padding: 20px;
+}
+
+/* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
+
 @media screen and (min-width: 480px) and (max-width: 767px) {
   /*---------------------Start---------------------*/
 
@@ -850,7 +910,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 240px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -861,9 +921,9 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 130px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
   }
   hr {
     width: 50vw;
@@ -999,6 +1059,9 @@ input {
   #resultsDiv {
     margin: 0 auto;
   }
+  #resultsMain{
+    background-image: url("../images/food.png");
+  }
   /* ---------------------------------- event page ----------------------------------- */
   .cardContainer {
     display: flex;
@@ -1073,7 +1136,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 260px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -1081,9 +1144,51 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 130px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
+  }
+  /* entire container, keeps perspective */
+  .flip-container {
+  	perspective: 1000px;
+  }
+  	/* flip the pane when hovered */
+  	.flip-container:hover .flipper, .flip-container.hover .flipper {
+  		transform: rotateY(180deg);
+  	}
+
+  .flip-container, .front, .back {
+    width: 250px;
+    height: 100px;
+  }
+
+  /* flip speed goes here */
+  .flipper {
+  	transition: 0.6s;
+  	transform-style: preserve-3d;
+
+  	position: relative;
+  }
+
+  /* hide back of pane during swap */
+  .front, .back {
+  	backface-visibility: hidden;
+
+  	position: absolute;
+  	top: 0;
+  	left: 0;
+  }
+
+  /* front pane, placed above back */
+  .front {
+  	z-index: 2;
+  	/* for firefox 31 */
+  	transform: rotateY(0deg);
+  }
+
+  /* back, initially hidden pane */
+  .back {
+  	transform: rotateY(180deg);
   }
 
   hr {
@@ -1093,6 +1198,8 @@ input {
     transform: translateX(-50%);
   }
 }
+
+/*//////////////////////////   OVER 1224       //////////////////////////////////////////*/
 
 @media only screen and (min-width: 1224px) {
   .view-animate.ng-leave{
@@ -1238,6 +1345,8 @@ input {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
+
+
   /*--------------------------------EVENTS-----------------------------------------------*/
   .cardContainer {
     display: flex;
@@ -1316,7 +1425,7 @@ input {
   .eventImageDiv {
     display: block;
     width: 520px;
-    height: 280px;
+    height: 260px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 3px;
     margin: 0 auto;
@@ -1324,9 +1433,9 @@ input {
   .card1,
   .card2 {
     width: 300px;
-    height: 160px;
+    height: 100px;
     padding: 0;
-    margin: 30px;
+    margin: 10px;
   }
   hr {
     width: 50vw;
@@ -1334,4 +1443,11 @@ input {
   footer {
     transform: translateX(-50%);
   }
+  
 }
+
+
+
+
+
+
