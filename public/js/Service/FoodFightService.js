@@ -70,14 +70,12 @@
     }
 
     function randNum() {
+      if(dayCount == 1){
+        return 1;
+      } else {
       return Math.floor(Math.random() * numberOfEvents) + 1;
-      // var randomEventNumber = Math.floor(Math.random() * numberOfEvents) + 1;
-      // if(randomEventNumber == 13 || randomEventNumber == 14 || randomEventNumber == 15){
-      // randNum();
-      // } else {
-      //   return randomEventNumber;
-      // }
-    }
+      }
+      }
 
     function getDayCount() {
       return dayCount;
