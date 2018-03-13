@@ -1,0 +1,35 @@
+<div id="addMain">
+    <div id="addContent">
+        <h3>Add An Event</h3>
+        <div id="addEventInfo">
+            <div id="eventTitle">
+                <label>Name of the Event:
+                    <input class="addInputs" type="text" name="eventName" ng-model="$ctrl.newEvent.eventname">
+                </label>
+                <label>Description:
+                    <input class="addInputs" type="text" name="eventDescription" ng-model="$ctrl.newEvent.text">
+                </label>
+            </div>
+            <div id="options">
+                <div id="choices">
+                    <label>First Option:
+                        <input class="addInputs" type="text" name="option1" ng-model="$ctrl.newEvent.option1">
+                    </label>
+                    <label>Second Option:
+                        <input class="addInputs" type="text" name="option2" ng-model="$ctrl.newEvent.option2">
+                    </label>
+                </div>
+                <div id="prices">
+                    <label>Price:
+                        <input class="addInputs" type="number" name="option1price" ng-model="$ctrl.newEvent.option1price">
+                    </label>
+                    <label>Price:
+                        <input class="addInputs" type="number" name="option2price" ng-model="$ctrl.newEvent.option2price">
+                    </label>
+                </div>
+            </div>
+            <button ng-click="$ctrl.addEvent($ctrl.newEvent);">Submit</button>
+        </div>
+        <button ng-click="$ctrl.home();">Home</button>
+    </div>
+</div>

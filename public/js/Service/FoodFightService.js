@@ -27,7 +27,8 @@
       donateBlood: donateBlood,
       getDayCount: getDayCount,
       sendMood: sendMood,
-      getMood: getMood
+      getMood: getMood,
+      addEvent: addEvent
     };
     function changeProgressBar(progressBar) {
       progressValue -= progressBar;
@@ -76,12 +77,24 @@
         .then(function(response) {
           //console.log("from service ",response.data);
 
-          return response.data[randNum()];
-        })
-        .catch(function(err) {
-          //console.log(err);
-        });
+                    return response.data[randNum()];
+                })
+                .catch(function(err) {
+                    //console.log(err);
+                });
+        }
+        function addEvent(newEvent) {
+            return $http({
+                url: "/events",
+                method: "POST",
+                data: newEvent
+            }).then(function(response) {
+                return response;
+            })
+            .catch(function(err){
+              console.log("ERROR");
+            });
+        }
     }
-  }
-  angular.module("App").factory("FoodFightService", FoodFightService);
+    angular.module("App").factory("FoodFightService", FoodFightService);
 })();
