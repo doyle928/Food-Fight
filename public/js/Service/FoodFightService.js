@@ -11,7 +11,8 @@
       option1price: 10,
       option2: "I'm option2",
       option2price: 20,
-      image: "images/forgotten-wallet.jpg"
+      image: "images/forgotten-wallet.jpg",
+      fact: "I'm a fact"
     };
 
     return {
