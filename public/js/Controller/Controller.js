@@ -65,6 +65,9 @@
       $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
       if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
         FoodFightService.getEvents().then(event => {
+          if(event == undefined){
+            getEverything();
+          } else {
           if (event.repeatability === true) {
             $ctrl.eventObj = event;
             $ctrl.progressBar = FoodFightService.getProgressBar();
@@ -86,9 +89,14 @@
           } else {
             getEverything();
           }
+        }
         });
       } else {
         FoodFightService.getEvents().then(event => {
+          if(event == undefined){
+            getEverything();
+          } else {
+          $ctrl.eventObj = event;
           if ($ctrl.usedEvents.indexOf(event.id) == -1) {
             $ctrl.progressBar = FoodFightService.getProgressBar();
             $ctrl.amount = FoodFightService.getAmount();
@@ -109,6 +117,7 @@
           } else {
             getEverything();
           };
+        }
         });
       }
     }
