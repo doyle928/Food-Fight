@@ -4,9 +4,10 @@ var util = require("util");
 var router = require("./routes");
 //var events = require("./routes.js");
 var app = express();
-app.use("/", router);
+
 app.use(express.static(__dirname + "/public"));
 app.use(bodyParser.json());
+app.use("/", router);
 //app.use("/", events);
 
 var port = process.env.PORT || 5000;

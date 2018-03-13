@@ -6,8 +6,11 @@
             $ctrl.home = function() {
                 $location.path("/welcome");
             };
+            $ctrl.newEvent = {};
             $ctrl.addEvent = function (newEvent){
-                FoodFightService.addEvent(newEvent);
+                FoodFightService.addEvent(newEvent).then(function(response){
+                    // $ctrl.newEvent = response.data;
+                });
                 console.log(newEvent);
             }
         }

@@ -23,10 +23,7 @@
           mouseMotionType: 'gaussian'
         });
 
-        $scope.$on("$destroy", function() {
-          console.log("destroying...");
-          $($element).data("plugin_parallaxify").destroy();
-        });
+
 
         // // using the linear positioning function
         // $('#other').parallaxify({
@@ -346,8 +343,8 @@
               }
             },
             _detectViewport: function () {
-              this.viewportWidth = this.$viewportElement.width();
-              this.viewportHeight = this.$viewportElement.height();
+              this.viewportWidth = this.$element.width();
+              this.viewportHeight = this.$element.height();
               if (this.useSensor) {
                 this.viewportFlipped = (window.orientation === 180);
                 this.viewportLandscape = (Math.abs(window.orientation) === 90);
@@ -757,7 +754,14 @@
 
           // Expose the plugin class so it can be modified
           window[pluginName] = Plugin;
+          $scope.$on("$destroy", function() {
+            console.log("destroying...");
+            Plugin(element, options);
+              // $($element).data(pluginName).destroy();
+              //$.data(this, 'plugin_' + pluginName, null);
+          });
         }(jQuery, this, document));
+
       }
     };
   }
