@@ -41,17 +41,17 @@ body {
   }
 }
 
-#backbutton {
+/*#backbutton {
   font-weight: normal;
   font-size: 1.75em;
   position: fixed;
   display: flex;
   top: 38px;
   left: 217px;
-}
-#removeline {
+}*/
+/*#removeline {
   text-decoration: none;
-}
+}*/
 
 .title h1 {
   padding: 0;

@@ -96,7 +96,7 @@
       if (dayCount == 1) {
         return 1;
       } else {
-        return Math.floor(Math.random() * numberOfEvents) + 1;
+        return Math.floor(Math.random() * numberOfEvents) + 2;
       }
     }
 
