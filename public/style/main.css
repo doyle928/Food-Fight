@@ -209,7 +209,7 @@ button {
   overflow: hidden;
 }
 .eventTitle {
-  margin: 30px;
+  margin: 70px;
 }
 .eventTitle h1 {
   font-size: 2.2em;
@@ -356,6 +356,19 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
 }
+.titleNavEvent{
+  background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.titleIcons{
+
+}
 
 .titleMain {
   transition: 0.3s;
@@ -412,7 +425,6 @@ a {
   font-size: 1.75em;
   margin-right: 30px;
 }
-
 /*
 .imgContainer {
   position: absolute;
@@ -815,6 +827,35 @@ input {
 }
 
 
+.titleIconsEvent{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4px;
+  background-color: #1f1f1f;
+  padding: 3px 5px;
+  transition: .3s;
+}
+.titleIconsElse{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4px;
+  background-color: #1f1f1f;
+  padding: 3px 5px;
+  transition: .3s;
+}
+.titleNavEvent{
+  position: fixed;
+  top:-24px;
+  left:0;
+  height: 24px;
+  background-color: #1f1f1f;
+  width: 100vw;
+  transition: .3s;
+}
+
+
 
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
@@ -981,6 +1022,16 @@ input {
     position: absolute;
     left: 0;
     top: 0;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .titleNavEvent{
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 75px;
     height: 0;
     width: 100vw;
     overflow: hidden;
