@@ -11,7 +11,8 @@ body {
   margin: 0;
   overflow: hidden;
   background-image: url("../images/food.png");
-  background-size: cover;
+  background-size: auto 200%;
+  background-position: -300px -200px;
 }
 /* #backgroundImgDiv {
   overflow: hidden;
@@ -919,6 +920,19 @@ input {
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
+  
   /*---------------------Start---------------------*/
 
   .view-animate.ng-leave{
@@ -1068,6 +1082,18 @@ input {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
   .view-animate.ng-leave{
     animation: slideleft 1s both ease-in;
     background-image: url("../images/food.png");
@@ -1350,6 +1376,18 @@ input {
 /*//////////////////////////   OVER 1224       //////////////////////////////////////////*/
 
 @media only screen and (min-width: 1224px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
   .view-animate.ng-leave{
     animation: slideleft 1s ease-in;
     background-image: url("../images/food.png");
