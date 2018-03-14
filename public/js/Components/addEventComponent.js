@@ -23,9 +23,8 @@
       };
       $ctrl.newEvent = {};
       $ctrl.addEvent = function(newEvent) {
-        FoodFightService.addEvent(newEvent).then(function(response) {
+        // FoodFightService.addEvent(newEvent).then(function(response) {
           // $ctrl.newEvent = response.data;
-        });
         console.log(newEvent);
       };
     }
