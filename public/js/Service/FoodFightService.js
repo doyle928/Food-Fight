@@ -37,8 +37,16 @@
       addEvent: addEvent,
       getNumberOfEvents: getNumberOfEvents,
       checkCreds: checkCreds,
-      checkifLog: checkifLog
-    };
+      checkifLog: checkifLog,
+      resetValues: resetValues
+  };
+
+  function resetValues() {
+    progressValue = 150;
+    dollarValue = 150;
+    dayCount = 1;
+    currentMood = 10;
+  }
 
     function checkifLog() {
       return loggedIn;
