@@ -7,6 +7,18 @@
       $ctrl.donate = function() {
         $location.path("/donate");
       };
+
+      $ctrl.titleNavButton = function() {
+        $(".titleIconsElse").css("top", "30px");
+        $(".titleNavElse").css("top", "0");
+        $(".mainResult").css("margin-top", "70px");
+      };
+      $(".mainResult").on("click", function() {
+        $(".titleIconsElse").css("top", "0px");
+        $(".titleNavElse").css("top", "-30px");
+        $(".mainResult").css("margin-top", "40px");
+      });
+
       $(".formFocus").hide();
       $(".creditForm").hide();
       setTimeout(function() {
