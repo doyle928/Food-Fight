@@ -12,7 +12,7 @@
     $ctrl.randPiggyUse = 1;
     $ctrl.randDonateUse = 1;
     $ctrl.numberOfEvents;
-
+ 
     getEverything();
     console.log($ctrl.eventObj);
     $ctrl.selectOption = function(price, mood) {

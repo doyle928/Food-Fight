@@ -29,8 +29,16 @@
       sendMood: sendMood,
       getMood: getMood,
       addEvent: addEvent,
-      getNumberOfEvents: getNumberOfEvents
+      getNumberOfEvents: getNumberOfEvents,
+      resetValues: resetValues
     };
+
+    function resetValues() {
+      progressValue = 150;
+      dollarValue = 150;
+      dayCount = 1;
+      currentMood = 10;
+    }
 
     function getNumberOfEvents() {
       return numberOfEvents;

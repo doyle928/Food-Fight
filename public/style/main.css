@@ -65,6 +65,12 @@ body {
   transition: 0.3s;
   font-family: "Fjalla One", sans-serif;
 }
+.title h1 h4 {
+  transition: 0.3s;
+  font-family: "Fjalla One", sans-serif;
+  /* float: left; */
+  text-align: left;
+}
 
 hr {
   width: 300px;
@@ -452,8 +458,8 @@ a {
 footer {
   position: fixed;
   bottom: 0;
-  text-align: center;
-  transform: translateX(-50%);
+  /* text-align: center;
+  transform: translateX(-50%); */
 }
 
 footer a {
@@ -1034,6 +1040,9 @@ input {
   .title h1 {
     margin: 30vh 0 0 20vw;
   }
+  /* .title h1 h4 {
+    text-align: left;
+  } */
   .bodyText {
     margin: 0;
     margin: 0 20vw;
@@ -1199,7 +1208,7 @@ input {
     width: 50vw;
   }
   footer {
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
   }
 }
 
@@ -1445,7 +1454,7 @@ input {
     width: 50vw;
   }
   footer {
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
   }
 
 }
