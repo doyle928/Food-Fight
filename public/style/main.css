@@ -65,11 +65,13 @@ body {
   transition: 0.3s;
   font-family: "Fjalla One", sans-serif;
 }
-.title h1 h4 {
+
+.title h4 {
+  padding: 0;
+  margin: 0 0 0 3%;
+  text-align: left;
   transition: 0.3s;
   font-family: "Fjalla One", sans-serif;
-  /* float: left; */
-  text-align: left;
 }
 
 hr {
@@ -457,9 +459,8 @@ a {
 
 footer {
   position: fixed;
-  bottom: 0;
-  /* text-align: center;
-  transform: translateX(-50%); */
+  bottom: -10px;
+  margin-left: -22px;
 }
 
 footer a {
@@ -890,6 +891,9 @@ input {
     margin-left: 119px;
     width: calc(100% - 119px);
   }
+  .title h4 {
+    margin: 0 0 0 3%;
+  }
   .needCashMenu {
     background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
     border-right: none;
@@ -951,12 +955,7 @@ input {
     width: auto;
   }
   .eventImageDiv {
-    display: block;
-    width: 520px;
-    height: 240px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 3px;
-    margin: 0 auto;
+    display: none;
   }
   .cardContainer {
     margin-left: calc(20% - 20px);
@@ -972,7 +971,7 @@ input {
     width: 50vw;
   }
   footer {
-    margin-left: -75px;
+    margin-left: -95px;
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
@@ -1073,9 +1072,9 @@ input {
   .title h1 {
     margin: 30vh 0 0 20vw;
   }
-  /* .title h1 h4 {
-    text-align: left;
-  } */
+  .title h4 {
+    margin: 0 0 0 27%;
+  }
   .bodyText {
     margin: 0;
     margin: 0 20vw;
@@ -1241,7 +1240,7 @@ input {
     width: 50vw;
   }
   footer {
-
+      margin-left: -82px;
   }
 }
 
@@ -1369,6 +1368,9 @@ input {
   .title h1 {
     margin: 30vh 0 0 20vw;
   }
+  .title h4 {
+    margin: 0 0 0 27%;
+  }
   .bodyText {
     margin: 0;
     margin: 0 20vw;
@@ -1487,6 +1489,7 @@ input {
     width: 50vw;
   }
   footer {
+    margin-left: -82px;
   }
 
 }
