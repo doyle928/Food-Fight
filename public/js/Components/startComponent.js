@@ -1,7 +1,7 @@
 (function() {
   var startComponent = {
     templateUrl: "Partials/start.html",
-    controller: function($location) {
+    controller: function($location, FoodFightService) {
       const $ctrl = this;
       $ctrl.windowWidth;
 
@@ -12,6 +12,7 @@
       $(window).resize(updateSize);
 
       $ctrl.start = function() {
+        FoodFightService.resetValues();
         $location.path("/events");
       };
 
