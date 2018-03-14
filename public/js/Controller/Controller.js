@@ -55,17 +55,14 @@
           .attr("src", "dependencies/blood-sample-used.svg");
         $(".blood").css("border", "3px solid grey");
       } else {
-        //end goal=> show div with error
         alert("You've already given blood!");
       }
     };
-
-
     function getEverything() {
       $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
       if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
         FoodFightService.getEvents().then(event => {
-          if(event == undefined){
+          if(event == undefined||event.id==1){
             getEverything();
           } else {
           if (event.repeatability === true) {
@@ -93,7 +90,7 @@
         });
       } else {
         FoodFightService.getEvents().then(event => {
-          if(event == undefined){
+          if(event == undefined||event.id==1){
             getEverything();
           } else {
           $ctrl.eventObj = event;
@@ -124,11 +121,11 @@
 
     function cashMenuItems() {
       $(".needCashMenu").css("width", "135px");
-      $(".main").css("margin-left", "119px");
-      $(".getCash").css("left", "119px");
-      $(".topInfo").css("left", "119px");
-      $("progress").css("left", "119px");
-      $("footer").css("left", "calc(50% + 119px)");
+      $(".main").css("margin-left", "130px");
+      $(".getCash").css("left", "130px");
+      $(".topInfo").css("left", "130px");
+      $("progress").css("left", "130px");
+      $("footer").css("left", "calc(50% + 130px)");
       $(".needCashMenu")
         .find("li")
         .css("margin-left", "0");
