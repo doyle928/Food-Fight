@@ -1,0 +1,14 @@
+<div class="loginMain">
+    <form name="loginForm" ng-submit="$ctrl.submitForm(loginForm.$valid)" autocomplete="on" novalidate>
+        <h1>Welcome</h1>
+        <p></p>
+        <input type="text" class="loginInput loginUser" placeholder="Username" ng-model="$ctrl.user.username" required>
+        <input type="password" class="loginInput loginPass" placeholder="Password" ng-model="$ctrl.user.password" required>
+        <button type="submit" ng-disabled="loginForm.$invalid">
+            <span>
+                <i class="material-icons">lock_outline</i>
+            </span>Log In</button>
+    </form>
+</div>
+<div class="fillSpace">
+</div>
