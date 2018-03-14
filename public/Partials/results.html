@@ -1,4 +1,4 @@
-<nav class="titleNav">
+<nav class="titleNavElse">
   <ul>
     <li>
       <a href="#!/start">Info</a>
@@ -14,10 +14,11 @@
     </li>
   </ul>
 </nav>
+<div class="titleIconsElse">
+  <i class="material-icons" class="menuIcon" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
+</div>
 <div class="mainResult" slide-up data-parallaxify-background-range="50">
-  <div class="titleIconsElse">
-    <i class="material-icons" class="menuIcon" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
-  </div>
+
   <div id="resultsDiv" class="bodyText">
     <h2>Congrats you made it
       <br> {{$ctrl.dayCount}} days.</h2>
@@ -139,3 +140,4 @@
       </form>
     </div>
   </div>
+</div>

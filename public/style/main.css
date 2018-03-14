@@ -554,6 +554,8 @@ input {
   background-size: cover; */
   width: 100vw;
   height: 100vh;
+  margin-top: 40px;
+  transition: .5s;
 }
 .formFocus {
   display: none;
@@ -583,6 +585,7 @@ input {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
+  transition: .5s;
 }
 .form {
   width: 300px;
@@ -758,9 +761,10 @@ input {
 #addMain {
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/food.png");
   background-size: cover;
   overflow: hidden;
+  margin-top: 40px;
+  transition: .5s;
 }
 
 .addInputs {
@@ -814,6 +818,7 @@ input {
   background-color: #0f0f0f;
   border: 5px solid #1f1f1f;
   border-radius: 10px;
+  transition: .5s;
 }
 .loginMain form{
   display: flex;
@@ -845,24 +850,64 @@ input {
   background-color: #1f1f1f;
   padding: 3px 5px;
   transition: .3s;
+  z-index: 100;
 }
 .titleIconsElse{
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  top: 4px;
+  top: 0px;
   background-color: #1f1f1f;
   padding: 3px 5px;
   transition: .3s;
+  z-index: 100;
 }
 .titleNavEvent{
   position: fixed;
-  top:-24px;
+  top:-30px;
   left:0;
-  height: 24px;
+  height: 30px;
   background-color: #1f1f1f;
   width: 100vw;
   transition: .3s;
+}
+.titleNavEvent ul {
+  width: 100vw;
+  padding: 0;
+  margin:0;
+}
+.titleNavEvent ul li{
+  float: left;
+  padding: 0 10px;
+  margin:0;
+  list-style: none;
+}
+.titleNavEvent ul li a {
+  text-decoration: none;
+}
+
+.titleNavElse{
+  position: fixed;
+  top:-30px;
+  left:0;
+  height: 30px;
+  background-color: #1f1f1f;
+  width: 100vw;
+  transition: .3s;
+}
+.titleNavElse ul {
+  width: 100vw;
+  padding: 0;
+  margin:0;
+}
+.titleNavElse ul li{
+  float: left;
+  padding: 0 10px;
+  margin:0;
+  list-style: none;
+}
+.titleNavElse ul li a {
+  text-decoration: none;
 }
 
 

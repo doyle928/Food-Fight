@@ -1,3 +1,20 @@
+<nav class="titleNavEvent">
+    <ul>
+        <li>
+            <a href="#!/start">Info</a>
+        </li>
+        <li>
+            <a href="#!/events">Game</a>
+        </li>
+        <li>
+            <a href="#!/result">Donate</a>
+        </li>
+        <li>
+            <a href="#!/add">Admin</a>
+        </li>
+    </ul>
+</nav>
+
 <div class="needCashMenu">
     <div class="mood">
         <span class="emotionWriteTo">
@@ -13,6 +30,9 @@
             <img src="dependencies/blood-sample.svg">
         </li>
     </ul>
+</div>
+<div class="titleIconsEvent">
+    <i class="material-icons" class="menuIconEvent" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
 </div>
 <div class="main" slide-up data-parallaxify-background-range="50">
 
@@ -82,9 +102,9 @@
     </div>
 </div>
 <footer>
-    <!-- <div class="facebookDiv" ng-click="">
+    <div class="facebookDiv" ng-click="">
         <img class="facebookImage" src="images/facebook.png">
-    </div> -->
+    </div>
     <p ng-click="$ctrl.showDonate()">Donate</p>
 </footer>
 

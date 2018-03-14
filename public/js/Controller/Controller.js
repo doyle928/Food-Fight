@@ -121,6 +121,18 @@
         });
       }
     }
+
+    $ctrl.titleNavButton = function() {
+      $(".titleIconsEvent").css("top", "34px");
+      $(".titleNavEvent").css("top", "0");
+      $(".main").css("transform", "translateY(30px)");
+    };
+    $(".creditForm").on("click", function() {
+      $(".titleIconsEvent").css("top", "4px");
+      $(".titleNavEvent").css("top", "-30px");
+      $(".main").css("transform", "translateX(0)");
+    });
+
     function cashMenuItems() {
       $(".needCashMenu").css("width", "135px");
       $(".main").css("margin-left", "130px");
