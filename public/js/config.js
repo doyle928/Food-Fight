@@ -10,6 +10,9 @@
       .when("/results", {
         template: "<results-component></results-component>"
       })
+      .when("/login", {
+        template: "<log-in></log-in>"
+      })
       .when("/add", {
         template: "<add-component></add-component>"
       })

@@ -4,6 +4,7 @@ try {
     // When not running via Heroku, this will load the .env file.
     require('dotenv').config();
 } catch (e) {
+    console.log("error");
     // When running with Heroku, dotenv doesn't need to be available.
 }
 console.info("DATABASE_URL:", process.env.DATABASE_URL);

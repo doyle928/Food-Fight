@@ -1,3 +1,3 @@
 (function() {
-  angular.module("App", ["ngRoute", "ngAnimate"]);
+  angular.module("App", ["ngRoute", "ngAnimate", "rzModule"]);
 })();

@@ -23,7 +23,7 @@ body {
   animation: slidedown 1s both ease-in;
   background-image: url("../images/food.png");
   background-size: cover;
-  z-index: 9999;
+  z-index: 9998;
 }
 .view-animate.ng-enter{
   z-index: -1;
@@ -215,7 +215,7 @@ button {
 
 .fillSpace {
   position: relative;
-  min-height: 100%;
+  min-height: 100vh;
   overflow: hidden;
 }
 .eventTitle {
@@ -297,7 +297,7 @@ a {
   top: 0;
   height: 100vh;
   width: 0;
-  z-index: -1;
+  z-index: 9998;
   overflow-x: hidden;
   overflow: hidden;
   transition: 0.5s;
@@ -305,10 +305,9 @@ a {
 .needCashMenu p {
   font-size: 1.2em;
   border-top: 2px solid gray;
-  padding: 0;
-  margin: 0;
-  margin-left: -10px;
-  padding-bottom: 15px;
+  position: absolute;
+  bottom: 8px;
+  left: 20px;
 }
 
 .getCash {
@@ -334,8 +333,9 @@ a {
 
 .cashGrabItems {
   padding: 15px;
-  margin-top: 41vh;
-  transform: translateY(-50%);
+  position: fixed;
+  bottom: 50px;
+  z-index: 9998;
 }
 
 .needCashMenu li {
@@ -675,11 +675,13 @@ input {
   height: 215px;
   border-radius: 5px;
   margin: -150px auto 0 auto;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at 100% 100%,
     rgb(100, 1, 100),
     rgb(197, 1, 148)
-  );
+  ); */
+  background-image: url("../images/world.png");
+  background-size: 110% 110%;
   font-family: "Coda", cursive;
 }
 .chip {
@@ -714,7 +716,7 @@ input {
   margin: 0 30px;
   padding: 0;
   margin-top: -15px;
-  font-size: 1.7em;
+  font-size: 1.4em;
   letter-spacing: 0.11em;
 }
 
@@ -792,6 +794,37 @@ input {
   margin: 0px;
   padding: 20px;
 }
+/*===============================LOG IN PAGE================================================================*/
+
+.loginMain{
+  margin: 50px auto;
+  width: 300px;
+  background-color: #0f0f0f;
+  border: 5px solid #1f1f1f;
+  border-radius: 10px;
+}
+.loginMain form{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  padding-top: 0;
+}
+.loginMain form h1{
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.loginMain form input{
+  border-radius: 3px;
+  padding: 5px;
+  margin: 10px 0;
+  width: 250px;
+}
+.loginMain form button{
+  margin-top: 10px;
+  align-items: baseline;
+}
+
+
 
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
@@ -865,7 +898,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -876,7 +909,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -885,7 +918,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
@@ -1094,7 +1127,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -1105,7 +1138,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -1114,7 +1147,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
@@ -1208,7 +1241,7 @@ input {
     width: 50vw;
   }
   footer {
-    /* transform: translateX(-50%); */
+
   }
 }
 
@@ -1383,7 +1416,7 @@ input {
     top: 0;
     height: 100vh;
     width: 122px;
-    z-index: -1;
+    z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
@@ -1394,7 +1427,7 @@ input {
   }
   .cashGrabItems {
     position: fixed;
-    top: 30vh;
+    bottom: 50px;
   }
   .getCash {
     display: none;
@@ -1403,7 +1436,7 @@ input {
     z-index: -1;
   }
   .mainProgress {
-    left: 119px;
+    left: 123px;
     height: 5px;
     width: calc(100% - 119px);
   }
@@ -1454,7 +1487,6 @@ input {
     width: 50vw;
   }
   footer {
-    /* transform: translateX(-50%); */
   }
 
 }

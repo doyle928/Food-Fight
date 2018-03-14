@@ -5,6 +5,12 @@
     var dayCount = 1;
     var currentMood = 10;
     var numberOfEvents = 15;
+    var enteredCred;
+    var userCred = {
+      username: "admin",
+      password: "password"
+    };
+    var loggedIn = false;
     var event = {
       eventName: "I'm an event",
       text: "You've been hit with an event. Choose a thing.",
@@ -30,16 +36,33 @@
       getMood: getMood,
       addEvent: addEvent,
       getNumberOfEvents: getNumberOfEvents,
+      checkCreds: checkCreds,
+      checkifLog: checkifLog,
       resetValues: resetValues
-    };
+  };
 
-    function resetValues() {
-      progressValue = 150;
-      dollarValue = 150;
-      dayCount = 1;
-      currentMood = 10;
+  function resetValues() {
+    progressValue = 150;
+    dollarValue = 150;
+    dayCount = 1;
+    currentMood = 10;
+  }
+
+    function checkifLog() {
+      return loggedIn;
     }
-
+    function checkCreds(entered) {
+      if (entered.username == userCred.username) {
+        if (entered.password == userCred.password) {
+          loggedIn = true;
+          return true;
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    }
     function getNumberOfEvents() {
       return numberOfEvents;
     }
@@ -78,12 +101,12 @@
     }
 
     function randNum() {
-      if(dayCount == 1){
+      if (dayCount == 1) {
         return 1;
       } else {
-      return Math.floor(Math.random() * numberOfEvents) + 1;
+        return Math.floor(Math.random() * numberOfEvents) + 1;
       }
-      }
+    }
 
     function getDayCount() {
       return dayCount;
@@ -99,11 +122,11 @@
 
     function getEvents() {
       return $http({
-          method: "GET",
-          url: "/events"
-        })
+        method: "GET",
+        url: "/events"
+      })
         .then(function(response) {
-            return response.data[randNum()];
+          return response.data[randNum()];
         })
         .catch(function(err) {
           //console.log(err);
@@ -112,10 +135,11 @@
 
     function addEvent(newEvent) {
       return $http({
-          url: "/events",
-          method: "POST",
-          data: newEvent
-        }).then(function(response) {
+        url: "/events",
+        method: "POST",
+        data: newEvent
+      })
+        .then(function(response) {
           return response;
         })
         .catch(function(err) {
