@@ -908,9 +908,9 @@ input {
 
 /*//////////////////////////////////RESULTS PAGE////////////////////////////////////////////////*/
 
-#resultsMain {
-  width: 100vw;
-  height: 100vh;
+
+a.facebookDiv {
+  text-decoration: none;
 }
 
 /*//////////////////////////////////ADD EVENTS PAGE////////////////////////////////////////////////*/
@@ -936,8 +936,10 @@ input {
 }
 
 #addContent div {
-  margin: 20px;
-  border: 1px solid red;
+  margin: 20px auto;
+  max-width: 600px;
+  background-color: #000;
+  border: 1px solid gray;
 }
 
 #addContent button:hover {
@@ -2537,7 +2539,15 @@ input {
     justify-content: space-between;
     margin: -30px 30px 0 30px;
   }
+  #resultsDiv {
+    margin: 0 auto;
+  }
+  #options {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 
+  }
 
   #teamDiv{
     margin-left: 45%;
