@@ -7,6 +7,26 @@
         $location.path("/welcome");
       };
 
+      function updateSize() {
+        $ctrl.windowWidth = $(window).width();
+      }
+      $(document).ready(updateSize);
+      $(window).resize(updateSize);
+
+      $ctrl.start = function() {
+        $location.path("/events");
+      };
+      $ctrl.titleNavButton = function() {
+        $(".titleIconsElse").css("top", "30px");
+        $(".titleNavElse").css("top", "0");
+        $(".creditForm").css("top", "230px");
+      };
+      $(".creditForm").on("click", function() {
+        $(".titleIconsElse").css("top", "0px");
+        $(".titleNavElse").css("top", "-30px");
+        $(".creditForm").css("top", "200px");
+      });
+
       $scope.slider = {
         value: 0,
         options: {
