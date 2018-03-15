@@ -1,5 +1,5 @@
 (function() {
-  function controllerFunction(FoodFightService, $location, $scope) {
+  function controllerFunction(FoodFightService, $location, $scope, $element) {
     const $ctrl = this;
     $ctrl.eventObj = {};
     $ctrl.progressBar;
@@ -18,13 +18,33 @@
 
     getEverything();
     console.log($ctrl.eventObj);
-    $ctrl.selectOption = function(price, mood) {
-      //  console.log(amount);
-      FoodFightService.changeProgressBar(price);
-      FoodFightService.changeAmount(price);
-      FoodFightService.sendMood(mood);
-      getEverything();
+    $ctrl.selectOption1 = function(price, mood) {
+      if ($(".flipper1").hasClass("flipped")) {
+        $(".flipper1").removeClass("flipped");
+        getEverything();
+        $(".flipper1").css("transform", "rotateY(0deg)");
+      } else {
+        $(".flipper1").addClass("flipped");
+        FoodFightService.changeProgressBar(price);
+        FoodFightService.changeAmount(price);
+        FoodFightService.sendMood(mood);
+        $(".flipper1").css("transform", "rotateY(180deg)");
+      }
     };
+    $ctrl.selectOption2 = function(price, mood) {
+      if ($(".flipper2").hasClass("flipped")) {
+        $(".flipper2").removeClass("flipped");
+        getEverything();
+        $(".flipper2").css("transform", "rotateY(0deg)");
+      } else {
+        FoodFightService.changeProgressBar(price);
+        FoodFightService.changeAmount(price);
+        FoodFightService.sendMood(mood);
+        $(".flipper2").css("transform", "rotateY(180deg)");
+        $(".flipper2").addClass("flipped");
+      }
+    };
+
     $ctrl.piggyBank = function() {
       if ($ctrl.randPiggyUse > 0) {
         let randPiggyHolder = $ctrl.randPiggy;
@@ -40,8 +60,13 @@
         $(".piggy").css("border", "3px solid grey");
       } else {
         //end goal => show div with error
-        alert("You've already taken your kids' piggy-banks!");
+        $(".piggyError").css("visibility", "visible");
       }
+      if ($ctrl.windowWidth < 480) {
+        cashMinItems();
+      }
+    
+      
     };
     $ctrl.donBlood = function() {
       if ($ctrl.randDonateUse > 0) {
@@ -58,82 +83,27 @@
         $(".blood").css("border", "3px solid grey");
       } else {
         //end goal=> show div with error
-        alert("You've already given blood!");
+        $(".donateError").css("visibility", "visible");
+      }
+      if ($ctrl.windowWidth < 480) {
+        cashMinItems();
       }
     };
-
-    function getEverything() {
-      $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
-      if (event.eventname === "Grocery Shopping") {
-        getEverything();
-      } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
-        FoodFightService.getEvents().then(event => {
-          if (event == undefined || event.id == 1) {
-            console.log(event.id);
-            getEverything();
-          } else {
-            if (event.repeatability === true) {
-              $ctrl.eventObj = event;
-              $ctrl.progressBar = FoodFightService.getProgressBar();
-              $ctrl.amount = FoodFightService.getAmount();
-              if ($ctrl.amount <= 0) {
-                $location.path("/results");
-              }
-              $ctrl.dayCount = FoodFightService.changeDayCount();
-              $ctrl.moodCurrent = FoodFightService.getMood();
-              $(".mainProgress").attr("value", $ctrl.amount);
-              $(".moodProgress").attr("value", $ctrl.moodCurrent);
-              var windowWidth = $(window).width();
-              if (windowWidth < 480) {
-                cashMinItems();
-              } else {
-                cashMenuItems();
-              }
-              moodIcon();
-            } else {
-              getEverything();
-            }
-          }
-        });
-      } else {
-        FoodFightService.getEvents().then(event => {
-          if (event == undefined || event.id == 1) {
-            getEverything();
-          } else {
-            $ctrl.eventObj = event;
-            if ($ctrl.usedEvents.indexOf(event.id) == -1) {
-              $ctrl.progressBar = FoodFightService.getProgressBar();
-              $ctrl.amount = FoodFightService.getAmount();
-              if ($ctrl.amount <= 0) {
-                $location.path("/results");
-              }
-              $ctrl.dayCount = FoodFightService.changeDayCount();
-              $ctrl.moodCurrent = FoodFightService.getMood();
-              $(".mainProgress").attr("value", $ctrl.amount);
-              $(".moodProgress").attr("value", $ctrl.moodCurrent);
-              var windowWidth = $(window).width();
-              if (windowWidth < 480) {
-                cashMinItems();
-              } else {
-                cashMenuItems();
-              }
-              moodIcon();
-            } else {
-              getEverything();
-            }
-          }
-        });
-      }
+    $ctrl.closePiggyError = function(){
+      $(".piggyError").css("visibility", "hidden");
+    }
+    $ctrl.closeDonateError = function(){
+      $(".donateError").css("visibility", "hidden");
     }
 
     function getEverything() {
       $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
       if (event.eventname === "Grocery Shopping") {
         getEverything();
-      } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
+      } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents - 3) {
+        console.log("used events = number of events");
         FoodFightService.getEvents().then(event => {
           if (event == undefined || event.id == 1) {
-            console.log(event.id);
             getEverything();
           } else {
             if (event.repeatability === true) {
@@ -161,11 +131,15 @@
         });
       } else {
         FoodFightService.getEvents().then(event => {
-          if (event == undefined || event.id == 1) {
-            getEverything();
-          } else {
-            $ctrl.eventObj = event;
+          if (event != undefined) {
             if ($ctrl.usedEvents.indexOf(event.id) == -1) {
+              console.log("Got here");
+              $ctrl.eventObj = event;
+              $ctrl.usedEvents.push(event.id);
+              console.log($ctrl.usedEvents.length);
+              if ($ctrl.usedEvents.length === 11) {
+                $ctrl.usedEvents = [1];
+              }
               $ctrl.progressBar = FoodFightService.getProgressBar();
               $ctrl.amount = FoodFightService.getAmount();
               if ($ctrl.amount <= 0) {
@@ -185,51 +159,56 @@
             } else {
               getEverything();
             }
+          } else {
+            getEverything();
           }
         });
       }
     }
 
     $ctrl.titleNavButton = function() {
-      $(".titleIconsEvent").css("top", "34px");
       $(".titleNavEvent").css("top", "0");
       $(".titleNavEvent").attr("class", "titleNavEvent down");
       if ($(".titleNavEvent").hasClass("titleNavEvent down")) {
         $(".main").css("margin-top", "30px");
         if ($ctrl.windowWidth < 480) {
+          $(".titleIconsEvent").css("top", "34px");
           $(".topInfo").css("top", "20px");
         } else {
+          $(".titleIconsEvent").css("top", "36px");
           $(".topInfo").css("top", "10px");
         }
-        $("progress").css("top", "30px");
+        $(".mainProgress").css("top", "30px");
       }
     };
     $(".main").on("click", function() {
-      $(".titleIconsEvent").css("top", "4px");
       $(".titleNavEvent").css("top", "-30px");
       if ($(".titleNavEvent").hasClass("down")) {
         $(".main").css("margin-top", "0px");
         if ($ctrl.windowWidth < 480) {
           $(".topInfo").css("top", "-5px");
+          $(".titleIconsEvent").css("top", "4px");
         } else {
           $(".topInfo").css("top", "-20px");
+          $(".titleIconsEvent").css("top", "6px");
         }
-        $("progress").css("top", "0");
+        $(".mainProgress").css("top", "0");
         $(".titleNavEvent").removeClass("down");
       }
     });
 
     function cashMenuItems() {
-      $(".needCashMenu").css("width", "135px");
-      $(".main").css("margin-left", "130px");
-      $(".getCash").css("left", "130px");
-      $(".topInfo").css("left", "130px");
-      $(".titleNavEvent").css("margin-left", "130px");
-      $("progress").css("left", "130px");
-      $("footer").css("left", "calc(50% + 130px)");
+      $(".needCashMenu").css("width", "120px");
+      $(".main").css("margin-left", "117px");
+      $(".getCashBorder").css("left", "117px");
+      $(".topInfo").css("left", "117px");
+      $(".titleNavEvent").css("margin-left", "117px");
+      $("progress").css("left", "117px");
+      $("footer").css("left", "calc(50% + 117px)");
       $(".needCashMenu")
         .find("li")
         .css("margin-left", "0");
+      $(".cashGrabItems").css("left", "-10px");
     }
 
     $ctrl.cashMenu = function() {
@@ -245,7 +224,7 @@
     function cashMinItems() {
       $(".needCashMenu").css("width", "0");
       $(".main").css("margin-left", "0px");
-      $(".getCash").css("left", "0");
+      $(".getCashBorder").css("left", "0");
       $(".topInfo").css("left", "0");
       $(".titleNavEvent").css("margin-left", "0");
       $("progress").css("left", "0");
@@ -253,6 +232,7 @@
       $(".needCashMenu")
         .find("li")
         .css("margin-left", "-80px");
+      $(".cashGrabItems").css("left", "-150px");
     }
     $ctrl.cashMin = function() {
       let windowWidth = $(window).width();
@@ -267,8 +247,35 @@
     function updateSize() {
       $ctrl.windowWidth = $(window).width();
       if ($ctrl.windowWidth < 480) {
+        $(".card1").removeAttr("data-tilt");
+        $(".card2").removeAttr("data-tilt");
+        $(".titleIconsEvent").css("left", "50%");
+        $(".titleIconsEvent").css("top", "4px");
+        $(".liSpan1").css("visibility", "visible");
+        $(".liSpan2").css("visibility", "visible");
+        $(".getCashBorder").css("visibility", "visible");
         cashMinItems();
       } else {
+        $(".card1").attr("data-tilt");
+        $(".card2").attr("data-tilt");
+        $(".titleIconsEvent").css("left", "calc(50% + 60px)");
+        $(".titleIconsEvent").css("top", "6px");
+        $(".liSpan1").css("visibility", "hidden");
+        $(".liSpan2").css("visibility", "hidden");
+        $(".getCashBorder").css("visibility", "hidden");
+        $(".piggy").on("mouseover", function() {
+          $(".liSpan1").css("visibility", "visible");
+        });
+        $(".piggy").on("mouseleave", function() {
+          $(".liSpan1").css("visibility", "hidden");
+        });
+
+        $(".blood").on("mouseover", function() {
+          $(".liSpan2").css("visibility", "visible");
+        });
+        $(".blood").on("mouseleave", function() {
+          $(".liSpan2").css("visibility", "hidden");
+        });
         cashMenuItems();
       }
     }
@@ -306,6 +313,9 @@
       $(".formFocus").hide();
       $(".creditForm").hide();
     };
+    // $ctrl.facebook = function(){
+    //   $location.path("")
+    // }
 
     $scope.slider = {
       value: 0,
@@ -389,32 +399,55 @@
           .empty();
       }
     });
-    // if ($ctrl.cc.ccnum1.length == 4) {
-    //   if ($ctrl.cc.ccnum2.length == 4) {
-    //     if ($ctrl.cc.ccnum3.length == 4) {
-    //       if ($ctrl.cc.ccnum4.length == 4) {
-    //         if (
-    //           $ctrl.cc.ccname != undefined ||
-    //           $ctrl.cc.ccname != undefined
-    //         ) {
-    //           if ($ctrl.cc.ccCCV.length == 3) {
-    //             if ($ctrl.cc.exp1 != "") {
-    //               if ($ctrl.cc.exp2 != "") {
-    //               }
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   }
-    // }
 
-    // $(".submitCC")
-    //   .find("span")
-    //   .empty();
-    // $(".submitCC")
-    //   .find("span")
-    //   .html('<i class="material-icons">lock_open</i>');
+    $ctrl.onSwipeRight = function() {
+      var windowWidth = $(window).width();
+      windowWidth = parseInt(windowWidth);
+      if (windowWidth < 480) {
+        cashMenuItems();
+      } else {
+        console.log("viewport too big");
+      }
+    };
+    $ctrl.onSwipeLeft = function() {
+      let windowWidth = $(window).width();
+      windowWidth = parseInt(windowWidth);
+      if (windowWidth < 480) {
+        cashMinItems();
+      } else {
+        console.log("viewport too big");
+      }
+    };
+    $ctrl.onSwipeUp = function() {
+      $(".titleNavEvent").css("top", "-30px");
+      if ($(".titleNavEvent").hasClass("down")) {
+        $(".main").css("margin-top", "0px");
+        if ($ctrl.windowWidth < 480) {
+          $(".topInfo").css("top", "-5px");
+          $(".titleIconsEvent").css("top", "4px");
+        } else {
+          $(".topInfo").css("top", "-20px");
+          $(".titleIconsEvent").css("top", "6px");
+        }
+        $(".mainProgress").css("top", "0");
+        $(".titleNavEvent").removeClass("down");
+      }
+    };
+    $ctrl.onSwipeDown = function() {
+      $(".titleNavEvent").css("top", "0");
+      $(".titleNavEvent").attr("class", "titleNavEvent down");
+      if ($(".titleNavEvent").hasClass("titleNavEvent down")) {
+        $(".main").css("margin-top", "30px");
+        if ($ctrl.windowWidth < 480) {
+          $(".titleIconsEvent").css("top", "34px");
+          $(".topInfo").css("top", "20px");
+        } else {
+          $(".titleIconsEvent").css("top", "36px");
+          $(".topInfo").css("top", "10px");
+        }
+        $(".mainProgress").css("top", "30px");
+      }
+    };
   }
   angular.module("App").controller("controllerFunction", controllerFunction);
 })();

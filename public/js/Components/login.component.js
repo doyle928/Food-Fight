@@ -10,11 +10,22 @@
         $(".titleNavElse").css("top", "0");
         $(".loginMain").css("margin-top", "80px");
       };
-      $(".loginMain").on("click", function() {
+      $(".whyDoIhaveToAddThisLogin").on("click", function() {
         $(".titleIconsElse").css("top", "0px");
         $(".titleNavElse").css("top", "-30px");
         $(".loginMain").css("margin-top", "50px");
       });
+
+      $ctrl.onSwipeUp = function() {
+        $(".titleIconsElse").css("top", "0px");
+        $(".titleNavElse").css("top", "-30px");
+        $(".loginMain").css("margin-top", "50px");
+      };
+      $ctrl.onSwipeDown = function() {
+        $(".titleIconsElse").css("top", "30px");
+        $(".titleNavElse").css("top", "0");
+        $(".loginMain").css("margin-top", "80px");
+      };
 
       $(".loginInput").on("keyup", function() {
         if ($(".loginUser").val() != "" && $(".loginPass").val() != "") {

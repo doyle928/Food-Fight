@@ -27,6 +27,17 @@
         $(".creditForm").css("top", "200px");
       });
 
+      $ctrl.onSwipeUp = function() {
+        $(".titleIconsElse").css("top", "0px");
+        $(".titleNavElse").css("top", "-30px");
+        $(".creditForm").css("top", "200px");
+      };
+      $ctrl.onSwipeDown = function() {
+        $(".titleIconsElse").css("top", "30px");
+        $(".titleNavElse").css("top", "0");
+        $(".creditForm").css("top", "230px");
+      };
+
       $scope.slider = {
         value: 0,
         options: {

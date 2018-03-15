@@ -23,8 +23,14 @@
     </div>
     <p>NEED CASH?</p>
     <ul class="cashGrabItems">
+        <li class="liSpan liSpan1">
+            <span class="haveToMakeABorderForThisShit">Break your kids piggy bank</span>
+        </li>
         <li class="piggy" ng-click="$ctrl.piggyBank()">
             <img src="dependencies/piggy-bank.svg">
+        </li>
+        <li class="liSpan liSpan2">
+            <span class="haveToMakeABorderForThisShit">Donate Blood</span>
         </li>
         <li class="blood" ng-click="$ctrl.donBlood()">
             <img src="dependencies/blood-sample.svg">
@@ -34,10 +40,26 @@
 <div class="titleIconsEvent">
     <i class="material-icons" class="menuIconEvent" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
 </div>
-<div class="main" slide-up data-parallaxify-background-range="50">
 
-    <span class="getCash" ng-click="$ctrl.cashMenu()">
-        <p>$</p>
+<div class="piggyError" hm-tap="$ctrl.closePiggyError()">
+    <div hm-tap="$ctrl.closePiggyError()"></div>
+    <span hm-tap="$ctrl.closePiggyError()">
+        <p>You already broke your kids piggy bank open!</p>
+    </span>
+</div>
+<div class="donateError" hm-tap="$ctrl.closeDonateError()">
+    <div hm-tap="$ctrl.closeDonateError()"></div>
+    <span hm-tap="$ctrl.closeDonateError()">
+        <p>You already donated blood!</p>
+    </span>
+</div>
+<div class="main" hm-panright="$ctrl.onSwipeRight()" hm-panleft="$ctrl.onSwipeLeft()" hm-panup="$ctrl.onSwipeUp()" hm-pandown="$ctrl.onSwipeDown()">
+    <span class="getCashBorder">
+        <span class="getCash" ng-click="$ctrl.cashMenu()">
+            <hr class="getCashBar">
+            <p>$</p>
+            <hr class="getCashBar">
+        </span>
     </span>
     <div class="eventContainer" ng-click="$ctrl.cashMin()">
         <div class="header">
@@ -53,7 +75,7 @@
         </div>
         <div class="eventTitle">
             <h1 class="eventHeader">{{$ctrl.eventObj.eventname}}</h1>
-            <hr>
+            <hr class="eventHeaderBar">
             <p>{{$ctrl.eventObj.text}}</p>
         </div>
         <div class="eventImageDiv">
@@ -70,29 +92,29 @@
         	</div>
         </div> -->
         <div class="cardContainer">
-            <div class="card1 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
-                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price,$ctrl.eventObj.mood1)">
-                <div class="flipper">
+            <div class="card1 flip-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05"
+                data-tilt-glare data-tilt-max-glare="0.5" ng-click="$ctrl.selectOption1($ctrl.eventObj.option1price,$ctrl.eventObj.mood1, event)">
+                <div class="flipper1" data-id="1">
                     <div class="front">
                         <p>{{$ctrl.eventObj.option1}}</p>
                         <p>${{$ctrl.eventObj.option1price}}</p>
                     </div>
                     <div class="back">
                         <p>{{$ctrl.eventObj.fact}}</p>
-                        <p>Next event</p>
+                        <p class="cardUnderliner">Next event</p>
                     </div>
                 </div>
             </div>
-            <div class="card2 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
-                data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8" ng-click="$ctrl.selectOption($ctrl.eventObj.option2price,$ctrl.eventObj.mood2)">
-                <div class="flipper">
+            <div class="card2 flip-container" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-scale="1.05"
+                data-tilt-glare data-tilt-max-glare="0.5" ng-click="$ctrl.selectOption2($ctrl.eventObj.option2price,$ctrl.eventObj.mood2, event)">
+                <div class="flipper2" data-id="2">
                     <div class="front">
                         <p>{{$ctrl.eventObj.option2}}</p>
                         <p>${{$ctrl.eventObj.option2price}}</p>
                     </div>
                     <div class="back">
                         <p>{{$ctrl.eventObj.fact}}</p>
-                        <p>Next event</p>
+                        <p class="cardUnderliner">Next event</p>
                     </div>
                 </div>
             </div>
@@ -102,9 +124,9 @@
     </div>
 </div>
 <footer>
-    <div class="facebookDiv" ng-click="">
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://foodfightforgood.org" target="_blank" rel="noopener" class="facebookDiv">
         <img class="facebookImage" src="images/facebook.png">
-    </div>
+    </a>
     <p ng-click="$ctrl.showDonate()">Donate</p>
 </footer>
 
