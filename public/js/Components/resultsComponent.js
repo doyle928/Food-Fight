@@ -5,26 +5,39 @@
       const $ctrl = this;
       $ctrl.dayCount = FoodFightService.getDayCount();
       $ctrl.donate = function() {
-        $location.path("/donate");
+        $(".formFocus").fadeIn(300);
+        $(".creditForm").fadeIn(300);
       };
-
+      $ctrl.playAgain = function(){
+        FoodFightService.resetValues();
+        $location.path("/events");
+      }
       $ctrl.titleNavButton = function() {
         $(".titleIconsElse").css("top", "30px");
         $(".titleNavElse").css("top", "0");
-        $(".mainResult").css("margin-top", "70px");
+        $(".mainResult").css("padding-top", "70px");
       };
       $(".mainResult").on("click", function() {
         $(".titleIconsElse").css("top", "0px");
         $(".titleNavElse").css("top", "-30px");
-        $(".mainResult").css("margin-top", "40px");
+        $(".mainResult").css("padding-top", "40px");
       });
-
+      $ctrl.onSwipeUp = function() {
+        $(".titleIconsElse").css("top", "0px");
+        $(".titleNavElse").css("top", "-30px");
+        $(".mainResult").css("padding-top", "40px");
+      };
+      $ctrl.onSwipeDown = function() {
+        $(".titleIconsElse").css("top", "30px");
+        $(".titleNavElse").css("top", "0");
+        $(".mainResult").css("padding-top", "70px");
+      };
       $(".formFocus").hide();
       $(".creditForm").hide();
-      setTimeout(function() {
-        $(".formFocus").fadeIn(400);
-        $(".creditForm").fadeIn(400);
-      }, 7500);
+      // setTimeout(function() {
+      //   $(".formFocus").fadeIn(400);
+      //   $(".creditForm").fadeIn(400);
+      // }, 7500);
       $ctrl.close = function() {
         $(".formFocus").hide();
         $(".creditForm").hide();
@@ -46,6 +59,7 @@
 
       $ctrl.submitForm = function(isValid) {
         if (isValid) {
+          $location.path("/thankyou");
         }
       };
 
@@ -94,7 +108,6 @@
             .empty()
             .html('<i class="material-icons">lock_outline</i>');
         }
-
         if (
           $ctrl.ccBoolean.value != 0 &&
           $ctrl.ccBoolean.ccnum1 == true &&

@@ -20,7 +20,7 @@
 <div class="titleIconsElse">
   <i class="material-icons" class="menuIcon" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
 </div>
-<div class="mainResult" slide-up data-parallaxify-background-range="50">
+<div class="mainResult" hm-panup="$ctrl.onSwipeUp()" hm-pandown="$ctrl.onSwipeDown()">
 
   <div id="resultsDiv" class="bodyText">
     <h2>Congrats you made it
@@ -34,6 +34,9 @@
       from hunger and poverty live in areas where fresh, unprocessed, healthy food is not available or is expensive, while
       the food they do have access to is nutritionally deficient. As the food rescue and food bank program serving Washtenaw
       County, Food Gatherers exists to alleviate hunger and eliminate its causes in our community.</p>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=http://foodfightforgood.org" target="_blank" rel="noopener" class="facebookDiv">
+      <img class="facebookImage" src="images/facebook.png">
+    </a>
     <button ng-click="$ctrl.donate()">DONATE</button>
   </div>
   <div>

@@ -13,14 +13,14 @@
             <a href="#!/add">Admin</a>
         </li>
         <li>
-          <a href="#!/team">Team</a>
+            <a href="#!/team">Team</a>
         </li>
     </ul>
 </nav>
 <div class="titleIconsElse">
     <i class="material-icons" class="menuIcon" ng-click="$ctrl.titleNavButton()">restaurant_menu</i>
 </div>
-<div id="addMain">
+<div id="addMain" hm-panup="$ctrl.onSwipeUp()" hm-pandown="$ctrl.onSwipeDown()">
     <div id="addContent">
         <h3>Add An Event</h3>
         <div id="addEventInfo">
@@ -50,7 +50,7 @@
                     </label>
                 </div>
             </div>
-            <button ng-click="$ctrl.addEvent($ctrl.newEvent);">Submit</button>
+            <button ng-click="$ctrl.addEvent($ctrl.newEvent)">Submit</button>
         </div>
         <button ng-click="$ctrl.home();">Home</button>
     </div>
