@@ -59,7 +59,7 @@
 
       $ctrl.submitForm = function(isValid) {
         if (isValid) {
-          $location.path("/thankyou");
+          $location.path("/receipt");
         }
       };
 
