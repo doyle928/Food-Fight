@@ -12,6 +12,9 @@
     <li>
       <a href="#!/add">Admin</a>
     </li>
+    <li>
+      <a href="#!/team">Team</a>
+    </li>
   </ul>
 </nav>
 <div class="titleIconsElse">
@@ -82,7 +85,7 @@
         <div class="ccNum">
           <div>
             <label for="card-number">Credit Card
-              <input type="text" id="card-number3" class="ccnum1 lockChange" maxlength="4" required ng-required="true" ng-minlength="4"
+              <input type="text" id="card-number" class="ccnum1 lockChange" maxlength="4" required ng-required="true" ng-minlength="4"
                 ng-maxlength="4" ng-model="$ctrl.cc.ccnum1">
             </label>
           </div>
@@ -95,7 +98,7 @@
         </div>
         <div class="cardName">
           <label for="card-holder">Card Holder Name
-            <input type="name" id="card-holder3" class="ccname lockChange" ng-model="$ctrl.cc.ccname" maxlength="32" required ng-required="true"
+            <input type="name" id="card-holder" class="ccname lockChange" ng-model="$ctrl.cc.ccname" maxlength="32" required ng-required="true"
               ng-minlength="3" ng-maxlength="32">
           </label>
         </div>
@@ -103,7 +106,7 @@
           <div class="expWhole">
             <div class="expirationLabel">
               <label for='expiration-date'>Expiration
-                <select id="expiration-date3" class="ccselect1 lockChange" ng-model="$ctrl.cc.exp1" required ng-required="true">
+                <select id="expiration-date" class="ccselect1 lockChange" ng-model="$ctrl.cc.exp1" required ng-required="true">
                   <option value=""></option>
                   <option value="01">01</option>
                   <option value="02">02</option>

@@ -19,6 +19,9 @@
       .when("/donate", {
         template: "<donate-component></donate-component>"
       })
+      .when("/team", {
+        template: "<team-component></team-component>"
+      })
       .otherwise({ redirectTo: "/welcome" });
   });
 })();
