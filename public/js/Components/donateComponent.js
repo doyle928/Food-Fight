@@ -1,7 +1,7 @@
 (function() {
   var donateComponent = {
     templateUrl: "Partials/donate.html",
-    controller: function($location, $scope) {
+    controller: function($location, $scope, FoodFightService) {
       const $ctrl = this;
       $ctrl.home = function() {
         $location.path("/welcome");
