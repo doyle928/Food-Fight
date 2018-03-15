@@ -22,6 +22,9 @@
       .when("/team", {
         template: "<team-component></team-component>"
       })
+      .when("/receipt", {
+        template: "<receipt-component></receipt-component>"
+      })
       .otherwise({ redirectTo: "/welcome" });
   });
 })();

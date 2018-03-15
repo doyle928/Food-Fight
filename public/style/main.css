@@ -182,7 +182,6 @@ button {
   width: 240px;
   min-height: 100px;
   height: auto;
-  max-height: 150px;
   overflow: visible;
   background-color: rgba(255, 255, 255, 0.1);
   color: #e7e7e7;
