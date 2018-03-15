@@ -55,6 +55,20 @@
   <script src="js/directives/slideup.directive.js"></script>
   <script src="js/Components/login.component.js"></script>
   <script src="js/Components/teamComponent.js"></script>
+  <script>
+    function updateSize() {
+      windowWidth = $(window).width();
+      if (windowWidth < 480) {
+        $("body").removeAttr("data-parallaxify-background-range");
+        $("body").attr("data-parallaxify-background-range", "200px");
+      } else {
+        $("body").removeAttr("data-parallaxify-background-range");
+        $("body").attr("data-parallaxify-background-range", "50px");
+      }
+    }
+    $(document).ready(updateSize);
+    $(window).resize(updateSize);
+  </script>
   <!-- <script>
   window.fbAsyncInit = function() {
     FB.init({
