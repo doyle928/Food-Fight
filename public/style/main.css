@@ -11,7 +11,8 @@ body {
   margin: 0;
   overflow: hidden;
   background-image: url("../images/food.png");
-  background-size: cover;
+  background-size: auto 200%;
+  background-position: -300px -200px;
 }
 /* #backgroundImgDiv {
   overflow: hidden;
@@ -92,8 +93,9 @@ body {
 }
 
 hr {
-  width: 300px;
-  margin: 0 auto;
+  min-width: 150px;
+  margin-left: auto;
+  /* transform: translateX(-50%); */
   border: 1px solid #dc143c;
   transition: 0.3s;
 }
@@ -158,7 +160,8 @@ button {
 .card1,
 .card2 {
   width: 240px;
-  height: 100px;
+  min-height: 100px;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.1);
   color: white;
   margin: 10px auto;
@@ -238,7 +241,7 @@ button {
   overflow: hidden;
 }
 .eventTitle {
-  margin: 30px;
+  margin: 70px;
 }
 .eventTitle h1 {
   font-size: 2.2em;
@@ -252,7 +255,7 @@ button {
 }
 
 .eventTitle p {
-  width: 85vw;
+  width: auto;
   margin: 10px auto;
   text-align: center;
   overflow: hidden;
@@ -365,6 +368,7 @@ a {
 }
 
 .main {
+  margin-top: 0;
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
@@ -384,6 +388,19 @@ a {
   width: 0;
   overflow-x: hidden;
   transition: 0.5s;
+}
+.titleNavEvent{
+  background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 0;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+.titleIcons{
+
 }
 
 .titleMain {
@@ -441,7 +458,6 @@ a {
   font-size: 1.75em;
   margin-right: 30px;
 }
-
 /*
 .imgContainer {
   position: absolute;
@@ -560,6 +576,8 @@ input {
   background-size: cover; */
   width: 100vw;
   height: 100vh;
+  margin-top: 40px;
+  transition: .5s;
 }
 .formFocus {
   display: none;
@@ -589,6 +607,7 @@ input {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
+  transition: .5s;
 }
 .form {
   width: 300px;
@@ -764,9 +783,10 @@ input {
 #addMain {
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/food.png");
   background-size: cover;
   overflow: hidden;
+  margin-top: 40px;
+  transition: .5s;
 }
 
 .addInputs {
@@ -820,6 +840,7 @@ input {
   background-color: #0f0f0f;
   border: 5px solid #1f1f1f;
   border-radius: 10px;
+  transition: .5s;
 }
 .loginMain form{
   display: flex;
@@ -843,10 +864,92 @@ input {
 }
 
 
+.titleIconsEvent{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 4px;
+  background-color: #1f1f1f;
+  padding: 3px 5px;
+  transition: .3s;
+  z-index: 100;
+}
+.titleIconsElse{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0px;
+  background-color: #1f1f1f;
+  padding: 3px 5px;
+  transition: .3s;
+  z-index: 100;
+}
+.titleNavEvent{
+  position: fixed;
+  top:-30px;
+  left:0;
+  height: 30px;
+  background-color: #1f1f1f;
+  width: 100vw;
+  transition: .3s;
+}
+.titleNavEvent ul {
+  width: 100vw;
+  padding: 0;
+  margin:0;
+}
+.titleNavEvent ul li{
+  float: left;
+  padding: 0 10px;
+  margin:0;
+  list-style: none;
+}
+.titleNavEvent ul li a {
+  text-decoration: none;
+}
+
+.titleNavElse{
+  position: fixed;
+  top:-30px;
+  left:0;
+  height: 30px;
+  background-color: #1f1f1f;
+  width: 100vw;
+  transition: .3s;
+}
+.titleNavElse ul {
+  width: 100vw;
+  padding: 0;
+  margin:0;
+}
+.titleNavElse ul li{
+  float: left;
+  padding: 0 10px;
+  margin:0;
+  list-style: none;
+}
+.titleNavElse ul li a {
+  text-decoration: none;
+}
+
+
 
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
 @media screen and (min-width: 480px) and (max-width: 767px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
+  
   /*---------------------Start---------------------*/
 
   .view-animate.ng-leave{
@@ -947,12 +1050,13 @@ input {
     left: 119px;
     width: calc(100% - 119px);
     font-size: 1.5em;
-    top: -15px;
+    top: -20px;
     padding: 10px;
   }
   .topInfo p {
     color: #dc143c;
     font-weight: 500;
+    padding-right: 40px;
   }
   .topInfo p span {
     color: white;
@@ -975,7 +1079,9 @@ input {
     display: none;
   }
   .cardContainer {
-    margin-left: calc(20% - 20px);
+    margin-left: 50%;
+    transform: translateX(-50%);
+    overflow: visible;
   }
   .card1,
   .card2 {
@@ -983,6 +1089,7 @@ input {
     height: 100px;
     padding: 0;
     margin: 10px;
+    overflow: visible;
   }
   hr {
     width: 50vw;
@@ -992,6 +1099,18 @@ input {
   }
 }
 @media screen and (min-width: 768px) and (max-width: 1223px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
   .view-animate.ng-leave{
     animation: slideleft 1s both ease-in;
     background-image: url("../images/food.png");
@@ -1007,6 +1126,16 @@ input {
     position: absolute;
     left: 0;
     top: 0;
+    height: 0;
+    width: 100vw;
+    overflow: hidden;
+    transition: 0.5s;
+  }
+  .titleNavEvent{
+    background-color: #1f1f1f;
+    position: absolute;
+    left: 0;
+    top: 75px;
     height: 0;
     width: 100vw;
     overflow: hidden;
@@ -1264,6 +1393,18 @@ input {
 /*//////////////////////////   OVER 1224       //////////////////////////////////////////*/
 
 @media only screen and (min-width: 1224px) {
+  body {
+    background-color: #1f1f1f;
+    color: #eee;
+    font-family: "Average Sans", serif;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    background-image: url("../images/food.png");
+    background-size: cover;
+    background-position: left 0 top 0;
+  }
   .view-animate.ng-leave{
     animation: slideleft 1s ease-in;
     background-image: url("../images/food.png");
