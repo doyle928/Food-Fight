@@ -1,5 +1,7 @@
-.back{
-  display: none;
+html {
+  background-color: #1f1f1f;
+  overflow: hidden;
+  text-shadow: #000 0 0 5px;
 }
 
 body {
@@ -13,13 +15,14 @@ body {
   background-image: url("../images/food.png");
   background-size: auto 200%;
   background-position: -300px -200px;
+  text-shadow: #000 0 0 5px;
 }
+
 /* #backgroundImgDiv {
   overflow: hidden;
   background-image: url("../images/food.png");
   background-size: cover;
 } */
-
 
 #receipt{
   box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
@@ -35,17 +38,18 @@ body {
   ::selection {background: #f31544; color: #FFF;}
 
   ::moz-selection {background: #f31544; color: #FFF;}
-  
 
-.view-animate.ng-leave{
+.view-animate.ng-leave {
   animation: slidedown 1s both ease-in;
   background-image: url("../images/food.png");
   background-size: cover;
-  z-index: 9998;
+  z-index: 500;
 }
-.view-animate.ng-enter{
+
+.view-animate.ng-enter {
   z-index: -1;
 }
+
 @keyframes slidedown {
   from {
     transform: translateY(0);
@@ -54,11 +58,12 @@ body {
     transform: translateY(-110%);
   }
 }
-@keyframes slideleft{
-  from{
+
+@keyframes slideleft {
+  from {
     transfrom: translateX(0);
   }
-  to{
+  to {
     transform: translateX(-110%);
   }
 }
@@ -71,6 +76,7 @@ body {
   top: 38px;
   left: 217px;
 }*/
+
 /*#removeline {
   text-decoration: none;
 }*/
@@ -92,8 +98,9 @@ body {
   font-family: "Fjalla One", sans-serif;
 }
 
-hr {
+.eventHeaderBar {
   min-width: 150px;
+  max-width: 90vw;
   margin-left: auto;
   /* transform: translateX(-50%); */
   border: 1px solid #dc143c;
@@ -136,12 +143,25 @@ button {
 
 .priorityButton .arrowDown {
   font-size: 1.3em;
-  color: #870805;
+  animation: flashArrow .7s infinite linear alternate-reverse;
 }
+
+@keyframes flashArrow {
+  0%,
+  25% {
+    color: #870805;
+  }
+  100% {
+    color: #eee;
+  }
+}
+
 .priorityButton .arrowRight {
   display: none;
 }
+
 /*============================EVENT==============================================================*/
+
 .eventContainer {
   text-align: center;
 }
@@ -162,11 +182,17 @@ button {
   width: 240px;
   min-height: 100px;
   height: auto;
+  max-height: 150px;
+  overflow: visible;
   background-color: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: #e7e7e7;
   margin: 10px auto;
   border-radius: 3px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.card2 {
+  margin-top: 35px;
 }
 
 .cardContainer {
@@ -178,17 +204,20 @@ button {
   text-align: center;
   padding: 10px 20px;
   margin: auto;
-  color: white;
+  color: #e7e7e7;
 }
+
 .facebookDiv {
   width: 34px;
   height: 34px;
   background-color: rgba(255, 255, 255, 0.1);
-  /* background-color: white; */
+  /* background-color: #e7e7e7; */
   border-radius: 3px;
   margin: 0 auto;
+  transform: translateX(-20px);
   margin-bottom: 10px;
 }
+
 .facebookImage {
   width: 28px;
   height: 28px;
@@ -196,11 +225,12 @@ button {
   border-radius: 3px;
   background-color: black;
 }
-.header{
+
+.header {
   z-index: -1;
 }
+
 .mainProgress {
-  background-color: crimson;
   width: 100%;
   height: 4px;
   padding: 0;
@@ -210,14 +240,14 @@ button {
   left: 0;
   background-color: #dc143c;
   color: transparent;
-  z-index: -1;
   transition: 0.3s;
 }
 
 .mainProgress::-webkit-progress-value {
   background-color: #dc143c;
 }
-.mainProgress::-webkit-progress-bar{
+
+.mainProgress::-webkit-progress-bar {
   background-color: black;
 }
 
@@ -240,9 +270,11 @@ button {
   min-height: 100vh;
   overflow: hidden;
 }
+
 .eventTitle {
-  margin: 70px;
+  margin: 70px 0 30px 0;
 }
+
 .eventTitle h1 {
   font-size: 2.2em;
   text-align: center;
@@ -255,7 +287,7 @@ button {
 }
 
 .eventTitle p {
-  width: auto;
+  width: 75vw;
   margin: 10px auto;
   text-align: center;
   overflow: hidden;
@@ -264,17 +296,27 @@ button {
 }
 
 a {
-  color: white;
+  color: #e7e7e7;
 }
 
 .cashGrab {
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 5px;
+}
+
+.liSpan {
+  width: 110px;
+  font-size: .9em;
+  padding: 0;
+  margin: 30px 0 8px 0;
+  transform: translateX(-14px);
 }
 
 .piggy,
 .blood {
+  padding: 0;
+  margin: 0;
   height: 75px;
   width: 75px;
   border-radius: 50%;
@@ -287,9 +329,10 @@ a {
   background-color: rgb(22, 22, 22);
 }
 
+/* 
 .blood {
   margin: 20px 0;
-}
+} */
 
 .piggy img,
 .blood img {
@@ -299,14 +342,14 @@ a {
 
 .piggy img {
   position: absolute;
-  left: 50%;
+  left: 42%;
   transform: translateX(-50%);
   padding-top: 15px;
 }
 
 .blood img {
   position: absolute;
-  left: 50%;
+  left: 42%;
   transform: translateX(-51%);
   padding-top: 11px;
 }
@@ -324,47 +367,76 @@ a {
   overflow: hidden;
   transition: 0.5s;
 }
+
 .needCashMenu p {
+  white-space: nowrap;
   font-size: 1.2em;
   border-top: 2px solid gray;
   position: absolute;
   bottom: 8px;
-  left: 20px;
+  left: 8px;
 }
 
-.getCash {
+.getCashBorder{
+  cursor: pointer;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 25px;
-  height: 100px;
-  clip-path: polygon(0 0, 25px 10px, 25px 90px, 0 100px);
+  width: 28px;
+  height: 106px;
+  clip-path: polygon(0 0, 28px 11px, 28px 95px, 0 106px);
   border-radius: 3px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: #313131;
+  vertical-align: middle;
   transition: 0.5s;
+}
+
+.getCash {
+  position: absolute;
+  top: 3px; /* equal to border thickness */
+  left: 0px; /* equal to border thickness */
+  width: 25px; /* container height - (border thickness * 2) */
+  height: 100px; /* container height - (border thickness * 2) */
+  clip-path: polygon(0 0, 25px 10px, 25px 90px, 0 100px);
+  background-color: #0f0f0f;
 }
 
 .getCash p {
   text-align: center;
   /* color: #1f1f1f; */
-  color: white;
+  color: #c7c7c7;
+  vertical-align: middle;
+  padding: 0;
+  margin: 48px 0 -4px -2px;
   font-size: 1.2em;
   font-weight: 600 !important;
+}
+
+.getCashBar {
+  transform: rotate(90deg);
+  transform-origin: left;
+  width: 16px;
+  position: relative;
+  top: 3px;
+  left: 8px;
+  border-color: #666666;
+  margin-bottom: -23px;
 }
 
 .cashGrabItems {
   padding: 15px;
   position: fixed;
+  left: -150px;
   bottom: 50px;
   z-index: 9998;
+  transition: .5s;
 }
 
 .needCashMenu li {
   list-style: none;
-  margin: 25px 0 0 20px;
   transition: 0.5s;
-  margin-left: 5px !important;
+  margin-left: 12px !important;
 }
 
 .main {
@@ -389,7 +461,8 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
 }
-.titleNavEvent{
+
+.titleNavEvent {
   background: linear-gradient(to right, #1f1f1f 85%, #0f0f0f);
   position: absolute;
   left: 0;
@@ -399,9 +472,8 @@ a {
   overflow-x: hidden;
   transition: 0.5s;
 }
-.titleIcons{
 
-}
+.titleIcons {}
 
 .titleMain {
   transition: 0.3s;
@@ -428,12 +500,12 @@ a {
   text-decoration: none;
 }
 
-.titleMain > div > i {
+.titleMain>div>i {
   font-size: 1.75em;
   margin: 30px;
 }
 
-.titleMain > .welcomeContainer > div {
+.titleMain>.welcomeContainer>div {
   width: 80vw;
   float: left;
 }
@@ -458,6 +530,7 @@ a {
   font-size: 1.75em;
   margin-right: 30px;
 }
+
 /*
 .imgContainer {
   position: absolute;
@@ -491,22 +564,29 @@ a {
 }
 
 footer {
+  display: flex;
   position: fixed;
   bottom: -10px;
   margin-left: -22px;
+  transition: .3s;
 }
 
 footer a {
+  transition: .3s;
   text-decoration: none;
 }
+
 .secondaryButton {
   display: none;
 }
+
 input {
   width: 280px;
   margin-top: 7px;
 }
+
 /*//////////////////////////////////////DONATE PAGE///////////////////////////////////*/
+
 #donateTemplate {
   width: 100vw;
   height: 100vh;
@@ -517,10 +597,12 @@ input {
   flex-direction: column;
   align-items: center;
 }
+
 #donateDiv {
   display: flex;
   flex-direction: column;
 }
+
 #donateDiv a {
   text-decoration: none;
   margin-bottom: 10px;
@@ -534,6 +616,7 @@ input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 #donateCard {
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
@@ -542,6 +625,7 @@ input {
   display: flex;
   flex-direction: column;
 }
+
 .mood {
   transform: rotate(-90deg);
   display: flex;
@@ -549,16 +633,19 @@ input {
   top: 75px;
   left: 0;
 }
+
 .mood span {
   transform: rotate(90deg);
   width: 44px;
   border-top: 2px solid #dc143c;
   margin-right: -7px;
 }
+
 .mood span i {
   font-size: 2em;
   padding: 4px;
 }
+
 .moodProgress {
   width: 75px;
   height: 30px;
@@ -566,19 +653,23 @@ input {
   margin-left: 6px;
   background-color: #dc143c;
 }
+
 .moodProgress::-webkit-progress-value {
   background-color: #dc143c;
 }
+
 /*-=---------------------RESULT-----------------------------------------------------------------------*/
+
 .mainResult {
   overflow: hidden;
   /* background-image: url("../images/food.png");
   background-size: cover; */
   width: 100vw;
   height: 100vh;
-  margin-top: 40px;
-  transition: .5s;
+  padding-top: 40px;
+  transition: .3s;
 }
+
 .formFocus {
   display: none;
   position: fixed;
@@ -588,15 +679,23 @@ input {
   height: 120vh;
   background-color: #000000b0;
 }
+
 .formFocus i {
   position: fixed;
   top: 30px;
   right: 30px;
-  color: white;
+  color: #e7e7e7;
 }
+
+.creditMain {
+  width: 90vw;
+  height: 90vh;
+  margin-top: -100px;
+}
+
 .creditForm {
   display: none;
-  width: 400px;
+  width: 300px;
   height: 350px;
   background-color: #1f1f1f;
   border-radius: 15px;
@@ -607,40 +706,49 @@ input {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
-  transition: .5s;
+  transition: .3s;
 }
+
 .form {
-  width: 300px;
+  width: 250px;
   margin: 20px auto;
 }
+
 .ccNum {
   display: flex;
   align-items: flex-end;
 }
+
 .ccNum div label {
   font-size: 0.7em;
   display: flex;
   flex-direction: column;
 }
+
 .ccNum div label input {
-  width: 55px;
+  width: 45px;
   height: 25px;
   margin-left: 0;
   border-radius: 3px;
   padding-left: 5px;
+  font-size: 1.37em;
 }
+
 .ccNum input {
-  width: 55px;
+  width: 45px;
   height: 25px;
   margin-left: 10px;
   border-radius: 3px;
   padding-left: 5px;
+  font-size: 1em;
 }
+
 .cardName {
   display: flex;
   align-items: flex-end;
   margin-top: 10px;
 }
+
 .cardName label {
   font-size: 0.7em;
   display: flex;
@@ -648,45 +756,58 @@ input {
   float: left;
   text-align: start;
 }
+
 .cardName label input {
-  width: 280px;
+  width: 250px;
   height: 25px;
   border-radius: 3px;
   padding-left: 5px;
+  font-size: 1.37em;
 }
+
 .expirationLabel {
   display: flex;
   align-items: flex-end;
 }
+
 .expirationLabel label {
   font-size: 0.7em;
   display: flex;
   flex-direction: column;
 }
+
 .expirationLabel label select {
-  width: 50px;
+  width: 40px;
   height: 30px;
   margin-left: 0;
   border-radius: 3px;
+  font-size: 1.37em;
 }
+
 .expWhole select {
   margin-left: 5px;
   border-radius: 3px;
+  font-size: 1em;
 }
+
 .expWhole select {
-  width: 50px;
+  width: 40px;
   height: 30px;
   border-radius: 3px;
+  font-size: 1em;
 }
+
 .expWhole {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
 }
+
 .ccvForm {
   display: flex;
   align-items: flex-end;
 }
+
 .ccvForm label {
   font-size: 0.7em;
   display: flex;
@@ -694,22 +815,27 @@ input {
   float: left;
   text-align: start;
 }
+
 .ccvForm label input {
-  width: 50px;
+  width: 40px;
   height: 25px;
   border-radius: 3px;
   padding-left: 5px;
+  font-size: 1.37em;
 }
+
 .expCCV {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 285px;
+  width: 255px;
   margin-top: 15px;
+  font-size: 1em;
 }
+
 .card {
-  width: 350px;
-  height: 215px;
+  width: 300px;
+  height: 180px;
   border-radius: 5px;
   margin: -150px auto 0 auto;
   /* background: radial-gradient(
@@ -721,45 +847,50 @@ input {
   background-size: 110% 110%;
   font-family: "Coda", cursive;
 }
+
 .chip {
   background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);
   border-top: 1px solid purple;
   border-left: 1px solid purple;
   border-right: 1px solid rgb(184, 0, 184);
   border-bottom: 1px solid rgb(184, 0, 184);
-  width: 50px;
-  height: 35px;
+  width: 40px;
+  height: 30px;
   border-radius: 5px;
 }
+
 .chipDec {
-  width: 30px;
-  height: 17px;
+  width: 25px;
+  height: 15px;
   margin: auto;
   border-radius: 5px;
   border: 3px solid grey;
   margin-top: 5px;
 }
+
 .topCard {
   display: flex;
   justify-content: space-between;
   padding: 30px 20px;
   align-items: start;
 }
+
 .topCard p {
   margin: 0;
 }
+
 .cardNumbers {
   display: flex;
   margin: 0 30px;
   padding: 0;
   margin-top: -15px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   letter-spacing: 0.11em;
 }
 
 .cardNameonCard {
   display: flex;
-  font-size: 0.8em;
+  font-size: .8em;
   margin: -30px 25px 0 20px;
   justify-content: space-between;
 }
@@ -767,6 +898,7 @@ input {
 .expOnCard div {
   display: flex;
 }
+
 .expOnCard {
   font-size: 1em;
   display: flex;
@@ -775,18 +907,20 @@ input {
 }
 
 /*//////////////////////////////////RESULTS PAGE////////////////////////////////////////////////*/
+
 #resultsMain {
   width: 100vw;
   height: 100vh;
 }
+
 /*//////////////////////////////////ADD EVENTS PAGE////////////////////////////////////////////////*/
+
 #addMain {
   width: 100vw;
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  margin-top: 40px;
-  transition: .5s;
+  transition: .3s;
 }
 
 .addInputs {
@@ -795,36 +929,51 @@ input {
   border-bottom: 1px solid #eee;
   color: #eee;
 }
+
+#addContent {
+  padding-top: 40px;
+  transition: .3s;
+}
+
 #addContent div {
   margin: 20px;
   border: 1px solid red;
 }
+
 #addContent button:hover {
   border-bottom: 2px solid #dc143c;
 }
+
 #eventTitle {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
 }
+
 #eventTitle input {
   width: 20vw;
 }
+
 #eventTitle label {
   padding: 5px;
 }
+
 #options {
   display: flex;
 }
+
 #options input[type="number"] {
   width: 40px;
 }
-#options input[type="text"]{
+
+#options input[type="text"] {
   width: 100px;
 }
+
 #options label {
   padding: 10px;
 }
+
 #options div {
   display: flex;
   flex-wrap: wrap;
@@ -832,107 +981,268 @@ input {
   margin: 0px;
   padding: 20px;
 }
+
 /*===============================LOG IN PAGE================================================================*/
 
-.loginMain{
+.whyDoIhaveToAddThisLogin {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loginMain {
   margin: 50px auto;
   width: 300px;
   background-color: #0f0f0f;
   border: 5px solid #1f1f1f;
   border-radius: 10px;
-  transition: .5s;
+  transition: .3s;
 }
-.loginMain form{
+
+.loginMain form {
   display: flex;
   flex-direction: column;
   padding: 20px;
   padding-top: 0;
 }
-.loginMain form h1{
+
+.loginMain form h1 {
   padding-bottom: 0;
   margin-bottom: 0;
 }
-.loginMain form input{
+
+.loginMain form input {
   border-radius: 3px;
   padding: 5px;
   margin: 10px 0;
   width: 250px;
 }
-.loginMain form button{
+
+.loginMain form button {
   margin-top: 10px;
   align-items: baseline;
 }
 
-
-.titleIconsEvent{
+.titleIconsEvent {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 4px;
   background-color: #1f1f1f;
   padding: 3px 5px;
-  transition: .3s;
+  transition: .5s;
   z-index: 100;
 }
-.titleIconsElse{
+
+.titleIconsElse {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
   top: 0px;
   background-color: #1f1f1f;
   padding: 3px 5px;
-  transition: .3s;
+  transition: .5s;
   z-index: 100;
 }
-.titleNavEvent{
+
+.titleNavEvent {
   position: fixed;
-  top:-30px;
-  left:0;
+  top: -30px;
+  left: 0;
   height: 30px;
   background-color: #1f1f1f;
   width: 100vw;
-  transition: .3s;
+  transition: .5s;
 }
+
 .titleNavEvent ul {
   width: 100vw;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
-.titleNavEvent ul li{
+
+.titleNavEvent ul li {
   float: left;
   padding: 0 10px;
-  margin:0;
+  margin: 0;
   list-style: none;
 }
+
 .titleNavEvent ul li a {
   text-decoration: none;
 }
 
-.titleNavElse{
+.titleNavElse {
   position: fixed;
-  top:-30px;
-  left:0;
+  top: -30px;
+  left: 0;
   height: 30px;
   background-color: #1f1f1f;
   width: 100vw;
   transition: .3s;
 }
+
 .titleNavElse ul {
   width: 100vw;
   padding: 0;
-  margin:0;
+  margin: 0;
 }
-.titleNavElse ul li{
+
+.titleNavElse ul li {
   float: left;
   padding: 0 10px;
-  margin:0;
+  margin: 0;
   list-style: none;
 }
+
 .titleNavElse ul li a {
   text-decoration: none;
 }
 
+.flip-container {
+  perspective: 1000px;
+}
 
+/*  .flipper, .flip-container.hover .flipper {
+    transform: rotateY(180deg);
+  }
+
+.flip-container, .front, .back {
+  width: 250px;
+  height: 100px;
+}
+
+/* flip speed goes here */
+
+.flipper1,
+.flipper2 {
+  transition: 0.6s;
+  transform-style: preserve-3d;
+  text-align: center;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+
+.front,
+.back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+
+.front {
+  z-index: 2;
+  /* for firefox 31 */
+  transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+
+.back {
+  transform: rotateY(180deg);
+}
+
+.cardUnderliner {
+  font-weight: 600;
+  text-decoration-line: underline;
+}
+
+.piggyError {
+  visibility: hidden;
+}
+
+.piggyError div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000008c;
+  transition: .3s;
+}
+
+.piggyError span {
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  top: 40%;
+  left: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* transform: translatey(-50%); */
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 5px solid #313131;
+  background-color: #1f1f1f;
+}
+
+.donateError {
+  visibility: hidden;
+}
+
+.donateError div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #0000008c;
+  transition: .3s;
+}
+
+.donateError span {
+  vertical-align: middle;
+  position: absolute;
+  width: 250px;
+  height: 100px;
+  top: 40%;
+  left: 0;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  /* transform: translatey(-50%); */
+  vertical-align: middle;
+  border-radius: 5px;
+  border: 5px solid #313131;
+  background-color: #1f1f1f;
+}
+/*//////////////////////////////////////TEAM PAGE///////////////////////////////////*/
+
+#teamDiv{
+  margin-top: 60px;
+  margin-left: 35%;
+  width: 320px;
+}
+
+.teamText{
+  text-align: left;
+}
+
+.teamText h1{
+  font-size: 2.2em;
+  color: green;
+  margin-bottom: 0;
+}
+
+.teamText h2 {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+#teamDiv a {
+}
+
+#codeDiv{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
 
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
 
@@ -949,19 +1259,16 @@ input {
     background-size: cover;
     background-position: left 0 top 0;
   }
-  
   /*---------------------Start---------------------*/
-
-  .view-animate.ng-leave{
+  .view-animate.ng-leave {
     animation: slideleft 1s both ease-in;
     background-image: url("../images/food.png");
     background-size: cover;
     z-index: 9999;
   }
-  .view-animate.ng-enter{
+  .view-animate.ng-enter {
     z-index: -1;
   }
-
   .titleIcons div {
     display: none;
   }
@@ -978,7 +1285,7 @@ input {
     left: 10vw;
     bottom: 150px;
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 175px;
     display: flex;
     justify-content: space-between;
@@ -994,7 +1301,7 @@ input {
     left: 10vw;
     bottom: 75px;
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 175px;
     display: flex;
     justify-content: space-between;
@@ -1004,7 +1311,6 @@ input {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
-
   /*-----------------------------------event--------------------------*/
   .main {
     overflow: hidden;
@@ -1021,25 +1327,53 @@ input {
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 122px;
+    width: 115px;
     z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
   .needCashMenu p {
+    white-space: nowrap;
     position: absolute;
     bottom: 8px;
-    left: 20px;
+    left: 8px;
   }
   .cashGrabItems {
     position: fixed;
     bottom: 50px;
     transition: .3s;
   }
+  .cashGrabItems li {
+    margin: -20px 0 0 0;
+  }
+  .haveToMakeABorderForThisShit {
+    position: absolute;
+    width: 104px;
+    height: 46px;
+    left: 3px;
+    top: 3px;
+    background: #313131;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: .95em;
+    padding-top: 8px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+  }
+  .liSpan {
+    visibility: hidden;
+    position: relative;
+    width: 110px;
+    height: 60px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+    background-color: #870805;
+    font-size: .9em;
+    margin: 30px 0 -10px 0;
+    transform: translateX(-14px);
+  }
   .getCash {
     display: none;
   }
-  .header{
+  .header {
     z-index: -1;
   }
   .mainProgress {
@@ -1060,7 +1394,7 @@ input {
     padding-right: 40px;
   }
   .topInfo p span {
-    color: white;
+    color: #e7e7e7;
     font-weight: 400;
   }
   .eventTitle {
@@ -1087,18 +1421,205 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 100px;
+    min-height: 100px;
     padding: 0;
     margin: 10px;
     overflow: visible;
   }
-  hr {
+  .card2 {
+    margin-top: 35px;
+  }
+  .eventHeaderBar {
     width: 50vw;
   }
   footer {
+    transition: .3s;
     margin-left: -95px;
   }
+  .creditMain {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100px;
+  }
+  .creditForm {
+    display: none;
+    width: 400px;
+    height: 350px;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    border: 7px solid #313131;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+  }
+  .form {
+    width: 300px;
+    margin: 20px auto;
+  }
+  .ccNum {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccNum div label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .ccNum div label input {
+    width: 55px;
+    height: 25px;
+    margin-left: 0;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .ccNum input {
+    width: 55px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .cardName {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+  .cardName label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .cardName label input {
+    width: 280px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expirationLabel {
+    display: flex;
+    align-items: flex-end;
+  }
+  .expirationLabel label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .expirationLabel label select {
+    width: 50px;
+    height: 30px;
+    margin-left: 0;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+  }
+  .expWhole {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .ccvForm {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccvForm label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .ccvForm label input {
+    width: 50px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expCCV {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 285px;
+    margin-top: 15px;
+  }
+  .card {
+    width: 350px;
+    height: 215px;
+    border-radius: 5px;
+    margin: -150px auto 0 auto;
+    /* background: radial-gradient(
+      circle at 100% 100%,
+      rgb(100, 1, 100),
+      rgb(197, 1, 148)
+    ); */
+    background-image: url("../images/world.png");
+    background-size: 110% 110%;
+    font-family: "Coda", cursive;
+  }
+  .chip {
+    background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);
+    border-top: 1px solid purple;
+    border-left: 1px solid purple;
+    border-right: 1px solid rgb(184, 0, 184);
+    border-bottom: 1px solid rgb(184, 0, 184);
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+  }
+  .chipDec {
+    width: 30px;
+    height: 17px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid grey;
+    margin-top: 5px;
+  }
+  .topCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: start;
+  }
+  .topCard p {
+    margin: 0;
+  }
+  .cardNumbers {
+    display: flex;
+    margin: 0 30px;
+    padding: 0;
+    margin-top: -15px;
+    font-size: 1.4em;
+    letter-spacing: 0.11em;
+  }
+  .cardNameonCard {
+    display: flex;
+    font-size: 0.8em;
+    margin: -30px 25px 0 20px;
+    justify-content: space-between;
+  }
+  .expOnCard div {
+    display: flex;
+  }
+  .expOnCard {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    margin: -30px 30px 0 30px;
+  }
 }
+
 @media screen and (min-width: 768px) and (max-width: 1223px) {
   body {
     background-color: #1f1f1f;
@@ -1112,16 +1633,15 @@ input {
     background-size: cover;
     background-position: left 0 top 0;
   }
-  .view-animate.ng-leave{
+  .view-animate.ng-leave {
     animation: slideleft 1s both ease-in;
     background-image: url("../images/food.png");
     background-size: cover;
     z-index: 9999;
   }
-  .view-animate.ng-enter{
+  .view-animate.ng-enter {
     z-index: -1;
   }
-
   .titleNav {
     background-color: #1f1f1f;
     position: absolute;
@@ -1132,7 +1652,7 @@ input {
     overflow: hidden;
     transition: 0.5s;
   }
-  .titleNavEvent{
+  .titleNavEvent {
     background-color: #1f1f1f;
     position: absolute;
     left: 0;
@@ -1142,11 +1662,9 @@ input {
     overflow: hidden;
     transition: 0.5s;
   }
-
   .titleNav ul {
     padding: 0;
   }
-
   .titleNav ul li {
     display: inline-block;
     float: left;
@@ -1156,11 +1674,9 @@ input {
     margin: auto;
     font-size: 1.2em;
   }
-
   .titleNav ul li a {
     text-decoration: none;
   }
-
   .main {
     overflow: hidden;
   }
@@ -1180,7 +1696,7 @@ input {
     transform: translateX(-50%);
     background-color: #1f1f1f;
     border-top: 2px solid #1f1f1f;
-    transition: .3s;
+    transition: .5s;
     cursor: pointer;
   }
   .titleIcons i:hover {
@@ -1204,7 +1720,7 @@ input {
   .priorityButton {
     position: static;
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 225px;
     display: flex;
     justify-content: space-between;
@@ -1234,7 +1750,7 @@ input {
   }
   .secondaryButton {
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 225px;
     display: flex;
     justify-content: space-between;
@@ -1244,14 +1760,13 @@ input {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
-
   /*  #resultsDiv {
     margin: 0 auto;
   }*/
   #resultsDiv {
     margin: 0 auto;
   }
-  #resultsMain{
+  #resultsMain {
     background-image: url("../images/food.png");
   }
   /* ---------------------------------- event page ----------------------------------- */
@@ -1272,24 +1787,52 @@ input {
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 122px;
+    width: 115px;
     z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
   .needCashMenu p {
+    white-space: nowrap;
     position: absolute;
     bottom: 8px;
-    left: 20px;
+    left: 8px;
   }
   .cashGrabItems {
     position: fixed;
     bottom: 50px;
   }
+  .cashGrabItems li {
+    margin: -20px 0 0 0;
+  }
+  .haveToMakeABorderForThisShit {
+    position: absolute;
+    width: 104px;
+    height: 46px;
+    left: 3px;
+    top: 3px;
+    background: #313131;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: .95em;
+    padding-top: 8px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+  }
+  .liSpan {
+    visibility: hidden;
+    position: relative;
+    width: 110px;
+    height: 60px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+    background-color: #870805;
+    font-size: .9em;
+    margin: 30px 0 -10px 0;
+    transform: translateX(-14px);
+  }
   .getCash {
     display: none;
   }
-  .header{
+  .header {
     z-index: -1;
   }
   .mainProgress {
@@ -1309,7 +1852,7 @@ input {
     font-weight: 500;
   }
   .topInfo p span {
-    color: white;
+    color: #e7e7e7;
     font-weight: 400;
   }
   .eventTitle {
@@ -1336,58 +1879,202 @@ input {
   .card1,
   .card2 {
     width: 250px;
-    height: 100px;
+    min-height: 100px;
     padding: 0;
     margin: 10px;
   }
   /* entire container, keeps perspective */
-  .flip-container {
-  	perspective: 1000px;
-  }
-  	/* flip the pane when hovered */
-  	.flip-container:hover .flipper, .flip-container.hover .flipper {
-  		transform: rotateY(180deg);
-  	}
-
-  .flip-container, .front, .back {
-    width: 250px;
-    height: 100px;
-  }
-
-  /* flip speed goes here */
-  .flipper {
-  	transition: 0.6s;
-  	transform-style: preserve-3d;
-
-  	position: relative;
-  }
-
-  /* hide back of pane during swap */
-  .front, .back {
-  	backface-visibility: hidden;
-
-  	position: absolute;
-  	top: 0;
-  	left: 0;
-  }
-
-  /* front pane, placed above back */
-  .front {
-  	z-index: 2;
-  	/* for firefox 31 */
-  	transform: rotateY(0deg);
-  }
-
-  /* back, initially hidden pane */
-  .back {
-  	transform: rotateY(180deg);
-  }
-
-  hr {
+  .eventHeaderBar {
     width: 50vw;
   }
   footer {
-      margin-left: -82px;
+    transition: .3s;
+    margin-left: -82px;
+  }
+  .creditMain {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100px;
+  }
+  .creditForm {
+    display: none;
+    width: 400px;
+    height: 350px;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    border: 7px solid #313131;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+  }
+  .form {
+    width: 300px;
+    margin: 20px auto;
+  }
+  .ccNum {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccNum div label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .ccNum div label input {
+    width: 55px;
+    height: 25px;
+    margin-left: 0;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .ccNum input {
+    width: 55px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .cardName {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+  .cardName label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .cardName label input {
+    width: 280px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expirationLabel {
+    display: flex;
+    align-items: flex-end;
+  }
+  .expirationLabel label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .expirationLabel label select {
+    width: 50px;
+    height: 30px;
+    margin-left: 0;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+  }
+  .expWhole {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .ccvForm {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccvForm label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .ccvForm label input {
+    width: 50px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expCCV {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 285px;
+    margin-top: 15px;
+  }
+  .card {
+    width: 350px;
+    height: 215px;
+    border-radius: 5px;
+    margin: -150px auto 0 auto;
+    /* background: radial-gradient(
+      circle at 100% 100%,
+      rgb(100, 1, 100),
+      rgb(197, 1, 148)
+    ); */
+    background-image: url("../images/world.png");
+    background-size: 110% 110%;
+    font-family: "Coda", cursive;
+  }
+  .chip {
+    background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);
+    border-top: 1px solid purple;
+    border-left: 1px solid purple;
+    border-right: 1px solid rgb(184, 0, 184);
+    border-bottom: 1px solid rgb(184, 0, 184);
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+  }
+  .chipDec {
+    width: 30px;
+    height: 17px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid grey;
+    margin-top: 5px;
+  }
+  .topCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: start;
+  }
+  .topCard p {
+    margin: 0;
+  }
+  .cardNumbers {
+    display: flex;
+    margin: 0 30px;
+    padding: 0;
+    margin-top: -15px;
+    font-size: 1.4em;
+    letter-spacing: 0.11em;
+  }
+  .cardNameonCard {
+    display: flex;
+    font-size: 0.8em;
+    margin: -30px 25px 0 20px;
+    justify-content: space-between;
+  }
+  .expOnCard div {
+    display: flex;
+  }
+  .expOnCard {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    margin: -30px 30px 0 30px;
+  }
+  #teamDiv{
+    margin-left: 42%;
   }
 }
 
@@ -1406,16 +2093,15 @@ input {
     background-size: cover;
     background-position: left 0 top 0;
   }
-  .view-animate.ng-leave{
+  .view-animate.ng-leave {
     animation: slideleft 1s ease-in;
     background-image: url("../images/food.png");
     background-size: cover;
     z-index: 9999;
   }
-  .view-animate.ng-enter{
+  .view-animate.ng-enter {
     z-index: -1;
   }
-
   .titleNav {
     background-color: #1f1f1f;
     position: absolute;
@@ -1426,11 +2112,9 @@ input {
     overflow: hidden;
     transition: 0.5s;
   }
-
   .titleNav ul {
     padding: 0;
   }
-
   .titleNav ul li {
     display: inline-block;
     float: left;
@@ -1438,13 +2122,11 @@ input {
     text-align: left;
     padding: 0 15px;
     margin: auto;
-    font-size: 1.2em;
+    font-size: 1.meem;
   }
-
   .titleNav ul li a {
     text-decoration: none;
   }
-
   .titleNav {
     background-color: #1f1f1f;
     position: absolute;
@@ -1455,11 +2137,9 @@ input {
     overflow-x: hidden;
     transition: 0.5s;
   }
-
   .titleNav ul {
     padding: 0;
   }
-
   .titleNav ul li {
     list-style: none;
     text-align: left;
@@ -1467,11 +2147,9 @@ input {
     margin: auto;
     font-size: 1.2em;
   }
-
   .titleNav ul li a {
     text-decoration: none;
   }
-
   .titleMain {
     overflow: hidden;
   }
@@ -1488,7 +2166,7 @@ input {
     transform: translateX(-50%);
     background-color: #1f1f1f;
     border-top: 2px solid #1f1f1f;
-    transition: .3s;
+    transition: .5s;
     cursor: pointer;
   }
   .titleIcons i:hover {
@@ -1512,7 +2190,7 @@ input {
   .priorityButton {
     position: static;
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 225px;
     display: flex;
     justify-content: space-between;
@@ -1542,7 +2220,7 @@ input {
   }
   .secondaryButton {
     font-size: 1.3em;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid #e7e7e7;
     width: 225px;
     display: flex;
     justify-content: space-between;
@@ -1552,8 +2230,6 @@ input {
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
   }
-
-
   /*--------------------------------EVENTS-----------------------------------------------*/
   .cardContainer {
     display: flex;
@@ -1576,24 +2252,52 @@ input {
     left: -3px;
     top: 0;
     height: 100vh;
-    width: 122px;
+    width: 115px;
     z-index: 9998;
     overflow-x: hidden;
     overflow: hidden;
   }
   .needCashMenu p {
     position: absolute;
+    white-space: nowrap;
     bottom: 8px;
-    left: 20px;
+    left: 8px;
   }
   .cashGrabItems {
     position: fixed;
     bottom: 50px;
   }
+  .cashGrabItems li {
+    margin: -20px 0 0 0;
+  }
+  .haveToMakeABorderForThisShit {
+    position: absolute;
+    width: 104px;
+    height: 46px;
+    left: 3px;
+    top: 3px;
+    background: #313131;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: .95em;
+    padding-top: 8px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+  }
+  .liSpan {
+    visibility: hidden;
+    position: relative;
+    width: 110px;
+    height: 60px;
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 60% 85%, 50% 100%, 40% 85%, 0 85%);
+    background-color: #870805;
+    font-size: .9em;
+    margin: 30px 0 -10px 0;
+    transform: translateX(-14px);
+  }
   .getCash {
     display: none;
   }
-  .header{
+  .header {
     z-index: -1;
   }
   .mainProgress {
@@ -1613,7 +2317,7 @@ input {
     font-weight: 500;
   }
   .topInfo p span {
-    color: white;
+    color: #e7e7e7;
     font-weight: 400;
   }
   .eventTitle {
@@ -1640,14 +2344,202 @@ input {
   .card1,
   .card2 {
     width: 300px;
-    height: 100px;
+    min-height: 100px;
     padding: 0;
     margin: 10px;
   }
-  hr {
+  .eventHeaderBar {
     width: 50vw;
   }
   footer {
     margin-left: -82px;
+    transition: .3s;
+  }
+  .creditMain {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -100px;
+  }
+  .creditForm {
+    display: none;
+    width: 400px;
+    height: 350px;
+    background-color: #1f1f1f;
+    border-radius: 15px;
+    border: 7px solid #313131;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: .3s;
+  }
+  .form {
+    width: 300px;
+    margin: 20px auto;
+  }
+  .ccNum {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccNum div label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .ccNum div label input {
+    width: 55px;
+    height: 25px;
+    margin-left: 0;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .ccNum input {
+    width: 55px;
+    height: 25px;
+    margin-left: 10px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .cardName {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 10px;
+  }
+  .cardName label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .cardName label input {
+    width: 280px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expirationLabel {
+    display: flex;
+    align-items: flex-end;
+  }
+  .expirationLabel label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+  }
+  .expirationLabel label select {
+    width: 50px;
+    height: 30px;
+    margin-left: 0;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    margin-left: 5px;
+    border-radius: 3px;
+  }
+  .expWhole select {
+    width: 50px;
+    height: 30px;
+    border-radius: 3px;
+  }
+  .expWhole {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+  }
+  .ccvForm {
+    display: flex;
+    align-items: flex-end;
+  }
+  .ccvForm label {
+    font-size: 0.7em;
+    display: flex;
+    flex-direction: column;
+    float: left;
+    text-align: start;
+  }
+  .ccvForm label input {
+    width: 50px;
+    height: 25px;
+    border-radius: 3px;
+    padding-left: 5px;
+  }
+  .expCCV {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 285px;
+    margin-top: 15px;
+  }
+  .card {
+    width: 350px;
+    height: 215px;
+    border-radius: 5px;
+    margin: -150px auto 0 auto;
+    /* background: radial-gradient(
+      circle at 100% 100%,
+      rgb(100, 1, 100),
+      rgb(197, 1, 148)
+    ); */
+    background-image: url("../images/world.png");
+    background-size: 110% 110%;
+    font-family: "Coda", cursive;
+  }
+  .chip {
+    background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);
+    border-top: 1px solid purple;
+    border-left: 1px solid purple;
+    border-right: 1px solid rgb(184, 0, 184);
+    border-bottom: 1px solid rgb(184, 0, 184);
+    width: 50px;
+    height: 35px;
+    border-radius: 5px;
+  }
+  .chipDec {
+    width: 30px;
+    height: 17px;
+    margin: auto;
+    border-radius: 5px;
+    border: 3px solid grey;
+    margin-top: 5px;
+  }
+  .topCard {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: start;
+  }
+  .topCard p {
+    margin: 0;
+  }
+  .cardNumbers {
+    display: flex;
+    margin: 0 30px;
+    padding: 0;
+    margin-top: -15px;
+    font-size: 1.4em;
+    letter-spacing: 0.11em;
+  }
+  .cardNameonCard {
+    display: flex;
+    font-size: 0.8em;
+    margin: -30px 25px 0 20px;
+    justify-content: space-between;
+  }
+  .expOnCard div {
+    display: flex;
+  }
+  .expOnCard {
+    font-size: 1em;
+    display: flex;
+    justify-content: space-between;
+    margin: -30px 30px 0 30px;
+  }
+
+
+  #teamDiv{
+    margin-left: 45%;
   }
 }

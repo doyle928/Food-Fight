@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Food Fight</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:title" content="Food Fight For Good" />
   <meta property="og:type" content="website" />
   <meta property="or:url" content="http://foodfightforgood.org" />
@@ -13,12 +13,16 @@
   <meta property="og:description" content="Could you feed a family of 4 on $150 a week? Try it." />
   <meta property="og:site_name" content="http://foodfightforgood.org" />
   <meta property="fb:admins" content="727082414" />
+  <meta name="theme-color" content="#1f1f1f">
+  <meta name="msapplication-navbutton-color" content="#1f1f1f">
+  <meta name="apple-mobile-web-app-status-bar-style" content="#1f1f1f">
   <link rel="stylesheet" type="text/css" media="screen" href="style/main.css">
   <link rel="icon" href="images/favicon-tomato.png" type="image/gif" sizes="16x16">
   <link href="https://fonts.googleapis.com/css?family=Average+Sans|Fjalla+One" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Coda" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="style/rzslider.css">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
 </head>
 
 <body class="body" slide-up data-parallaxify-background-range="50">
@@ -27,6 +31,10 @@
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-route.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-animate.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.7/angular-touch.js"></script>
+  <script src="js/plugins/angular-swipe.js"></script>
+  <script src="js/plugins/hammer.min.js"></script>
+  <script src="js/plugins/angular.hammer.js"></script>
   <script src="js/plugins/rzslider.js"></script>
   <script src="js/main.js"></script>
   <script src="js/module.js"></script>
@@ -43,6 +51,7 @@
   <script src="js/plugins/jquery.parallaxify.js"></script>
   <script src="js/directives/slideup.directive.js"></script>
   <script src="js/Components/login.component.js"></script>
+  <script src="js/Components/teamComponent.js"></script>
   <!-- <script>
   window.fbAsyncInit = function() {
     FB.init({

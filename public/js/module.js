@@ -1,3 +1,10 @@
 (function() {
-  angular.module("App", ["ngRoute", "ngAnimate", "rzModule"]);
+  angular.module("App", [
+    "ngRoute",
+    "ngAnimate",
+    "rzModule",
+    "ngTouch",
+    "swipe",
+    "hmTouchEvents"
+  ]);
 })();

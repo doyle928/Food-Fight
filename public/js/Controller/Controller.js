@@ -334,6 +334,7 @@
 
     $ctrl.submitForm = function(isValid) {
       if (isValid) {
+        $locaton.path("/thankyou");
       }
     };
 
