@@ -6,7 +6,8 @@
     $ctrl.amount;
     $ctrl.dayCount;
     $ctrl.moodCurrent;
-    $ctrl.usedEvents = [1];
+    $ctrl.usedEvents = [];
+    $ctrl.usedEventsDup = [];
     $ctrl.randPiggy = Math.floor(Math.random() * 12) + 5;
     $ctrl.randDonate = Math.floor(Math.random() * 30) + 20;
     $ctrl.randPiggyUse = 1;
@@ -65,8 +66,6 @@
       if ($ctrl.windowWidth < 480) {
         cashMinItems();
       }
-    
-      
     };
     $ctrl.donBlood = function() {
       if ($ctrl.randDonateUse > 0) {
@@ -89,41 +88,48 @@
         cashMinItems();
       }
     };
-    $ctrl.closePiggyError = function(){
+    $ctrl.closePiggyError = function() {
       $(".piggyError").css("visibility", "hidden");
-    }
-    $ctrl.closeDonateError = function(){
+    };
+    $ctrl.closeDonateError = function() {
       $(".donateError").css("visibility", "hidden");
-    }
+    };
 
     function getEverything() {
       $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
       if (event.eventname === "Grocery Shopping") {
         getEverything();
-      } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents - 3) {
+      } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents - 4) {
         console.log("used events = number of events");
         FoodFightService.getEvents().then(event => {
-          if (event == undefined || event.id == 1) {
+          if (event == undefined) {
+            getEverything();
+          } else if (event.eventname == "Grocery Shopping") {
             getEverything();
           } else {
             if (event.repeatability === true) {
-              $ctrl.eventObj = event;
-              $ctrl.progressBar = FoodFightService.getProgressBar();
-              $ctrl.amount = FoodFightService.getAmount();
-              if ($ctrl.amount <= 0) {
-                $location.path("/results");
-              }
-              $ctrl.dayCount = FoodFightService.changeDayCount();
-              $ctrl.moodCurrent = FoodFightService.getMood();
-              $(".mainProgress").attr("value", $ctrl.amount);
-              $(".moodProgress").attr("value", $ctrl.moodCurrent);
-              var windowWidth = $(window).width();
-              if (windowWidth < 480) {
-                cashMinItems();
+              if ($ctrl.usedEventsDup.indexOf(event.id) == -1) {
+                $ctrl.eventObj = event;
+                $ctrl.usedEventsDup.push(event.id);
+                $ctrl.progressBar = FoodFightService.getProgressBar();
+                $ctrl.amount = FoodFightService.getAmount();
+                if ($ctrl.amount <= 0) {
+                  $location.path("/results");
+                }
+                $ctrl.dayCount = FoodFightService.changeDayCount();
+                $ctrl.moodCurrent = FoodFightService.getMood();
+                $(".mainProgress").attr("value", $ctrl.amount);
+                $(".moodProgress").attr("value", $ctrl.moodCurrent);
+                var windowWidth = $(window).width();
+                if (windowWidth < 480) {
+                  cashMinItems();
+                } else {
+                  cashMenuItems();
+                }
+                moodIcon();
               } else {
-                cashMenuItems();
+                getEverything();
               }
-              moodIcon();
             } else {
               getEverything();
             }
@@ -133,13 +139,14 @@
         FoodFightService.getEvents().then(event => {
           if (event != undefined) {
             if ($ctrl.usedEvents.indexOf(event.id) == -1) {
-              console.log("Got here");
+              console.log("used events", $ctrl.usedEvents);
+              console.log(event.eventname, event.id);
               $ctrl.eventObj = event;
               $ctrl.usedEvents.push(event.id);
               console.log($ctrl.usedEvents.length);
-              if ($ctrl.usedEvents.length === 11) {
-                $ctrl.usedEvents = [1];
-              }
+              // if ($ctrl.usedEvents.length === 11) {
+              //   $ctrl.usedEvents = [7];
+              // }
               $ctrl.progressBar = FoodFightService.getProgressBar();
               $ctrl.amount = FoodFightService.getAmount();
               if ($ctrl.amount <= 0) {
