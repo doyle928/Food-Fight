@@ -19,7 +19,7 @@
 
         
         $($element).parallaxify({
-          motionType: 'natural',
+          motionType: 'gaussian',
           mouseMotionType: 'gaussian'
         });
 

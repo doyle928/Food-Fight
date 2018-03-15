@@ -86,7 +86,7 @@ body {
   margin: 20vh 0 0 -10px;
   text-align: left;
   font-size: 3em;
-  transition: 0.3s;
+  transition: 0.5s;
   font-family: "Fjalla One", sans-serif;
 }
 
@@ -94,7 +94,7 @@ body {
   padding: 0;
   margin: 0 0 0 3%;
   text-align: left;
-  transition: 0.3s;
+  transition: 0.5s;
   font-family: "Fjalla One", sans-serif;
 }
 
@@ -104,13 +104,13 @@ body {
   margin-left: auto;
   /* transform: translateX(-50%); */
   border: 1px solid #dc143c;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .bodyText {
   width: 90%;
   margin: 0 auto;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .bodyText p {
@@ -138,7 +138,7 @@ button {
   left: 50%;
   transform: translateX(-50%);
   overflow: hidden;
-  transition: .3s;
+  transition: .5s;
 }
 
 .priorityButton .arrowDown {
@@ -242,7 +242,7 @@ button {
   left: 0;
   background-color: #dc143c;
   color: transparent;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .mainProgress::-webkit-progress-value {
@@ -260,7 +260,7 @@ button {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  transition: 0.3s;
+  transition: 0.5s;
 }
 
 .topInfo p {
@@ -478,7 +478,7 @@ a {
 .titleIcons {}
 
 .titleMain {
-  transition: 0.3s;
+  transition: 0.5s;
   width: 100vw;
   height: 100vh;
   box-shadow: -5px 0px 10px black;
@@ -570,11 +570,11 @@ footer {
   position: fixed;
   bottom: -10px;
   margin-left: -22px;
-  transition: .3s;
+  transition: .5s;
 }
 
 footer a {
-  transition: .3s;
+  transition: .5s;
   text-decoration: none;
 }
 
@@ -669,7 +669,7 @@ input {
   width: 100vw;
   height: 100vh;
   padding-top: 40px;
-  transition: .3s;
+  transition: .5s;
 }
 
 .formFocus {
@@ -708,7 +708,7 @@ input {
   top: 200px;
   left: 50%;
   transform: translateX(-50%);
-  transition: .3s;
+  transition: .5s;
 }
 
 .form {
@@ -922,7 +922,7 @@ a.facebookDiv {
   height: 100vh;
   background-size: cover;
   overflow: hidden;
-  transition: .3s;
+  transition: .5s;
 }
 
 .addInputs {
@@ -934,7 +934,7 @@ a.facebookDiv {
 
 #addContent {
   padding-top: 40px;
-  transition: .3s;
+  transition: .5s;
 }
 
 #addContent div {
@@ -1002,7 +1002,7 @@ a.facebookDiv {
   background-color: #0f0f0f;
   border: 5px solid #1f1f1f;
   border-radius: 10px;
-  transition: .3s;
+  transition: .5s;
 }
 
 .loginMain form {
@@ -1085,7 +1085,7 @@ a.facebookDiv {
   height: 30px;
   background-color: #1f1f1f;
   width: 100vw;
-  transition: .3s;
+  transition: .5s;
 }
 
 .titleNavElse ul {
@@ -1170,7 +1170,7 @@ a.facebookDiv {
   width: 100vw;
   height: 100vh;
   background-color: #0000008c;
-  transition: .3s;
+  transition: .5s;
 }
 
 .piggyError span {
@@ -1199,7 +1199,7 @@ a.facebookDiv {
   width: 100vw;
   height: 100vh;
   background-color: #0000008c;
-  transition: .3s;
+  transition: .5s;
 }
 
 .donateError span {
@@ -1295,7 +1295,7 @@ a.facebookDiv {
     justify-content: space-between;
     flex-direction: row;
     transform: translateX(0);
-    transition: .3s;
+    transition: .5s;
   }
   .priorityButton:hover {
     border-bottom: 2px solid #dc143c;
@@ -1310,7 +1310,7 @@ a.facebookDiv {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    transition: .3s;
+    transition: .5s;
   }
   .secondaryButton:hover {
     border-bottom: 2px solid #dc143c;
@@ -1345,7 +1345,7 @@ a.facebookDiv {
   .cashGrabItems {
     position: fixed;
     bottom: 50px;
-    transition: .3s;
+    transition: .5s;
   }
   .cashGrabItems li {
     margin: -20px 0 0 0;
@@ -1437,7 +1437,7 @@ a.facebookDiv {
     width: 50vw;
   }
   footer {
-    transition: .3s;
+    transition: .5s;
     margin-left: -95px;
   }
   .creditMain {
@@ -1458,7 +1458,7 @@ a.facebookDiv {
     top: 200px;
     left: 50%;
     transform: translateX(-50%);
-    transition: .3s;
+    transition: .5s;
   }
   .form {
     width: 300px;
@@ -1660,8 +1660,8 @@ a.facebookDiv {
     background-color: #1f1f1f;
     position: absolute;
     left: 0;
-    top: 75px;
-    height: 0;
+    top: -30px;
+    height: 30px;
     width: 100vw;
     overflow: hidden;
     transition: 0.5s;
@@ -1719,7 +1719,7 @@ a.facebookDiv {
     display: flex;
     position: absolute;
     bottom: 15vh;
-    transition: .3s;
+    transition: .5s;
   }
   .priorityButton {
     position: static;
@@ -1892,7 +1892,7 @@ a.facebookDiv {
     width: 50vw;
   }
   footer {
-    transition: .3s;
+    transition: .5s;
     margin-left: -82px;
   }
   .creditMain {
@@ -1913,7 +1913,7 @@ a.facebookDiv {
     top: 200px;
     left: 50%;
     transform: translateX(-50%);
-    transition: .3s;
+    transition: .5s;
   }
   .form {
     width: 300px;
@@ -2189,7 +2189,7 @@ a.facebookDiv {
     display: flex;
     position: absolute;
     bottom: 18vh;
-    transition: .3s;
+    transition: .5s;
   }
   .priorityButton {
     position: static;
@@ -2357,7 +2357,7 @@ a.facebookDiv {
   }
   footer {
     margin-left: -82px;
-    transition: .3s;
+    transition: .5s;
   }
   .creditMain {
     width: 100vw;
@@ -2377,7 +2377,7 @@ a.facebookDiv {
     top: 200px;
     left: 50%;
     transform: translateX(-50%);
-    transition: .3s;
+    transition: .5s;
   }
   .form {
     width: 300px;

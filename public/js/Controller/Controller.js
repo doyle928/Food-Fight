@@ -22,27 +22,33 @@
     $ctrl.selectOption1 = function(price, mood) {
       if ($(".flipper1").hasClass("flipped")) {
         $(".flipper1").removeClass("flipped");
-        getEverything();
-        $(".flipper1").css("transform", "rotateY(0deg)");
-      } else {
-        $(".flipper1").addClass("flipped");
+        $(".flipper2").removeClass("flipped");
         FoodFightService.changeProgressBar(price);
         FoodFightService.changeAmount(price);
         FoodFightService.sendMood(mood);
+        $(".flipper1").css("transform", "rotateY(0deg)");
+        getEverything();
+      } else {
+        $(".flipper1").addClass("flipped");
+        $(".flipper2").removeClass("flipped");
         $(".flipper1").css("transform", "rotateY(180deg)");
+        $(".flipper2").css("transform", "rotateY(0deg)");
       }
     };
     $ctrl.selectOption2 = function(price, mood) {
       if ($(".flipper2").hasClass("flipped")) {
         $(".flipper2").removeClass("flipped");
-        getEverything();
-        $(".flipper2").css("transform", "rotateY(0deg)");
-      } else {
+        $(".flipper1").removeClass("flipped");
         FoodFightService.changeProgressBar(price);
         FoodFightService.changeAmount(price);
         FoodFightService.sendMood(mood);
-        $(".flipper2").css("transform", "rotateY(180deg)");
+        $(".flipper2").css("transform", "rotateY(0deg)");
+        getEverything();
+      } else {
         $(".flipper2").addClass("flipped");
+        $(".flipper1").removeClass("flipped");
+        $(".flipper2").css("transform", "rotateY(180deg)");
+        $(".flipper1").css("transform", "rotateY(0deg)");
       }
     };
 
@@ -174,7 +180,7 @@
     }
 
     $ctrl.titleNavButton = function() {
-      $(".titleNavEvent").css("top", "0");
+      $(".titleNavEvent").css("top", "0px");
       $(".titleNavEvent").attr("class", "titleNavEvent down");
       if ($(".titleNavEvent").hasClass("titleNavEvent down")) {
         $(".main").css("margin-top", "30px");
@@ -209,6 +215,7 @@
       $(".main").css("margin-left", "117px");
       $(".getCashBorder").css("left", "117px");
       $(".topInfo").css("left", "117px");
+      $(".titleIconsEvent").css("left","calc(50% + 117px)");
       $(".titleNavEvent").css("margin-left", "117px");
       $("progress").css("left", "117px");
       $("footer").css("left", "calc(50% + 117px)");
@@ -233,6 +240,7 @@
       $(".main").css("margin-left", "0px");
       $(".getCashBorder").css("left", "0");
       $(".topInfo").css("left", "0");
+      $(".titleIconsEvent").css("left","50%");
       $(".titleNavEvent").css("margin-left", "0");
       $("progress").css("left", "0");
       $("footer").css("left", "50%");
