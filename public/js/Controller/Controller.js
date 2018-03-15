@@ -1,130 +1,135 @@
 (function() {
-        function controllerFunction(FoodFightService, $location, $scope) {
-            const $ctrl = this;
-            $ctrl.eventObj = {};
-            $ctrl.progressBar;
-            $ctrl.amount;
-            $ctrl.dayCount;
-            $ctrl.moodCurrent;
-            $ctrl.usedEvents = [1];
-            $ctrl.randPiggy = Math.floor(Math.random() * 12) + 5;
-            $ctrl.randDonate = Math.floor(Math.random() * 30) + 20;
-            $ctrl.randPiggyUse = 1;
-            $ctrl.randDonateUse = 1;
-            $ctrl.numberOfEvents;
-            $ctrl.cc;
-            console.log($ctrl.usedEvents);
+    function controllerFunction(FoodFightService, $location, $scope) {
+        const $ctrl = this;
+        $ctrl.eventObj = {};
+        $ctrl.progressBar;
+        $ctrl.amount;
+        $ctrl.dayCount;
+        $ctrl.moodCurrent;
+        $ctrl.usedEvents = [1];
+        $ctrl.randPiggy = Math.floor(Math.random() * 12) + 5;
+        $ctrl.randDonate = Math.floor(Math.random() * 30) + 20;
+        $ctrl.randPiggyUse = 1;
+        $ctrl.randDonateUse = 1;
+        $ctrl.numberOfEvents;
+        $ctrl.cc;
 
+        getEverything();
+        console.log($ctrl.eventObj);
+        $ctrl.selectOption = function(price, mood) {
+            //  console.log(amount);
+            FoodFightService.changeProgressBar(price);
+            FoodFightService.changeAmount(price);
+            FoodFightService.sendMood(mood);
             getEverything();
-            console.log($ctrl.eventObj);
-            $ctrl.selectOption = function(price, mood) {
-                //  console.log(amount);
-                FoodFightService.changeProgressBar(price);
-                FoodFightService.changeAmount(price);
-                FoodFightService.sendMood(mood);
-                getEverything();
-            };
-            $ctrl.piggyBank = function() {
-                if ($ctrl.randPiggyUse > 0) {
-                    let randPiggyHolder = $ctrl.randPiggy;
-                    FoodFightService.breakPiggy(randPiggyHolder);
-                    $ctrl.progressBar = FoodFightService.getProgressBar();
-                    $ctrl.amount = FoodFightService.getAmount();
-                    $(".mainProgress").attr("value", $ctrl.amount);
-                    $(".mainProgress").attr("max", randPiggyHolder + 150);
-                    $ctrl.randPiggyUse--;
-                    $(".piggy")
-                        .find("img")
-                        .attr("src", "dependencies/piggy-bank-used.svg");
-                    $(".piggy").css("border", "3px solid grey");
-                } else {
-                    //end goal => show div with error
-                    alert("You've already taken your kids' piggy-banks!");
-                }
-            };
-            $ctrl.donBlood = function() {
-                if ($ctrl.randDonateUse > 0) {
-                    let randDonateHolder = $ctrl.randDonate;
-                    FoodFightService.donateBlood(randDonateHolder);
-                    $ctrl.progressBar = FoodFightService.getProgressBar();
-                    $ctrl.amount = FoodFightService.getAmount();
-                    $(".mainProgress").attr("value", $ctrl.amount);
-                    $(".mainProgress").attr("max", randDonateHolder + 150);
-                    $ctrl.randDonateUse--;
-                    $(".blood")
-                        .find("img")
-                        .attr("src", "dependencies/blood-sample-used.svg");
-                    $(".blood").css("border", "3px solid grey");
-                } else {
-                    //end goal=> show div with error
-                    alert("You've already given blood!");
-                }
-            };
-
-            function getEverything() {
-                $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
-                if (event.eventname === "Grocery Shopping") {
-                    getEverything();
-                } else if ($ctrl.usedEvents.length == $ctrl.numberOfEvents) {
-                    FoodFightService.getEvents().then(event => {
-                        if (event == undefined || event.id == 1) {
-                            console.log(event.id);
-                            getEverything();
-                        } else {
-                            if (event.repeatability === true) {
-                                $ctrl.eventObj = event;
-                                $ctrl.progressBar = FoodFightService.getProgressBar();
-                                $ctrl.amount = FoodFightService.getAmount();
-                                if ($ctrl.amount <= 0) {
-                                    $location.path("/results");
-                                }
-                                $ctrl.dayCount = FoodFightService.changeDayCount();
-                                $ctrl.moodCurrent = FoodFightService.getMood();
-                                $(".mainProgress").attr("value", $ctrl.amount);
-                                $(".moodProgress").attr("value", $ctrl.moodCurrent);
-                                var windowWidth = $(window).width();
-                                if (windowWidth < 480) {
-                                    cashMinItems();
-                                } else {
-                                    cashMenuItems();
-                                }
-                                moodIcon();
-                            } else {
-                                getEverything();
-                            }
-                        }
-                    });
-                } else {
-                    FoodFightService.getEvents().then(event => {
-                        if (event == undefined || event.id == 1) {
-                            getEverything();
-                        } else {
-                            $ctrl.eventObj = event;
-                            if ($ctrl.usedEvents.indexOf(event.id) == -1) {
-                                $ctrl.progressBar = FoodFightService.getProgressBar();
-                                $ctrl.amount = FoodFightService.getAmount();
-                                if ($ctrl.amount <= 0) {
-                                    $location.path("/results");
-                                }
-                                $ctrl.dayCount = FoodFightService.changeDayCount();
-                                $ctrl.moodCurrent = FoodFightService.getMood();
-                                $(".mainProgress").attr("value", $ctrl.amount);
-                                $(".moodProgress").attr("value", $ctrl.moodCurrent);
-                                var windowWidth = $(window).width();
-                                if (windowWidth < 480) {
-                                    cashMinItems();
-                                } else {
-                                    cashMenuItems();
-                                }
-                                moodIcon();
-                            } else {
-                                getEverything();
-                            }
-                        }
-                    });
-                }
+        };
+        $ctrl.piggyBank = function() {
+            if ($ctrl.randPiggyUse > 0) {
+                let randPiggyHolder = $ctrl.randPiggy;
+                FoodFightService.breakPiggy(randPiggyHolder);
+                $ctrl.progressBar = FoodFightService.getProgressBar();
+                $ctrl.amount = FoodFightService.getAmount();
+                $(".mainProgress").attr("value", $ctrl.amount);
+                $(".mainProgress").attr("max", randPiggyHolder + 150);
+                $ctrl.randPiggyUse--;
+                $(".piggy")
+                    .find("img")
+                    .attr("src", "dependencies/piggy-bank-used.svg");
+                $(".piggy").css("border", "3px solid grey");
+            } else {
+                //end goal => show div with error
+                alert("You've already taken your kids' piggy-banks!");
             }
-        
+        };
+        $ctrl.donBlood = function() {
+            if ($ctrl.randDonateUse > 0) {
+                let randDonateHolder = $ctrl.randDonate;
+                FoodFightService.donateBlood(randDonateHolder);
+                $ctrl.progressBar = FoodFightService.getProgressBar();
+                $ctrl.amount = FoodFightService.getAmount();
+                $(".mainProgress").attr("value", $ctrl.amount);
+                $(".mainProgress").attr("max", randDonateHolder + 150);
+                $ctrl.randDonateUse--;
+                $(".blood")
+                    .find("img")
+                    .attr("src", "dependencies/blood-sample-used.svg");
+                $(".blood").css("border", "3px solid grey");
+            } else {
+                //end goal=> show div with error
+                alert("You've already given blood!");
+            }
+        };
+
+        function getEverything() {
+            $ctrl.numberOfEvents = FoodFightService.getNumberOfEvents();
+            if (event.eventname === "Grocery Shopping") {
+                getEverything();
+            } else if ($ctrl.usedEvents.length == ($ctrl.numberOfEvents-3)) {
+                console.log("used events = number of events");
+                FoodFightService.getEvents().then(event => {
+                    if (event == undefined || event.id == 1) {
+                        getEverything();
+                    } else {
+                        if (event.repeatability === true) {
+                            $ctrl.eventObj = event;
+                            $ctrl.progressBar = FoodFightService.getProgressBar();
+                            $ctrl.amount = FoodFightService.getAmount();
+                            if ($ctrl.amount <= 0) {
+                                $location.path("/results");
+                            }
+                            $ctrl.dayCount = FoodFightService.changeDayCount();
+                            $ctrl.moodCurrent = FoodFightService.getMood();
+                            $(".mainProgress").attr("value", $ctrl.amount);
+                            $(".moodProgress").attr("value", $ctrl.moodCurrent);
+                            var windowWidth = $(window).width();
+                            if (windowWidth < 480) {
+                                cashMinItems();
+                            } else {
+                                cashMenuItems();
+                            }
+                            moodIcon();
+                        } else {
+                            getEverything();
+                        }
+                    }
+                });
+            } else {
+                FoodFightService.getEvents().then(event => {
+                    if (event != undefined) {
+                        if ($ctrl.usedEvents.indexOf(event.id) == -1) {
+                            $ctrl.eventObj = event;
+                            $ctrl.usedEvents.push(event.id);
+                            if ($ctrl.usedEvents.length === 11){
+                              $ctrl.usedEvents = [1];
+                            }
+
+                            $ctrl.progressBar = FoodFightService.getProgressBar();
+                            $ctrl.amount = FoodFightService.getAmount();
+                            if ($ctrl.amount <= 0) {
+                                $location.path("/results");
+                            }
+                            $ctrl.dayCount = FoodFightService.changeDayCount();
+                            $ctrl.moodCurrent = FoodFightService.getMood();
+                            $(".mainProgress").attr("value", $ctrl.amount);
+                            $(".moodProgress").attr("value", $ctrl.moodCurrent);
+                            var windowWidth = $(window).width();
+                            if (windowWidth < 480) {
+                                cashMinItems();
+                            } else {
+                                cashMenuItems();
+                            }
+                            moodIcon();
+                        } else {
+                            getEverything();
+                        }
+                    } else {
+                      getEverything();
+                    }
+
+                });
+            }
+        }
+
 
 
 
@@ -135,6 +140,7 @@
             $(".topInfo").css("left", "119px");
             $("progress").css("left", "119px");
             $("footer").css("left", "calc(50% + 119px)");
+            $(".cashGrabItems").css("left", "80px");
             $(".needCashMenu")
                 .find("li")
                 .css("margin-left", "0");
@@ -156,6 +162,7 @@
             $(".topInfo").css("left", "0");
             $("progress").css("left", "0");
             $("footer").css("left", "50%");
+            $(".cashGrabItems").css("left", "0");
             $(".needCashMenu")
                 .find("li")
                 .css("margin-left", "-80px");

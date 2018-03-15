@@ -747,8 +747,6 @@ input {
 #addMain {
   width: 100vw;
   height: 100vh;
-  background-image: url("../images/food.png");
-  background-size: cover;
   overflow: hidden;
 }
 
@@ -914,6 +912,7 @@ input {
   .cashGrabItems {
     position: fixed;
     bottom: 50px;
+    transition: .3s;
   }
   .getCash {
     display: none;

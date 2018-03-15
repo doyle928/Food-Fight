@@ -7,6 +7,10 @@
       $ctrl.donate = function() {
         $location.path("/donate");
       };
+      $ctrl.playAgain = function(){
+        FoodFightService.resetValues();
+        $location.path("/events");
+      }
       $(".formFocus").hide();
       $(".creditForm").hide();
       setTimeout(function() {
