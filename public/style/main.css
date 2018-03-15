@@ -3,7 +3,6 @@ html {
   overflow: hidden;
   text-shadow: #000 0 0 5px;
 }
-
 body {
   background-color: #1f1f1f;
   color: #eee;
@@ -25,14 +24,13 @@ body {
 } */
 
 #receipt{
-  box-shadow: 0 0 1in -0.25in rgba(0, 0, 0, 0.5);
-  padding:2mm;
+  font-family: "Average Sans", serif;
   margin: 0 auto;
-  width: 65mm;
-  height:80mm;
-  background: #992c99;
-  color:#302b30;
-  border-radius:10px;
+  width: 320px;
+  height: 640px;
+  background-color: #1f1f1f;
+  color: #eee;
+  border-radius: 3px;
 }
 
   ::selection {background: #f31544; color: #FFF;}
@@ -182,7 +180,6 @@ button {
   width: 240px;
   min-height: 100px;
   height: auto;
-  max-height: 150px;
   overflow: visible;
   background-color: rgba(255, 255, 255, 0.1);
   color: #e7e7e7;
@@ -680,6 +677,7 @@ input {
   width: 120vw;
   height: 120vh;
   background-color: #000000b0;
+  z-index: 9999;
 }
 
 .formFocus i {
@@ -709,6 +707,7 @@ input {
   left: 50%;
   transform: translateX(-50%);
   transition: .5s;
+  z-index: 9999;
 }
 
 .form {
@@ -1231,7 +1230,6 @@ a.facebookDiv {
 
 .teamText h1{
   font-size: 2.2em;
-  color: green;
   margin-bottom: 0;
 }
 
@@ -2490,6 +2488,7 @@ a.facebookDiv {
     background-image: url("../images/world.png");
     background-size: 110% 110%;
     font-family: "Coda", cursive;
+    z-index: 9999;
   }
   .chip {
     background: radial-gradient(circle at 100% 100%, #adadad, #e7e7e7);

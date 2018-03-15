@@ -102,7 +102,7 @@
 
     function randNum() {
       if (dayCount == 1) {
-        return 9;
+        return 11;
       } else {
         return Math.floor(Math.random() * numberOfEvents) + 1;
       }
