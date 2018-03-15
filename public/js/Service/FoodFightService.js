@@ -39,14 +39,14 @@
       checkCreds: checkCreds,
       checkifLog: checkifLog,
       resetValues: resetValues
-  };
+    };
 
-  function resetValues() {
-    progressValue = 150;
-    dollarValue = 150;
-    dayCount = 1;
-    currentMood = 10;
-  }
+    function resetValues() {
+      progressValue = 150;
+      dollarValue = 150;
+      dayCount = 1;
+      currentMood = 10;
+    }
 
     function checkifLog() {
       return loggedIn;
@@ -102,7 +102,7 @@
 
     function randNum() {
       if (dayCount == 1) {
-        return 8;
+        return 11;
       } else {
         return Math.floor(Math.random() * numberOfEvents) + 1;
       }
