@@ -1,5 +1,6 @@
 (function() {
   function FoodFightService($http) {
+    var creditCard;
     var progressValue = 150;
     var dollarValue = 150;
     var dayCount = 1;
@@ -38,8 +39,18 @@
       getNumberOfEvents: getNumberOfEvents,
       checkCreds: checkCreds,
       checkifLog: checkifLog,
-      resetValues: resetValues
+      resetValues: resetValues,
+      getCreditCard: getCreditCard,
+      sendCreditCard: sendCreditCard
     };
+
+    function getCreditCard(credit){
+      creditCard = credit;
+    }
+
+    function sendCreditCard(){
+      return creditCard;
+    }
 
     function resetValues() {
       progressValue = 150;

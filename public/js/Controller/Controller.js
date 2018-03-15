@@ -339,8 +339,11 @@
 
     // $ctrl.submitForm();
 
-    $ctrl.submitForm = function(isValid) {
+    $ctrl.submitForm = function(isValid, credit) {
       if (isValid) {
+        $ctrl.cc = credit;
+        $ctrl.cc = $scope.slider.value;
+        FoodFightService.getCreditCard($ctrl.cc);
         $locaton.path("/thankyou");
       }
     };

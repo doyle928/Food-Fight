@@ -1,8 +1,9 @@
 (function() {
   var receiptComponent = {
     templateUrl: "Partials/receipt.html",
-    controller: function(){
-
+    controller: function(FoodFightService){
+      const $ctrl = this;
+      $ctrl.cc = FoodFightService.sendCreditCard();
     }
 	};
   angular

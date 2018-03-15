@@ -57,8 +57,9 @@
 
       // $ctrl.submitForm();
 
-      $ctrl.submitForm = function(isValid) {
+      $ctrl.submitForm = function(isValid, credit) {
         if (isValid) {
+          FoodFightService.getCreditCard(credit);
           $location.path("/receipt");
         }
       };
