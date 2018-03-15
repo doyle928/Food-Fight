@@ -39,16 +39,7 @@
         <div class="eventImageDiv">
             <img class="eventImage" src="{{$ctrl.eventObj.image}}">
         </div>
-        <!-- <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-        	<div class="flipper">
-        		<div class="front">
-        			front content
-        		</div>
-        		<div class="back">
-        			back content
-        		</div>
-        	</div>
-        </div> -->
+
         <div class="cardContainer">
             <div class="card1 flip-container" ontouchstart="this.classList.toggle('hover');" data-tilt data-tilt-max="15" data-tilt-speed="400"
                 data-tilt-perspective="500" data-tilt-scale="1.05" data-tilt-glare data-tilt-max-glare="0.8" ng-click="$ctrl.selectOption($ctrl.eventObj.option1price,$ctrl.eventObj.mood1)">
@@ -82,9 +73,7 @@
     </div>
 </div>
 <footer>
-    <!-- <div class="facebookDiv" ng-click="">
-        <img class="facebookImage" src="images/facebook.png">
-    </div> -->
+
     <p ng-click="$ctrl.showDonate()">Donate</p>
 </footer>
 
@@ -188,7 +177,7 @@
                     </label>
                 </div>
             </div>
-            <button type="submit" class="submitCC" ng-disabled="ccform.$invalid">
+            <button type="submit" class="submitCC" ng-disabled="ccform.$invalid" ng-click="#!/thankyou">
                 <span>
                     <i class="material-icons">lock_outline</i>
                 </span>Submit - Demo Only</button>
