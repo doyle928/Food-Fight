@@ -45,108 +45,110 @@
   <div class="formFocus">
     <i class="material-icons" ng-click="$ctrl.close()">close</i>
   </div>
-  <div class="creditForm">
-    <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-glare data-tilt-max-glare="1">
-      <div class="topCard">
-        <div class="chip">
-          <div class="chipDec"></div>
-        </div>
-        <img src="dependencies/visa.svg" style="width: 50px;">
-      </div>
-      <div class="cardNumbers">
-        <p>{{ $ctrl.cc.ccnum1 }}</p>
-        <p>&#160;</p>
-        <p>{{ $ctrl.cc.ccnum2 }}</p>
-        <p>&#160;</p>
-        <p>{{ $ctrl.cc.ccnum3 }}</p>
-        <p>&#160;</p>
-        <p>{{ $ctrl.cc.ccnum4 }}</p>
-      </div>
-
-      <div class="cardNameonCard">
-        <p>Card Holder</p>
-        <p class="exptext">Expiration</p>
-
-      </div>
-      <div class="expOnCard">
-        <p>{{ $ctrl.cc.ccname }}</p>
-        <div>
-          <p>{{ $ctrl.cc.exp1 }}</p>
-          <p>/</p>
-          <p>{{ $ctrl.cc.exp2 }}</p>
-        </div>
-      </div>
-
-
-    </div>
-    <div class="creditCard">
-      <form ng-submit="$ctrl.submitForm(ccform.$valid)" class="form" name="ccform" autocomplete="on" novalidate>
-        <rzslider class="custom-slider" rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
-        <div class="ccNum">
-          <div>
-            <label for="card-number">Credit Card
-              <input type="text" id="card-number" class="ccnum1 lockChange" maxlength="4" required ng-required="true" ng-minlength="4"
-                ng-maxlength="4" ng-model="$ctrl.cc.ccnum1">
-            </label>
+  <div class="creditMain" hm-panup="$ctrl.onSwipeUp()" hm-pandown="$ctrl.onSwipeDown()">
+    <div class="creditForm">
+      <div class="card" data-tilt data-tilt-max="15" data-tilt-speed="400" data-tilt-perspective="500" data-tilt-glare data-tilt-max-glare="1">
+        <div class="topCard">
+          <div class="chip">
+            <div class="chipDec"></div>
           </div>
-          <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum2"
-            class="ccnum2 lockChange">
-          <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum3"
-            class="ccnum3 lockChange">
-          <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum4"
-            class="ccnum4 lockChange">
+          <img src="dependencies/visa.svg" style="width: 50px;">
         </div>
-        <div class="cardName">
-          <label for="card-holder">Card Holder Name
-            <input type="name" id="card-holder" class="ccname lockChange" ng-model="$ctrl.cc.ccname" maxlength="32" required ng-required="true"
-              ng-minlength="3" ng-maxlength="32">
-          </label>
+        <div class="cardNumbers">
+          <p>{{ $ctrl.cc.ccnum1 }}</p>
+          <p>&#160;</p>
+          <p>{{ $ctrl.cc.ccnum2 }}</p>
+          <p>&#160;</p>
+          <p>{{ $ctrl.cc.ccnum3 }}</p>
+          <p>&#160;</p>
+          <p>{{ $ctrl.cc.ccnum4 }}</p>
         </div>
-        <div class="expCCV">
-          <div class="expWhole">
-            <div class="expirationLabel">
-              <label for='expiration-date'>Expiration
-                <select id="expiration-date" class="ccselect1 lockChange" ng-model="$ctrl.cc.exp1" required ng-required="true">
-                  <option value=""></option>
-                  <option value="01">01</option>
-                  <option value="02">02</option>
-                  <option value="03">03</option>
-                  <option value="04">04</option>
-                  <option value="05">05</option>
-                  <option value="06">06</option>
-                  <option value="07">07</option>
-                  <option value="08">08</option>
-                  <option value="09">09</option>
-                  <option value="10">10</option>
-                  <option value="11">11</option>
-                  <option value="12">12</option>
-                </select>
+
+        <div class="cardNameonCard">
+          <p>Card Holder</p>
+          <p class="exptext">Expiration</p>
+
+        </div>
+        <div class="expOnCard">
+          <p>{{ $ctrl.cc.ccname }}</p>
+          <div>
+            <p>{{ $ctrl.cc.exp1 }}</p>
+            <p>/</p>
+            <p>{{ $ctrl.cc.exp2 }}</p>
+          </div>
+        </div>
+
+
+      </div>
+      <div class="creditCard">
+        <form ng-submit="$ctrl.submitForm(ccform.$valid, $ctrl.cc)" class="form" name="ccform" autocomplete="on" novalidate>
+          <rzslider class="custom-slider" rz-slider-model="slider.value" rz-slider-options="slider.options"></rzslider>
+          <div class="ccNum">
+            <div>
+              <label for="card-number">Credit Card
+                <input type="text" id="card-number3" class="ccnum1 lockChange input" maxlength="4" required ng-required="true" ng-minlength="4"
+                  ng-maxlength="4" ng-model="$ctrl.cc.ccnum1" maxlength="4">
               </label>
             </div>
-            <select ng-model="$ctrl.cc.exp2" class="ccselect2 lockChange" required ng-required="true">
-              <option value=""></option>
-              <option value="18">18</option>
-              <option value="19">19</option>
-              <option value="20">20</option>
-              <option value="21">21</option>
-              <option value="22">22</option>
-              <option value="23">23</option>
-              <option value="24">24</option>
-              <option value="25">25</option>
-            </select>
+            <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum2"
+              class="ccnum2 lockChange input" maxlength="4">
+            <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum3"
+              class="ccnum3 lockChange input" maxlength="4">
+            <input type="text" maxlength="4" required ng-required="true" ng-minlength="4" ng-maxlength="4" ng-model="$ctrl.cc.ccnum4"
+              class="ccnum4 lockChange input" maxlength="4">
           </div>
-          <div class="ccvForm">
-            <label for="ccv">CCV
-              <input type="text" id="ccv3" class="ccCCV lockChange" maxlength="3" ng-model="$ctrl.cc.ccCCV" required ng-required="true"
-                ng-minlength="3" ng-maxlength="3">
+          <div class="cardName">
+            <label for="card-holder">Card Holder Name
+              <input type="name" id="card-holder3" class="ccname lockChange" ng-model="$ctrl.cc.ccname" maxlength="32" required ng-required="true"
+                ng-minlength="3" ng-maxlength="32">
             </label>
           </div>
-        </div>
-        <button type="submit" class="submitCC" ng-disabled="ccform.$invalid">
-          <span>
-            <i class="material-icons">lock_outline</i>
-          </span>Submit - Demo Only</button>
-      </form>
+          <div class="expCCV">
+            <div class="expWhole">
+              <div class="expirationLabel">
+                <label for='expiration-date'>Expiration
+                  <select id="expiration-date3" class="ccselect1 lockChange" ng-model="$ctrl.cc.exp1" required ng-required="true">
+                    <option value=""></option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                  </select>
+                </label>
+              </div>
+              <select ng-model="$ctrl.cc.exp2" class="ccselect2 lockChange" required ng-required="true">
+                <option value=""></option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+              </select>
+            </div>
+            <div class="ccvForm">
+              <label for="ccv">CCV
+                <input type="text" id="ccv3" class="ccCCV lockChange" maxlength="3" ng-model="$ctrl.cc.ccCCV" required ng-required="true"
+                  ng-minlength="3" ng-maxlength="3">
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="submitCC" ng-disabled="ccform.$invalid">
+            <span>
+              <i class="material-icons">lock_outline</i>
+            </span>Submit - Demo Only</button>
+        </form>
+      </div>
     </div>
   </div>
 </div>

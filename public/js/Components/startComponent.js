@@ -4,6 +4,7 @@
     controller: function($location, FoodFightService) {
       const $ctrl = this;
       $ctrl.windowWidth;
+      FoodFightService.resetValues();
 
       function updateSize() {
         $ctrl.windowWidth = $(window).width();

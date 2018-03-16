@@ -3,15 +3,18 @@
     templateUrl: "Partials/results.html",
     controller: function(FoodFightService, $location, $scope) {
       const $ctrl = this;
+      $ctrl.cc;
       $ctrl.dayCount = FoodFightService.getDayCount();
+      FoodFightService.resetValues();
+
       $ctrl.donate = function() {
         $(".formFocus").fadeIn(300);
         $(".creditForm").fadeIn(300);
       };
-      $ctrl.playAgain = function(){
+      $ctrl.playAgain = function() {
         FoodFightService.resetValues();
         $location.path("/events");
-      }
+      };
       $ctrl.titleNavButton = function() {
         $(".titleIconsElse").css("top", "30px");
         $(".titleNavElse").css("top", "0");
@@ -57,12 +60,27 @@
 
       // $ctrl.submitForm();
 
-      $ctrl.submitForm = function(isValid) {
+      $ctrl.submitForm = function(isValid, credit) {
         if (isValid) {
+          $ctrl.cc = credit;
+          $ctrl.cc.value = $scope.slider.value;
+          FoodFightService.getCredit($ctrl.cc);
           $location.path("/receipt");
         }
       };
 
+      $(".input").keyup(function() {
+        if (this.value.length == this.maxLength) {
+          var $next = $(this).next(".input");
+          if ($next.length) {
+            $(this)
+              .next(".input")
+              .focus();
+          } else {
+            $(this).blur();
+          }
+        }
+      });
       // ccBoolean
       $(".lockChange").on("keyup", function() {
         $ctrl.ccBoolean = {

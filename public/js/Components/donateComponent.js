@@ -1,12 +1,13 @@
 (function() {
   var donateComponent = {
     templateUrl: "Partials/donate.html",
-    controller: function($location, $scope) {
+    controller: function($location, $scope, FoodFightService) {
       const $ctrl = this;
+      $ctrl.cc;
       $ctrl.home = function() {
         $location.path("/welcome");
       };
-
+      FoodFightService.resetValues();
       function updateSize() {
         $ctrl.windowWidth = $(window).width();
       }
@@ -52,12 +53,27 @@
       };
 
       // $ctrl.submitForm();
-
-      $ctrl.submitForm = function(isValid) {
+      $ctrl.submitForm = function(isValid, credit) {
         if (isValid) {
+          $ctrl.cc = credit;
+          $ctrl.cc.value = $scope.slider.value;
+          FoodFightService.getCredit($ctrl.cc);
           $location.path("/receipt");
         }
       };
+
+      $(".input").keyup(function() {
+        if (this.value.length == this.maxLength) {
+          var $next = $(this).next(".input");
+          if ($next.length) {
+            $(this)
+              .next(".input")
+              .focus();
+          } else {
+            $(this).blur();
+          }
+        }
+      });
 
       // ccBoolean
       $(".lockChange").on("keyup", function() {

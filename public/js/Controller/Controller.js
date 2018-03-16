@@ -347,12 +347,27 @@
 
     // $ctrl.submitForm();
 
-    $ctrl.submitForm = function(isValid) {
+    $ctrl.submitForm = function(isValid, credit) {
       if (isValid) {
-        $locaton.path("/thankyou");
+        $ctrl.cc = credit;
+        $ctrl.cc.value = $scope.slider.value;
+        FoodFightService.getCredit($ctrl.cc);
+        $location.path("/receipt");
       }
     };
 
+    $(".input").keyup(function() {
+      if (this.value.length == this.maxLength) {
+        var $next = $(this).next(".input");
+        if ($next.length) {
+          $(this)
+            .next(".input")
+            .focus();
+        } else {
+          $(this).blur();
+        }
+      }
+    });
     // ccBoolean
     $(".lockChange").on("keyup", function() {
       $ctrl.ccBoolean = {

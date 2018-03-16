@@ -6,7 +6,7 @@ html {
 
 body {
   background-color: #1f1f1f;
-  color: #eee;
+  color: #e7e7e7;
   font-family: "Average Sans", serif;
   text-align: center;
   padding: 0;
@@ -25,7 +25,7 @@ body {
   background-size: cover;
 } */
 
-#receipt {
+/* #receipt {
   font-family: "Average Sans", serif;
   margin: 0 auto;
   width: 320px;
@@ -33,8 +33,9 @@ body {
   background-color: #1f1f1f;
   color: #eee;
   border-radius: 3px;
-}
 
+} */
+/* 
 ::-moz-selection {
   background: #f31544;
   color: #FFF;
@@ -48,7 +49,7 @@ body {
 ::moz-selection {
   background: #f31544;
   color: #FFF;
-}
+} */
 
 .view-animate.ng-leave {
   animation: slidedown 1s both ease-in;
@@ -1057,7 +1058,7 @@ input {
 }
 
 .cardName label input {
-  width: 250px;
+  width: 240px;
   height: 25px;
   border-radius: 3px;
   padding-left: 5px;
@@ -1088,7 +1089,7 @@ input {
 }
 
 .expirationLabel label select {
-  width: 40px;
+  width: 45px;
   height: 30px;
   margin-left: 0;
   border-radius: 3px;
@@ -1104,7 +1105,7 @@ input {
 }
 
 .expWhole select {
-  width: 40px;
+  width: 45px;
   height: 30px;
   border-radius: 3px;
   font-size: 1em;
@@ -1170,7 +1171,7 @@ input {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 255px;
+  width: 245px;
   margin-top: 15px;
   font-size: 1em;
 }
@@ -1382,6 +1383,7 @@ a.facebookDiv {
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 10;
 }
 
 .loginMain {
@@ -1489,7 +1491,7 @@ a.facebookDiv {
 
 .titleNavEvent ul li {
   float: left;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin: 0;
   list-style: none;
 }
@@ -1506,6 +1508,7 @@ a.facebookDiv {
   height: 30px;
   background-color: #1f1f1f;
   width: 100vw;
+  z-index: 101;
   transition: .5s;
   -webkit-transition: .5s;
   -moz-transition: .5s;
@@ -1520,7 +1523,7 @@ a.facebookDiv {
 
 .titleNavElse ul li {
   float: left;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin: 0;
   list-style: none;
 }
@@ -1711,6 +1714,35 @@ a.facebookDiv {
 #codeDiv {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+#receipt{
+  width: 100vw;
+  height: 100vh;
+}
+.receiptMain{
+  background-color: #1f1f1f;
+  color: #e7e7e7;
+  border: 8px solid #313131;
+  border-radius: 10px;
+  width: 300px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.receiptMain div span{
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.receiptMain div span p:nth-child(odd) {
+  padding-left: 25px;
+}
+.receiptMain div span p:nth-child(even) {
+  text-align: right;
+  padding-right: 25px;
 }
 
 /* /////////////////////////////////   480 ------- 767   /////////////////////////////////////////////////////////////*/
