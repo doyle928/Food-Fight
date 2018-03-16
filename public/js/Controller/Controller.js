@@ -347,7 +347,7 @@
 
     // $ctrl.submitForm();
 
-    $ctrl.submitForm = function(isValid, credit) {
+    $ctrl.submitForm = function(isValid, credit, $location) {
       if (isValid) {
         $ctrl.cc = credit;
         $ctrl.cc.value = $scope.slider.value;

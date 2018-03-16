@@ -29,13 +29,12 @@
       $ctrl.name =
         nameHolder[0].charAt(0).toUpperCase() + nameHolder[0].slice(1);
 
-      $ctrl.days = function() {
-        var numHolder = Math.floor($ctrl.cc.value / (150 / 7));
-        if (numHolder == 0) {
-          numHolder = 1;
-        }
-        return numHolder;
-      };
+      //   var numHolder = Math.floor($ctrl.cc.value / (150 / 7));
+      //   if (numHolder == 0) {
+      //     numHolder = 1;
+      // };
+      // $ctrl.day = numHolder;
+
 
       $ctrl.titleNavButton = function() {
         $(".titleIconsElse").css("top", "30px");
