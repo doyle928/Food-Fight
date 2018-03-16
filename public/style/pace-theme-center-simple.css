@@ -64,11 +64,12 @@
   -ms-user-select: none;
       user-select: none;
   color: #ee3148;
+  background-color: #1f1f1f;
 }
 
 .pace-progress {
   position: fixed;
-  z-index: 2000;
+  z-index: 10000;
   top: 50%;
   left: 50%;
   margin-left: -2.5rem;

@@ -215,7 +215,7 @@
       $(".main").css("margin-left", "117px");
       $(".getCashBorder").css("left", "117px");
       $(".topInfo").css("left", "117px");
-      $(".titleIconsEvent").css("left","calc(50% + 117px)");
+      $(".titleIconsEvent").css("left", "calc(50% + 117px)");
       $(".titleNavEvent").css("margin-left", "117px");
       $("progress").css("left", "117px");
       $("footer").css("left", "calc(50% + 117px)");
@@ -240,7 +240,7 @@
       $(".main").css("margin-left", "0px");
       $(".getCashBorder").css("left", "0");
       $(".topInfo").css("left", "0");
-      $(".titleIconsEvent").css("left","50%");
+      $(".titleIconsEvent").css("left", "50%");
       $(".titleNavEvent").css("margin-left", "0");
       $("progress").css("left", "0");
       $("footer").css("left", "50%");
@@ -273,7 +273,7 @@
       } else {
         $(".card1").attr("data-tilt");
         $(".card2").attr("data-tilt");
-        $(".titleIconsEvent").css("left", "calc(50% + 60px)");
+        $(".titleIconsEvent").css("left", "50%");
         $(".titleIconsEvent").css("top", "6px");
         $(".liSpan1").css("visibility", "hidden");
         $(".liSpan2").css("visibility", "hidden");
